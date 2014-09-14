@@ -7,14 +7,13 @@ class PzzUser < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :lockable, :timeoutable #,:confirmable
 
   # fields
+  # Virtual attribute for authenticating by either username or email
+  # This is in addition to a real persisted field like 'username'
+  attr_accessor :login
   enum user_status: [:active, :disabled, :locked]
   enum user_contact_prefer: [:email, :phone, :both]
   has_attached_file :user_avatar, :styles => { :medium => "240x240>", :thumb => "120x120>" }, :default_url => ""
   before_post_process :skip_for_audio
-  
-  # Virtual attribute for authenticating by either username or email
-  # This is in addition to a real persisted field like 'username'
-  attr_accessor :login
 
 
   # validates 
@@ -45,7 +44,7 @@ class PzzUser < ActiveRecord::Base
 
 
   # overrides
-  def self.find_for_database_authentications(warden_conditions)
+  def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
       where(conditions).where(["lower(user_phone) = :value OR lower(email) = :value", { :value => login.downcase }]).first
