@@ -94,6 +94,9 @@ gem 'rack-rewrite', '~> 1.5.0'
 # make enum work with simple form and i18n
 gem 'enum_help'
 
+# rest api documentation
+gem 'apipie-rails'
+
 # pzz app gems end
 
 

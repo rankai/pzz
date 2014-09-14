@@ -5,6 +5,8 @@
 zh-CN:
   website:
     # options
+  apipie:
+    api_documentation: "API文档"
 
   # locale
   date:
@@ -190,18 +192,205 @@ zh-CN:
     select:
       prompt: "请选择"
 
+  enums:
+    # line
+    pzz_line:
+      line_status:
+        created: "已创建"
+        closed: "已关闭"
+        expired: "已过期"
+        canceled: "已取消"
+      line_type:
+        local: "同城拼车"
+        long_distance: "长途拼车"
+      line_plan_type:
+        one_off: "临时"
+        long_term: "长期计划"
+      line_return:
+        yes: "返程"
+        no: "无返程"
+      user_type:
+        driver: "司机"
+        passenger: "乘客"
+    # user
+    pzz_user:
+      user_status:
+        active: "正常"
+        disabled: "禁用"
+        locked: "锁定"
+      user_contact_prefer:
+        email: "邮件"
+        phone: "手机"
+        both: "两者都是"
+    # identity
+    pzz_identity:
+      identity_status:
+        pending: "实名认证待审核"
+        dl_pending: "驾驶认证待审核"
+        confirmed: "实名认证生效"
+        dl_confirmed: "驾驶认证生效"
+        both_confirmed: "双认证"
+      identity_dl_status:
+        normal: "正常"
+        expired: "已过期"
+        canceled: "已注销"
+      identity_dl_type:
+        A: "A本"
+        B: "B本"
+        C: "C本"
+      identity_gender:
+        male: "先生"
+        female: "女士"
+    # order
+    pzz_order:
+      order_status:
+        received: "未确认"
+        confirmed: "已确认"
+        pending: "已挂起"
+        canceled: "已取消"
+    # car
+    pzz_car:
+      car_type:
+        SUV: "城市越野车"
+        SPORTS: "跑车"
+        MPV: "多功能用途车"
+        MINI: "迷你轿车"
+        COMPACT: "小型轿车"
+        FAMILY: "中级轿车"
+        LUXURY: "豪华轿车"
+        BUS: "小型客车"
+    # comment
+    pzz_comment:
+      comment_approved:
+        yes: "已通过"
+        no: "未通过"
+    # draw
+    pzz_draw_config:
+      draw_type:
+        circle: "转盘"
+        scratch: "呱呱乐"
+        slot: "老虎机"
+      draw_status:
+        not_start: "未开始"
+        in_process: "进行中"
+        completed: "已完成"
+        pending: "已挂起"
+    # draw history
+    pzz_draw_history:
+      draw_status:
+        missed: "未中奖"
+        won: "中奖"
+        issued: "已发放奖品"
+    # link
+    pzz_link:
+      link_visible:
+        yes: "可见"
+        no: "不可见"
+    # message
+    pzz_message:
+      message_status:
+        unread: "未读"
+        read: "已读"
+        deleted: "已删除"
+      message_type:
+        system: "系统通知"
+        user: "私信"
+        broadcast: "系统广播"
+      message_folder:
+        inbox: "收件箱"
+        outbox: "发件箱"
+    # option
+    pzz_option:
+      autoload:
+        yes: "是"
+        no: "不是"
+    # template
+    pzz_template:
+      template_type:
+        sms: "短信模板"
+        pms: "站内消息模板"
+        pz: "拼车说明模板"
+        system: "系统消息模板"
+    # pay history
+    pzz_pay_history:
+      pay_status:
+        pending: "等待"
+        success: "充值成功"
+        failed: "充值失败"
+    # post
+    pzz_post:
+      post_status:
+        publish: "已发布"
+        draft: "草稿"
+    # traffic
+    pzz_traffic:
+      traffic_keywords:
+        smooth: "畅通"
+        slow: "缓行"
+        jam: "拥堵"
+    # sms history
+    pzz_sms_history:
+      sms_status:
+        pending: "等待发送"
+        success: "发送成功"
+        failed: "发送失败"
+
 
   activerecord:
     models:
       #here is for model name, for example, in rails_admin
       # model name human
+      pzz_user: "系统用户"
+      pzz_user_meta: "用户附加属性"
+      pzz_identity: "用户认证"
+      pzz_car: "车辆信息"
+      pzz_car_image: "车辆照片"
+      pzz_post: "文章"
+      pzz_post_meta: "文章附加属性"
+      pzz_traffic: "路况信息"
+      pzz_comment: "评论"
+      pzz_comment_meta: "评论附件属性"
+      pzz_pay_history: "短信充值记录"
+      pzz_sms_history: "短信发送记录"
+      pzz_draw_history: "用户抽奖记录"
+      pzz_draw_config: "抽奖配置"
+      pzz_draw_prize: "抽奖奖品"
+      pzz_user_draw: "用户抽奖机会"
+      pzz_line: "拼车线路"
+      pzz_order: "拼车订单"
+      pzz_term: "类别"
+      pzz_term_taxonomy: "分类目录"
+      pzz_term_relationship: "分类映射"
+      pzz_option: "系统属性"
+      pzz_template: "模板"
+      pzz_link: "友情链接"
+      pzz_message: "站内消息"
+      role: "用户角色"
     attributes:
       # attributes human
+      pzz_user:
+        email: "邮箱"
+        user_phone: "手机"
+        user_nickname: "昵称"
+        user_display_name: "显示名称"
+        user_age: "年龄"
+        user_url: "个人网站"
+        user_description: "自我介绍"
+        user_msg_count: "剩余短信条数"
+        user_satisfaction_rating: "满意度"
+        user_breach_rating: "爽约率"
+        user_grade: "诚信等级"
+        user_avatar: "头像"
+        user_qq: "QQ"
+        user_contact_prefer: "优选联系方式"
+        user_pz_count: "拼车成功次数"
+        user_status: "状态"
+        user_group_id: "群组"
     errors:
       models:
         pzz_user:
           attributes:
-            user_avatar:
+            user_phone:
               blank: "不能为空"
       template: # ~ 2.3.5 backward compatible
         header:

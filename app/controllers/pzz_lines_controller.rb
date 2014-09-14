@@ -5,12 +5,17 @@ class PzzLinesController < ApplicationController
 
   # GET /pzz_lines
   # GET /pzz_lines.json
+  api :GET, '/pzz_lines', "Get all pz lines"
+  api :GET, '/pzz_lines.json', "Get all pz lines in json"
   def index
     @pzz_lines = PzzLine.all
   end
 
   # GET /pzz_lines/1
   # GET /pzz_lines/1.json
+  api :GET, '/pzz_lines/:id', "Get a pz line by id"
+  api :GET, '/pzz_lines/:id.json', "Get a pz line in json by id"
+  param :id, :number
   def show
   end
 

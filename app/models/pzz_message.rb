@@ -2,7 +2,7 @@ class PzzMessage < ActiveRecord::Base
 
 	# fields
 	enum message_status: [:unread, :read, :deleted]
-	# new 未读
+	# unread 未读
 	# read 已读
 	# deleted 已删除
 

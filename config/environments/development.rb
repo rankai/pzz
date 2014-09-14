@@ -37,7 +37,7 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :test
   config.action_mailer.smtp_settings = {
       address:              'smtp.gmail.com',
       port:                 587,
@@ -54,7 +54,7 @@ Rails.application.configure do
   config.assets.image_optim = false
 
   config.i18n.available_locales = ['zh-CN', 'en', :de]
-  config.i18n.default_locale = 'en'
-
+  config.i18n.default_locale = 'zh-CN'
+  config.i18n.load_path += Dir[Rails.root.join('config', 'locals', '**', '*.{rb,yml}').to_s]
 
 end

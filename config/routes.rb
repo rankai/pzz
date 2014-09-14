@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
 
+  apipie
   resources :pzz_comments
 
   resources :pzz_posts
+
+  # devise_for :pzz_users
+  devise_for :pzz_users, controllers: {registrations: "users/registrations", sessions: "users/sessions"}
+
+  devise_scope :pzz_users do
+    get 'users/phone_registered', to: "users/registrations#phone_registered?"
+    get 'users/email_registered', to: "users/registrations#email_registered?"
+  end
 
   mount Rich::Engine => '/rich', :as => 'rich'
   resources :pzz_traffics
@@ -28,8 +37,6 @@ Rails.application.routes.draw do
   resources :pzz_orders
 
   resources :pzz_lines
-
-  devise_for :pzz_users
 
   get 'home/index'
 

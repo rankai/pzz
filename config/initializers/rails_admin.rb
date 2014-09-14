@@ -148,7 +148,7 @@ RailsAdmin.config do |config|
     navigation_label 'Carpool'
   end
 
-  config.model 'Rich' do
+  config.model 'RichFile' do
     visible false
   end
 
