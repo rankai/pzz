@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   resources :pzz_posts
 
   # devise_for :pzz_users
-  devise_for :pzz_users, controllers: {registrations: "users/registrations", sessions: "users/sessions"}
+  devise_for :pzz_users, controllers: {registrations: "pzz_users/registrations", sessions: "pzz_users/sessions"}
 
-  devise_scope :pzz_users do
-    get 'users/phone_registered', to: "users/registrations#phone_registered?"
-    get 'users/email_registered', to: "users/registrations#email_registered?"
+  devise_scope :pzz_user do
+    get 'pzz_users/phone_registered', to: "pzz_users/registrations#phone_registered?"
+    get 'pzz_users/email_registered', to: "pzz_users/registrations#email_registered?"
   end
 
   mount Rich::Engine => '/rich', :as => 'rich'

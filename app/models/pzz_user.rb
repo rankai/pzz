@@ -12,6 +12,7 @@ class PzzUser < ActiveRecord::Base
   attr_accessor :login
   enum user_status: [:active, :disabled, :locked]
   enum user_contact_prefer: [:email, :phone, :both]
+  enum user_grade: [:low, :middle, :high]
   has_attached_file :user_avatar, :styles => { :medium => "240x240>", :thumb => "120x120>" }, :default_url => ""
   before_post_process :skip_for_audio
 
@@ -58,6 +59,14 @@ class PzzUser < ActiveRecord::Base
   def skip_for_audio
     ! %w(audio/ogg application/ogg).include?(user_avatar_content_type)
   end
+
+
+
+  # identity
+
+
+
+  # sms
 
 
 

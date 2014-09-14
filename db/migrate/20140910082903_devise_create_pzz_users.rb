@@ -42,8 +42,8 @@ class DeviseCreatePzzUsers < ActiveRecord::Migration
       t.integer     :user_status,               default: 0,   null: false
       t.string      :user_display_name,         default: "",  null: false
       t.integer     :user_age,                  default: 0,   null: false
-      t.integer     :user_msg_count,            default: 0,   null: false
-      t.string      :user_grade,                default: "",  null: false
+      t.integer     :user_msg_count,            default: 10,  null: false
+      t.integer     :user_grade,                default: 0,   null: false
       t.string      :user_contact_prefer,       default: 0,   null: false
       t.integer     :user_satisfaction_rating,  default: 0,   null: false
       t.integer     :user_breach_rating,        default: 0,   null: false

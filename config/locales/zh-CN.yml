@@ -222,6 +222,11 @@ zh-CN:
         email: "邮件"
         phone: "手机"
         both: "两者都是"
+      user_grade:
+        low: "诚信指数低"
+        middle: "诚信指数中"
+        high: "诚信指数高"
+
     # identity
     pzz_identity:
       identity_status:
@@ -340,6 +345,7 @@ zh-CN:
     models:
       #here is for model name, for example, in rails_admin
       # model name human
+      rich_file: "文章媒体库"
       pzz_user: "系统用户"
       pzz_user_meta: "用户附加属性"
       pzz_identity: "用户认证"

@@ -6,7 +6,7 @@
 			e.preventDefault();
 
 			$.ajax({
-                url: "<%= users_if_user_exist_path %>",
+                url: "<%= pzz_users_phone_registered_path %>",
                 method: "get",
                 dataType: "json",
                 data: {username:$("#user_username").val()},
@@ -74,7 +74,7 @@
 <div class="container-fluid">
   	<div class="row text-center">
     	<div class="login-reg-box col-md-12">
-		     <p class="top-login-reg">Already a member? <%= link_to "Sign in", new_user_session_path %></p>
+		     <p class="top-login-reg">Already a member? <%= link_to "Sign in", new_pzz_user_session_path %></p>
 		     <h2 class="page page-header">New user registration</h2>
 		     <%= render "form" %>
   		</div><!--span12--> 

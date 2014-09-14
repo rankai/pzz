@@ -18,7 +18,7 @@ RailsAdmin.config do |config|
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
   config.actions do
-    dashboard                     # mandatory
+    dashboard                     # mandatory             
     index                         # mandatory
     new do 
       except ['PzzSmsHistory', 'PzzPayHistory', 'PzzOrder', 'PzzDrawHistory']
@@ -60,7 +60,10 @@ RailsAdmin.config do |config|
     visible false
   end
 
-
+  config.model 'PzzSms' do 
+    # navigation_label 'User Manage'
+    visible false
+  end
 
 
   # histories tables read only kevin
