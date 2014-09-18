@@ -23,7 +23,7 @@ class PzzDrawConfig < ActiveRecord::Base
 
 
 	# relationships
-	
+	has_many :pzz_draw_prizes
 
 
 end

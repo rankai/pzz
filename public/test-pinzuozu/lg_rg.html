@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+           拼座族
+        </title>
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media
+        queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file://
+        -->
+        <!--[if lt IE 9]>
+            <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js">
+            </script>
+            <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js">
+            </script>
+        <![endif]-->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!-- Include all compiled plugins (below), or include individual files
+        as needed -->
+        <script src="js/jquery.min.js">
+        </script>
+        <script src="js/bootstrap.min.js">
+        </script>
+        <script type="text/javascript">
+            // $('#modal_1').ready(function()){
+            //    $('#login_active').removeClass('active');
+            //    $('#reginster_active').addClass('active'); 
+            // }
+            // $('#register_btn').click(function(con_active) {
+                
+            // });
+      
+
+
+        </script>
+    </head>
+    
+    <body>
+        <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" onclick="getId(this)">
+            登录
+        </button>
+        <button id="register_btn" class="btn btn-primary" click="function(con_active)" data-toggle="modal" data-target=".bs-example-modal-lg">
+            注册
+        </button>
+        <!-- modal start -->
+        <div id="modal_1" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
+        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">
+                                &times;
+                            </span>
+                            <span class="sr-only">
+                                Close
+                            </span>
+                        </button>
+                        <h4 class="modal-title text-center ">
+                            请您先登录或注册
+                        </h4>
+                    </div>
+                    <div class="modal-body text-center">
+                        <!-- tab start -->
+                        <ul class="nav nav-tabs lg-rg-tab-ul">
+                            <li id="login_active" class="active" >
+                                <a href="#home" data-toggle="tab" onclick="getId(this)" >
+                                    登录
+                                </a>
+                            </li>
+                            <li id="reginster_active">
+                                <a href="#profile" data-toggle="tab">
+                                    注册
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- tab content start -->
+                        <div class="tab-content">
+                            <!-- login start -->
+                            <div class="tab-pane active" id="home">
+                                <form class="form-horizontal lg-rg-form text-center" role="form">
+                                    <div class="form-group lg-rg-form-group">
+                                        <label for="" class="col-sm-2 control-label">
+                                            手机
+                                        </label>
+                                        <div class="col-sm-10">
+                                            <input type="mobile" class="form-control" id="" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group lg-rg-form-group">
+                                        <label for="inputPassword3" class="col-sm-2 control-label">
+                                            密码
+                                        </label>
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" id="inputPassword3" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group lg-rg-form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" class="btn btn-primary" >
+                                                立即登录
+                                            </button>
+                                            <a class="lg-rg-btn-a" href="#">
+                                                忘记密码？
+                                            </a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- login end -->
+                            <!-- register start -->
+                            <div class="tab-pane" id="profile">
+                                <form class="form-horizontal lg-rg-form text-center" role="form">
+                                    <div class="form-group lg-rg-form-group">
+                                        <label for="" class="col-sm-2 control-label">
+                                            手机
+                                        </label>
+                                        <div class="col-sm-10">
+                                            <input type="mobile" class="form-control" id="" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group lg-rg-form-group">
+                                        <label for="" class="col-sm-2 control-label">
+                                            验证码
+                                        </label>
+                                        <div class="col-sm-10">
+                                            <input type="" class="form-control" id="inputPassword3" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group lg-rg-form-group">
+                                        <label for="inputPassword3" class="col-sm-2 control-label">
+                                            密码
+                                        </label>
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" id="inputPassword3" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group lg-rg-form-group">
+                                        <label for="inputPassword3" class="col-sm-2 control-label">
+                                            密码确认
+                                        </label>
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" id="inputPassword3" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group lg-rg-form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" class="btn btn-primary">
+                                                同意协议并注册
+                                            </button>
+                                            <a class="lg-rg-btn-a" href="#">
+                                                《拼座族注册协议》
+                                            </a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- register end -->
+                        </div>
+                        <!-- tab content end -->
+                        <!-- tab end -->
+                    </div>
+                    <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </div> -->
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <!-- modal end -->
+        <!-- register login end -->
+    </body>
+
+</html>

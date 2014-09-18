@@ -64,6 +64,7 @@ gem 'paperclip', '~> 4.1.1'
 gem 'paperclip-meta' # add width, height, and size to paperclip images
 gem 'image_optim'
 gem 'paperclip-optimizer'
+gem 'paperclip-compression'
 
 #image crop
 gem 'rails_admin_jcrop'

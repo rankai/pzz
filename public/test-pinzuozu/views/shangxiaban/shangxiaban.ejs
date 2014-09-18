@@ -1,0 +1,17 @@
+<img src="images/car.jpg" >
+<div >
+  <a href="passenger-route-detail.html">
+    <%=line.attr("start") %> <i class="icon"></i>
+    <%=line.attr("end") %>
+  </a>
+  <p>
+    <span>
+      出发时间： <strong><%=line.attr("startTime") %>&nbsp;</strong>
+    </span>
+    <span>
+      提供座位： <strong><%=line.attr("seat") %></strong>
+      个
+    </span>
+  </p>
+</div>
+<span class="page-list-span">￥18元/位</span>

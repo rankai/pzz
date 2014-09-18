@@ -13,3 +13,9 @@ PzzOption.create([
 		{option_name: 'sms_password', option_value: '', autoload: 0},
 		{option_name: 'sms_count', option_value: '1000', autoload: 0},
 	])
+
+Role.create([
+		{name: "guest"},
+		{name: "passenger"},
+		{name: "driver"}
+	])

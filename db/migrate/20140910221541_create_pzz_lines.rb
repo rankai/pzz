@@ -1,7 +1,7 @@
 class CreatePzzLines < ActiveRecord::Migration
   def change
     create_table :pzz_lines do |t|
-      t.integer :pzz_user_id,                         null: false, default: 0
+      t.integer :pzz_user_id,                     null: false, default: 0
       t.string :user_nickname,                    null: false, default: ""
       t.string :user_realname,                    null: false, default: ""
       t.string :user_phone,                       null: false, default: ""

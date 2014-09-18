@@ -21,7 +21,8 @@ RailsAdmin.config do |config|
     dashboard                     # mandatory             
     index                         # mandatory
     new do 
-      except ['PzzSmsHistory', 'PzzPayHistory', 'PzzOrder', 'PzzDrawHistory']
+      except ['PzzSmsHistory', 'PzzPayHistory', 'PzzOrder', 
+        'PzzDrawHistory', 'PzzIdentity', 'PzzDriverIdentity']
     end
     export
     bulk_delete
@@ -37,22 +38,118 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  config.model 'PzzUser' do
-    navigation_icon 'icon-user'
-    navigation_label 'User Manage'
+
+  config.model 'PzzTermTaxonomy' do 
+    navigation_label 'System Config'
+    weight 19
   end
 
 
-  config.model 'PzzCar' do
+  config.model 'PzzTemplate' do 
+    navigation_label 'System Config'
+    weight 18
+  end
+
+  config.model 'PzzLink' do 
+    navigation_label 'System Config'
+    weight 17
+  end
+
+  config.model 'PzzOption' do 
+    navigation_label 'System Config'
+    weight 16
+  end
+
+
+  config.model 'PzzDrawHistory' do
+    navigation_label 'Draws'
+    weight 15
+  end
+
+  config.model 'PzzUserDraw' do
+    navigation_label 'Draws'
+    weight 14
+  end
+
+  config.model 'PzzDrawConfig' do 
+    navigation_label 'Draws'
+    weight 13
+  end
+
+
+  # histories tables read only kevin
+  # sms_history
+  # pay_history
+
+  config.model 'PzzSmsHistory' do
+    navigation_label 'Statistics'
+    weight 12
+  end
+
+  config.model 'PzzPayHistory' do
+    navigation_label 'Statistics'
+    weight 11
+  end
+
+  config.model 'PzzMessage' do
+    navigation_label 'Statistics'
+    weight 10
+  end
+  config.model 'PzzTraffic' do 
+    navigation_label 'User Post'
+    weight 9
+  end
+
+  config.model 'PzzComment' do 
+    navigation_label 'User Post'
+    weight 8
+  end
+
+  config.model 'PzzPost' do 
+    navigation_label 'User Post'
+    weight 7
+  end
+
+  config.model 'PzzOrder' do 
+    navigation_label 'Carpool'
+    weight 6
+  end
+
+  config.model 'PzzLine' do 
+    navigation_label 'Carpool'
+    weight 5
+  end
+
+   config.model 'PzzCar' do
     navigation_label 'User Manage'
+    weight 4
   end
 
   config.model 'PzzIdentity' do 
     navigation_label 'User Manage'
+    weight 2
+  end
+
+  config.model 'PzzDriverIdentity' do 
+    navigation_label 'User Manage'
+    weight 3
   end
 
   config.model 'Role' do 
     navigation_label 'User Manage'
+    weight 1
+  end
+
+   config.model 'PzzUser' do
+    navigation_icon 'icon-user'
+    navigation_label 'User Manage'
+    weight 0
+  end
+  
+
+  # invisible
+  config.model 'PzzDrawPrize' do
+    visible false
   end
 
   config.model 'PzzUserMeta' do 
@@ -65,39 +162,6 @@ RailsAdmin.config do |config|
     visible false
   end
 
-
-  # histories tables read only kevin
-  # sms_history
-  # pay_history
-
-  config.model 'PzzSmsHistory' do
-    navigation_label 'Statistics'
-  end
-
-  config.model 'PzzPayHistory' do
-    navigation_label 'Statistics'
-  end
-
-  config.model 'PzzMessage' do
-    navigation_label 'Statistics'
-  end
-
-  config.model 'PzzUserDraw' do
-    navigation_label 'Draws'
-  end
-
-  config.model 'PzzDrawConfig' do 
-    navigation_label 'Draws'
-  end
-
-  config.model 'PzzDrawPrize' do
-    navigation_label 'Draws'
-  end
-
-  config.model 'PzzDrawHistory' do
-    navigation_label 'Draws'
-  end
-
   config.model 'PzzTerm' do 
     visible false
   end
@@ -106,52 +170,12 @@ RailsAdmin.config do |config|
     visible false
   end
 
-  config.model 'PzzTermTaxonomy' do 
-    navigation_label 'System Config'
-  end
-
-  config.model 'PzzOption' do 
-    navigation_label 'System Config'
-  end
-
-  config.model 'PzzTemplate' do 
-    navigation_label 'System Config'
-  end
-
-  config.model 'PzzLink' do 
-    navigation_label 'System Config'
-  end
-
-  config.model 'PzzTraffic' do 
-    navigation_label 'User Post'
-  end
-
-  config.model 'PzzComment' do 
-    navigation_label 'User Post'
-  end
-
-  config.model 'PzzPost' do 
-    navigation_label 'User Post'
-  end
-
   config.model 'PzzPostMeta' do 
     # navigation_label 'User Manage'
     visible false
   end
 
   config.model 'PzzCommentMeta' do 
-    visible false
-  end
-
-  config.model 'PzzOrder' do 
-    navigation_label 'Carpool'
-  end
-
-  config.model 'PzzLine' do 
-    navigation_label 'Carpool'
-  end
-
-  config.model 'RichFile' do
     visible false
   end
 

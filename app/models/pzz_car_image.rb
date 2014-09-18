@@ -1,19 +1,23 @@
 class PzzCarImage < ActiveRecord::Base
-	
+	before_create :randomize_file_name  
+
 	# fields
 	has_attached_file :car_image, 
-		:styles => {:medium => "640x640>", :thumb => "160x160>" },
+		:styles => {:medium => "640x640>" },
 		:convert_options => {
-		  	:medium => "-strip -interlace Plane -quality 85%",
-		  	:thumb => "-strip -interlace Plane -quality 85%"
+		  	:medium => "-strip -interlace Plane -quality 85%"
 		},
  		:processors => [:thumbnail, :compression]
-		#not set path for every user
-		before_create :randomize_file_name  
-		# skip for audio
-		before_post_process :skip_for_audio
-      
-	
+
+
+	# validate
+	validates_attachment :car_image,
+	  :content_type => { :content_type => /\Aimage\/.*\Z/ },
+	  :size => { :in => 0..500.kilobytes}
+
+	# relationships 
+	belongs_to :pzz_car
+
 	private  
 	def randomize_file_name  
 	    #archives 就是你在 has_attached_file :archives 使用的名字  
@@ -22,16 +26,6 @@ class PzzCarImage < ActiveRecord::Base
 	    self.car_image.instance_write(:file_name, "#{Time.now.strftime("%Y%m%d%H%M%S")}#{rand(1000)}#{extension}")  
 	end  
 
-	def skip_for_audio
-		! %w(audio/ogg application/ogg).include?(car_image_content_type)
-	end
-
-	# validate
-	validates_attachment_content_type 	:car_image, 	   :content_type => /\Aimage\/.*\Z/
-
-	# relationships 
-	belongs_to :pzz_car
-
 	public
 	def make_image(name)
 		#Dir.tmpdir
@@ -39,5 +33,4 @@ class PzzCarImage < ActiveRecord::Base
 		io = File.new(file)
 		self.car_image = io
 	end
-
 end

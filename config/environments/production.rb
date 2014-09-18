@@ -86,4 +86,11 @@ Rails.application.configure do
 
   config.i18n.available_locales = ['zh-CN', 'en', :de]
   config.i18n.default_locale = 'en'
+
+  # SSL
+  #in config/environments/production.rb
+  config.to_prepare { PzzUsers::SessionsController.force_ssl }
+  config.to_prepare { Devise::RegistrationsController.force_ssl }
+  config.to_prepare { Devise::PasswordsController.force_ssl }
+  # or your customized controller, extending from Devise
 end

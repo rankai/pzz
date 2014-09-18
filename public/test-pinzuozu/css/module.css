@@ -1,0 +1,94 @@
+/*页面宽度*/
+.container{
+	width:980px !important;
+}
+/* 去掉弧度 */
+.border-radius-style{
+	border-radius: 0 !important;
+}
+/* 修改float属性 */
+.com-overflow{
+	overflow: auto;
+}
+/* 当前位置 */
+.current-position{
+	padding: 15px 0 10px 0;
+	font-size: 14px;
+
+}
+.current-position a{
+	color: #444;
+}
+/*显示列表*/
+.page-list-bg{
+	background: #ffffff;
+}
+.page-list-title{
+	position: relative;
+	z-index: 1;
+	height: 36px;
+	background-position: 0 -145px;
+
+}
+.page-list-title .more{
+  position: absolute;
+  right: 15px;
+  top: 0px;
+}
+.page-list ul{
+	list-style: none;
+}
+.page-list ul li{
+	display: list-item;
+	text-align: -webkit-match-parent;
+	overflow:auto;
+	border-bottom: 1px #dedede dashed;
+}
+.page-list ul li img{
+	float:left;
+}
+.page-list ul li div{
+	float:left;padding:20px;
+}
+.page-list-span{
+	float:right;
+	padding:24px;
+	font-size: 20px;
+}
+/*右边旅游日记*/
+#com-travel-diary li{
+	font-size: 14px !important;
+	color: #444;
+	padding:20px;
+	border-bottom: #eee dashed 1px;
+}
+#com-travel-diary a{
+	color: #444;
+}
+#com-travel-diary li img{
+  width: 70px;
+  height: 50px;
+  border: 1px #ccc solid;
+  margin-right: 15px;
+  padding: 1px;
+  float: left;
+}
+/*右边信息*/
+#com-msg a{
+	color: #444;
+}
+#com-msg ul{
+	list-style: inherit !important;
+	padding-left: 30px;
+}
+#com-msg li{
+	padding: 5px;
+	font-size: 14px;
+}
+/*footer*/
+#footer a{
+    font-size: 14px;
+    color: #444;
+    padding: 10px;
+}
+/*footer end*/

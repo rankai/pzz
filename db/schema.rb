@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140913065421) do
+ActiveRecord::Schema.define(version: 20140915223025) do
 
   create_table "pzz_car_images", force: true do |t|
     t.integer  "pzz_car_id",             default: 0, null: false
@@ -26,17 +26,36 @@ ActiveRecord::Schema.define(version: 20140913065421) do
   add_index "pzz_car_images", ["pzz_car_id"], name: "index_pzz_car_images_on_pzz_car_id", using: :btree
 
   create_table "pzz_cars", force: true do |t|
-    t.integer  "pzz_user_id",  default: 0,  null: false
-    t.integer  "car_type",     default: 0,  null: false
-    t.string   "car_brand",    default: "", null: false
-    t.integer  "car_seats",    default: 0,  null: false
-    t.string   "car_plate_no", default: "", null: false
+    t.integer  "pzz_user_id",                    default: 0,  null: false
+    t.integer  "pzz_driver_identity_id",         default: 0,  null: false
+    t.string   "user_realname",                  default: "", null: false
+    t.integer  "car_type",                       default: 0,  null: false
+    t.string   "car_brand_name",                 default: "", null: false
+    t.integer  "car_seats",                      default: 0,  null: false
+    t.string   "car_plate_no",                   default: "", null: false
+    t.string   "car_vin",                        default: "", null: false
+    t.string   "car_engine_no",                  default: "", null: false
+    t.string   "identity_vl_no",                 default: "", null: false
+    t.string   "identity_vl_image_file_name"
+    t.string   "identity_vl_image_content_type"
+    t.integer  "identity_vl_image_file_size"
+    t.datetime "identity_vl_image_updated_at"
+    t.datetime "identity_vl_issued",                          null: false
+    t.string   "insurance_corporate",            default: "", null: false
+    t.string   "insurance_no",                   default: "", null: false
+    t.datetime "insurance_expired",                           null: false
+    t.string   "insurance_image_file_name"
+    t.string   "insurance_image_content_type"
+    t.integer  "insurance_image_file_size"
+    t.datetime "insurance_image_updated_at"
+    t.integer  "identity_status",                default: 0,  null: false
+    t.text     "identity_remark"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "pzz_cars", ["car_plate_no"], name: "index_pzz_cars_on_car_plate_no", unique: true, using: :btree
-  add_index "pzz_cars", ["pzz_user_id"], name: "index_pzz_cars_on_pzz_user_id", unique: true, using: :btree
+  add_index "pzz_cars", ["pzz_driver_identity_id"], name: "index_pzz_cars_on_pzz_driver_identity_id", using: :btree
+  add_index "pzz_cars", ["pzz_user_id"], name: "index_pzz_cars_on_pzz_user_id", using: :btree
 
   create_table "pzz_comment_meta", force: true do |t|
     t.integer  "pzz_comment_id",    default: 0,  null: false
@@ -110,29 +129,41 @@ ActiveRecord::Schema.define(version: 20140913065421) do
 
   add_index "pzz_draw_prizes", ["pzz_draw_config_id"], name: "index_pzz_draw_prizes_on_pzz_draw_config_id", using: :btree
 
-  create_table "pzz_identities", force: true do |t|
-    t.integer  "pzz_user_id",                      default: 0,  null: false
-    t.string   "identity_realname",                default: "", null: false
-    t.integer  "identity_gender",                  default: 0,  null: false
-    t.string   "identity_card_no",                 default: "", null: false
-    t.string   "identity_card_image_file_name"
-    t.string   "identity_card_image_content_type"
-    t.integer  "identity_card_image_file_size"
-    t.datetime "identity_card_image_updated_at"
-    t.string   "identity_dl_no",                   default: "", null: false
-    t.integer  "identity_dl_type",                 default: 0,  null: false
+  create_table "pzz_driver_identities", force: true do |t|
+    t.integer  "pzz_user_id",                    default: 0,  null: false
+    t.string   "user_realname",                  default: "", null: false
+    t.string   "identity_dl_no",                 default: "", null: false
     t.string   "identity_dl_image_file_name"
     t.string   "identity_dl_image_content_type"
     t.integer  "identity_dl_image_file_size"
     t.datetime "identity_dl_image_updated_at"
-    t.datetime "identity_dl_starttime",                         null: false
-    t.integer  "identity_dl_status",               default: 0,  null: false
-    t.integer  "identity_status",                  default: 0,  null: false
+    t.integer  "identity_dl_type",               default: 0,  null: false
+    t.datetime "identity_dl_expired",                         null: false
+    t.integer  "identity_dl_status",             default: 0,  null: false
+    t.integer  "identity_status",                default: 0,  null: false
+    t.text     "indentity_remark"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "pzz_identities", ["pzz_user_id"], name: "index_pzz_identities_on_pzz_user_id", using: :btree
+  add_index "pzz_driver_identities", ["pzz_user_id"], name: "index_pzz_driver_identities_on_pzz_user_id", using: :btree
+
+  create_table "pzz_identities", force: true do |t|
+    t.integer  "pzz_user_id",                 default: 0,  null: false
+    t.string   "user_realname",               default: "", null: false
+    t.integer  "user_gender",                 default: 0,  null: false
+    t.string   "identity_card_no",            default: "", null: false
+    t.string   "identity_image_file_name"
+    t.string   "identity_image_content_type"
+    t.integer  "identity_image_file_size"
+    t.datetime "identity_image_updated_at"
+    t.integer  "identity_status",             default: 0,  null: false
+    t.text     "identity_remark"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pzz_identities", ["pzz_user_id"], name: "index_pzz_identities_on_pzz_user_id", unique: true, using: :btree
 
   create_table "pzz_lines", force: true do |t|
     t.integer  "pzz_user_id",                                          default: 0,     null: false
@@ -289,12 +320,11 @@ ActiveRecord::Schema.define(version: 20140913065421) do
   add_index "pzz_posts", ["pzz_user_id"], name: "index_pzz_posts_on_pzz_user_id", using: :btree
 
   create_table "pzz_sms_histories", force: true do |t|
-    t.integer  "pzz_user_id",     default: 0,  null: false
-    t.integer  "pzz_template_id", default: 0,  null: false
-    t.string   "user_phone",      default: "", null: false
-    t.string   "sms_subject",     default: "", null: false
-    t.string   "sms_content",     default: "", null: false
-    t.integer  "sms_status",      default: 0,  null: false
+    t.integer  "pzz_user_id", default: 0,  null: false
+    t.string   "user_phone",  default: "", null: false
+    t.string   "sms_subject", default: "", null: false
+    t.string   "sms_content", default: "", null: false
+    t.integer  "sms_status",  default: 0,  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,41 @@
+<h1>Listing pzz_driver_identities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pzz user</th>
+      <th>User realname</th>
+      <th>Identity dl no</th>
+      <th>Identity dl image</th>
+      <th>Identity dl type</th>
+      <th>Identity dl issued</th>
+      <th>Identity dl status</th>
+      <th>Identity status</th>
+      <th>Indentity remark</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pzz_driver_identities.each do |pzz_driver_identity| %>
+      <tr>
+        <td><%= pzz_driver_identity.pzz_user_id %></td>
+        <td><%= pzz_driver_identity.user_realname %></td>
+        <td><%= pzz_driver_identity.identity_dl_no %></td>
+        <td><%= pzz_driver_identity.identity_dl_image %></td>
+        <td><%= pzz_driver_identity.identity_dl_type %></td>
+        <td><%= pzz_driver_identity.identity_dl_issued %></td>
+        <td><%= pzz_driver_identity.identity_dl_status %></td>
+        <td><%= pzz_driver_identity.identity_status %></td>
+        <td><%= pzz_driver_identity.indentity_remark %></td>
+        <td><%= link_to 'Show', pzz_driver_identity %></td>
+        <td><%= link_to 'Edit', edit_pzz_driver_identity_path(pzz_driver_identity) %></td>
+        <td><%= link_to 'Destroy', pzz_driver_identity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pzz driver identity', new_pzz_driver_identity_path %>

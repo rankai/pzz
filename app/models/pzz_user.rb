@@ -6,6 +6,7 @@ class PzzUser < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :lockable, :timeoutable #,:confirmable
 
+
   # fields
   # Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'username'
@@ -14,13 +15,11 @@ class PzzUser < ActiveRecord::Base
   enum user_contact_prefer: [:email, :phone, :both]
   enum user_grade: [:low, :middle, :high]
   has_attached_file :user_avatar, :styles => { :medium => "240x240>", :thumb => "120x120>" }, :default_url => ""
-  before_post_process :skip_for_audio
-
 
   # validates 
   validates_attachment :user_avatar,
-  :content_type => { :content_type => "image/jpeg" },
-  :size => { :in => 0..10.kilobytes}
+  :content_type => { :content_type => /\Aimage\/.*\Z/ },
+  :size => { :in => 0..500.kilobytes}
 
   validates :user_phone, 
       :uniqueness => {
@@ -35,6 +34,7 @@ class PzzUser < ActiveRecord::Base
   has_many :passenger_orders, foreign_key: "passenger_id", class_name: "PzzOrder", dependent: :nullify
   has_one  :pzz_car, dependent: :destroy
   has_one  :pzz_identity, dependent: :destroy
+  has_one  :pzz_driver__identity, dependent: :destroy
   has_many :pzz_sms_histories, dependent: :nullify
   has_many :pzz_traffics, dependent: :nullify
   has_many :sent_messages, foreign_key: "from_user_id", class_name: "PzzMessage"
@@ -54,12 +54,13 @@ class PzzUser < ActiveRecord::Base
     end
   end
 
-  
 
-  def skip_for_audio
-    ! %w(audio/ogg application/ogg).include?(user_avatar_content_type)
+  def self.current
+    Thread.current[:pzz_user]
   end
-
+  def self.current=(user)
+    Thread.current[:pzz_user] = user
+  end
 
 
   # identity

@@ -63,7 +63,7 @@ class PzzSms < ActiveRecord::Base
 
 	private
 
-	# get sms url
+	# get sms sent url
 	def self.get_sms_sent_url(mobile, content)
 		uid = PzzOption.find_by(option_name: "sms_account").option_value.to_s
 		pwd = PzzOption.find_by(option_name: "sms_password").option_value.to_s
@@ -72,7 +72,7 @@ class PzzSms < ActiveRecord::Base
 		return url
 	end
 
-	# get left sms count url
+	# get left sms count query url
 	#http://api.sms.cn/mm/?uid=用户账号&pwd=MD5位32密码
 
 end

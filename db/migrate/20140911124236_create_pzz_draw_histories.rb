@@ -1,9 +1,9 @@
 class CreatePzzDrawHistories < ActiveRecord::Migration
   def change
     create_table :pzz_draw_histories do |t|
-      t.integer :pzz_user_id,                     null: false, default: 0
-      t.integer :pzz_draw_config_id,              null: false, default: 0
-      t.integer :pzz_draw_prize_id,               null: false, default: 0
+      t.integer :pzz_user_id,                 null: false, default: 0
+      t.integer :pzz_draw_config_id,          null: false, default: 0
+      t.integer :pzz_draw_prize_id,           null: false, default: 0
       t.string :user_nickname,                null: false, default: ""
       t.string :draw_title,                   null: false, default: ""
       t.string :prize_place_name,             null: false, default: ""

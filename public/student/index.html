@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Contacts Manager >> Part 2</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/student.css">
+		<script src="js/jquery-1.7.1.min.js"></script>
+	</head>
+	<script>
+		$(function(){
+			$("#aaa").click(function(){
+				alert("button");
+				$("#greeting").val("aaa");
+			});
+		});
+	</script>
+	<body>
+		<input id="aaa" type="button" value="OK" /><br />
+		<input id="show-text" type="button" value="Greeting" />
+		<input id="greeting" type="text" />
+		<div id="content">
+		</div>
+		<script src="js/can.jquery.js"></script>
+		<script src="js/can.fixture.js"></script>
+		<script src="js/student.js"></script>
+	</body>
+</html>

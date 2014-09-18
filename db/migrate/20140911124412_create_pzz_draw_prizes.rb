@@ -1,7 +1,7 @@
 class CreatePzzDrawPrizes < ActiveRecord::Migration
   def change
     create_table :pzz_draw_prizes do |t|
-      t.integer :pzz_draw_config_id,              null: false, default: 0
+      t.integer :pzz_draw_config_id,          null: false, default: 0
       t.string :place,                        null: false, default: ""
       t.string :place_name,                   null: false, default: ""
       t.integer :min_degree,                  null: false, default: 0

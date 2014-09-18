@@ -230,11 +230,18 @@ zh-CN:
     # identity
     pzz_identity:
       identity_status:
-        pending: "实名认证待审核"
-        dl_pending: "驾驶认证待审核"
-        confirmed: "实名认证生效"
-        dl_confirmed: "驾驶认证生效"
-        both_confirmed: "双认证"
+        pending: 审核中
+        confirmed: 已生效
+        failed: 认证失败"
+      identity_gender:
+        male: "先生"
+        female: "女士"
+    # driver identity
+    pzz_identity:
+      identity_status:
+        pending: 审核中
+        confirmed: 已生效
+        failed: 认证失败
       identity_dl_status:
         normal: "正常"
         expired: "已过期"
@@ -243,9 +250,6 @@ zh-CN:
         A: "A本"
         B: "B本"
         C: "C本"
-      identity_gender:
-        male: "先生"
-        female: "女士"
     # order
     pzz_order:
       order_status:
@@ -264,6 +268,10 @@ zh-CN:
         FAMILY: "中级轿车"
         LUXURY: "豪华轿车"
         BUS: "小型客车"
+      identity_status:
+        pending: 审核中
+        confirmed: 已生效
+        failed: 认证失败
     # comment
     pzz_comment:
       comment_approved:
@@ -348,7 +356,8 @@ zh-CN:
       rich_file: "文章媒体库"
       pzz_user: "系统用户"
       pzz_user_meta: "用户附加属性"
-      pzz_identity: "用户认证"
+      pzz_identity: "实名认证"
+      pzz_driver_identity: "驾驶认证"
       pzz_car: "车辆信息"
       pzz_car_image: "车辆照片"
       pzz_post: "文章"
@@ -648,7 +657,7 @@ zh-CN:
       item: "条目"
       last_used: "最近使用"
       message: "消息"
-      model_name: "（数据库）模型名称"
+      model_name: "模型名称"
       records: "记录"
       username: "用户"
     home:

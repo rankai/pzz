@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :pzz_cars
+
+  resources :pzz_identities
+
+  resources :pzz_driver_identities
+
   apipie
   resources :pzz_comments
 
@@ -29,10 +35,6 @@ Rails.application.routes.draw do
   resources :pzz_options
 
   resources :pzz_messages
-
-  resources :pzz_identities
-
-  resources :pzz_cars
 
   resources :pzz_orders
 

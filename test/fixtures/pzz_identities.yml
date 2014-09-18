@@ -1,27 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: 1
-  identity_realname: MyString
-  identity_gender: 1
+  pzz_user_id: 1
+  user_realname: MyString
+  user_gender: 1
   identity_card_no: MyString
-  identity_card_image: 
-  identity_dl_no: MyString
-  identity_dl_type: 1
-  identity_dl_image: 
-  identity_dl_starttime: 2014-09-11 01:28:51
-  identity_dl_status: 1
+  identity_image: 
   identity_status: 1
+  identity_remark: MyText
 
 two:
-  user_id: 1
-  identity_realname: MyString
-  identity_gender: 1
+  pzz_user_id: 1
+  user_realname: MyString
+  user_gender: 1
   identity_card_no: MyString
-  identity_card_image: 
-  identity_dl_no: MyString
-  identity_dl_type: 1
-  identity_dl_image: 
-  identity_dl_starttime: 2014-09-11 01:28:51
-  identity_dl_status: 1
+  identity_image: 
   identity_status: 1
+  identity_remark: MyText

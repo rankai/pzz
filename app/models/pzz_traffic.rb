@@ -5,17 +5,19 @@ class PzzTraffic < ActiveRecord::Base
 	# smooth 畅通
 	# slow 缓行
 	# jam 拥堵
-	has_attached_file :traffic_image, :default_url => ""
-  	before_post_process :skip_for_audio
-  
-	def skip_for_audio
-	   ! %w(audio/ogg application/ogg).include?(traffic_image_content_type)
-	end
+
+	has_attached_file :traffic_image, 
+	    :styles => {:medium => "640x640>" },
+	    :convert_options => {
+	        :medium => "-strip -interlace Plane -quality 85%"
+	    },
+	    :processors => [:thumbnail, :compression]
 
 
-	# validates 
-	validates_attachment_content_type :traffic_image, :content_type => /\Aimage\/.*\Z/
-
+	# validate
+	validates_attachment :traffic_image,
+	    :content_type => { :content_type => /\Aimage\/.*\Z/ },
+	    :size => { :in => 0..500.kilobytes}
 
 	# relationships
 	belongs_to :pzz_user

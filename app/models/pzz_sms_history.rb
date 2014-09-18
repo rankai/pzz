@@ -22,7 +22,7 @@ class PzzSmsHistory < ActiveRecord::Base
 
 	# 
 	def self.record(user_id, mobile, content, status)
-		PzzSmsHistory.create(pzz_user_id: user_id, pzz_template_id: 0, 
+		PzzSmsHistory.create(pzz_user_id: user_id, 
 			user_phone: mobile, sms_content: content, sms_status: status)
 	end
 

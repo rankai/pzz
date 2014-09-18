@@ -1,8 +1,8 @@
 class CreatePzzUserDraws < ActiveRecord::Migration
   def change
     create_table :pzz_user_draws do |t|
-      t.integer :pzz_user_id,                      null: false, default: 0
-      t.integer :pzz_draw_config_id,               null: false, default: 0
+      t.integer :pzz_user_id,                  null: false, default: 0
+      t.integer :pzz_draw_config_id,           null: false, default: 0
       t.integer :draw_count,                   null: false, default: 0
 
       t.timestamps

@@ -1,7 +1,7 @@
 class CreatePzzLinks < ActiveRecord::Migration
   def change
     create_table :pzz_links do |t|
-      t.integer :pzz_user_id,             null: false, default: 0
+      t.integer :pzz_user_id,         null: false, default: 0
       t.string :link_url,             null: false, default: ""
       t.string :link_name,            null: false, default: ""
       t.attachment :link_image

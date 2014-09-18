@@ -1,0 +1,8 @@
+列表
+<ul>
+<% students.each(function(student){ %>
+	<li>
+		<%== can.view.render('views/student.ejs', {student: student}) %>
+	</li>
+<% }); %>
+</ul>

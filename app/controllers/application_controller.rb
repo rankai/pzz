@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
   before_filter :devise_parameter_sanitizer, if: :devise_controller?
 
 
+  def set_current_user
+      PzzUser.current = current_pzz_user
+  end
+
   # localization
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
@@ -41,4 +45,11 @@ class ApplicationController < ActionController::Base
        end
        root_path
   end
+
+
+  # after sign out back to http, if using ssl
+  def after_sign_out_path_for(resource_or_scope)
+    root_url(:protocol => 'http')
+  end
+
 end

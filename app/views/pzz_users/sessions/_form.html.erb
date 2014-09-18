@@ -1,6 +1,5 @@
  <%= form_for(resource, as: resource_name, url: session_path(resource_name), role: "form") do |f| %>
 	<%= devise_error_messages! %>
-	<p class="alert"><%= alert %></p>
 	<div class="form-group" style="text-align: -webkit-center">
 		<div class="input-group" >
 			<%= f.text_field :login, autofocus: true, class: "form-control", placeholder: "email or phone" %>
