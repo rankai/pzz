@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   # protect_from_forgery with: :exception
+
   before_action :set_locale
   before_filter :devise_parameter_sanitizer, if: :devise_controller?
 
@@ -52,11 +53,18 @@ class ApplicationController < ActionController::Base
     root_url(:protocol => 'http')
   end
 
-  def http_authenticate
-      authenticate_or_request_with_http_digest do |login, password|
-        login == "foo" && password == "bar"
-      end
-      warden.custom_failure! if performed?
+  private
+  
+  def authenticate_user_from_token!
+    login = params[:login].presence
+    user       = login && PzzUser.find_by(email: login) || PzzUser.find_by(user_phone: login)
+ 
+    # Notice how we use Devise.secure_compare to compare the token
+    # in the database with the token given in the params, mitigating
+    # timing attacks.
+    if user && Devise.secure_compare(user.authentication_token, params[:auth_token])
+      sign_in user, store: false
     end
+  end
 
 end

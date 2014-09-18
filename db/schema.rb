@@ -422,6 +422,7 @@ ActiveRecord::Schema.define(version: 20140915223025) do
     t.integer  "failed_attempts",          default: 0,   null: false
     t.string   "unlock_token"
     t.datetime "locked_at"
+    t.string   "authentication_token"
     t.string   "user_phone",               default: "",  null: false
     t.string   "user_nickname",            default: "",  null: false
     t.string   "user_avatar_file_name"
@@ -445,6 +446,7 @@ ActiveRecord::Schema.define(version: 20140915223025) do
     t.datetime "updated_at"
   end
 
+  add_index "pzz_users", ["authentication_token"], name: "index_pzz_users_on_authentication_token", unique: true, using: :btree
   add_index "pzz_users", ["confirmation_token"], name: "index_pzz_users_on_confirmation_token", unique: true, using: :btree
   add_index "pzz_users", ["email"], name: "index_pzz_users_on_email", unique: true, using: :btree
   add_index "pzz_users", ["reset_password_token"], name: "index_pzz_users_on_reset_password_token", unique: true, using: :btree

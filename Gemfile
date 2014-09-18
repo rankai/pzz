@@ -28,10 +28,13 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Use msyql
 gem 'mysql2'
 
+#gem 'simple_token_authentication' # add token authentication
 # authentication
 gem 'devise'
 # not working
 # gem 'devise-token_authenticatable' # enable token-auth for devise > 3.3.0
+# gem 'devise_invitable', '~> 1.3.4' # invite friends to join in
+
 
 # authorization based on roles
 gem 'cancan'

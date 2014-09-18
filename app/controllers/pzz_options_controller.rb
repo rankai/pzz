@@ -1,5 +1,8 @@
 class PzzOptionsController < ApplicationController
   before_action :set_pzz_option, only: [:show, :edit, :update, :destroy]
+
+  # This is our new function that comes before Devise's one
+  before_filter :authenticate_user_from_token!
   before_filter :authenticate_pzz_user!
 
   # GET /pzz_options
