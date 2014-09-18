@@ -1,1 +1,0 @@
-json.extract! @pzz_driver_identity, :id, :pzz_user_id, :user_realname, :identity_dl_no, :identity_dl_image, :identity_dl_type, :identity_dl_issued, :identity_dl_status, :identity_status, :indentity_remark, :created_at, :updated_at

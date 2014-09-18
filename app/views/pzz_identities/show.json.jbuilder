@@ -1,1 +1,0 @@
-json.extract! @pzz_identity, :id, :pzz_user_id, :identity_realname, :identity_gender, :identity_card_no, :identity_card_image, :identity_dl_no, :identity_dl_type, :identity_dl_image, :identity_dl_starttime, :identity_dl_status, :identity_status, :created_at, :updated_at
