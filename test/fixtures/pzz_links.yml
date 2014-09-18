@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  link_url: MyString
+  link_name: MyString
+  link_image: 
+  link_target: MyString
+  link_description: MyString
+  link_visible: 1
+  link_rating: 1
+  link_rel: MyString
+  link_notes: MyText
+  link_rss: MyString
+
+two:
+  user_id: 1
+  link_url: MyString
+  link_name: MyString
+  link_image: 
+  link_target: MyString
+  link_description: MyString
+  link_visible: 1
+  link_rating: 1
+  link_rel: MyString
+  link_notes: MyText
+  link_rss: MyString

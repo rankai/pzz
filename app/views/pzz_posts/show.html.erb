@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pzz user:</strong>
+  <%= @pzz_post.pzz_user_id %>
+</p>
+
+<p>
+  <strong>Post title:</strong>
+  <%= @pzz_post.post_title %>
+</p>
+
+<p>
+  <strong>Post name:</strong>
+  <%= @pzz_post.post_name %>
+</p>
+
+<p>
+  <strong>Post content:</strong>
+  <%= @pzz_post.post_content %>
+</p>
+
+<p>
+  <strong>Post excerpt:</strong>
+  <%= @pzz_post.post_excerpt %>
+</p>
+
+<p>
+  <strong>Post status:</strong>
+  <%= @pzz_post.post_status %>
+</p>
+
+<p>
+  <strong>Comment status:</strong>
+  <%= @pzz_post.comment_status %>
+</p>
+
+<p>
+  <strong>Post content filtered:</strong>
+  <%= @pzz_post.post_content_filtered %>
+</p>
+
+<p>
+  <strong>Comment count:</strong>
+  <%= @pzz_post.comment_count %>
+</p>
+
+<p>
+  <strong>Post order:</strong>
+  <%= @pzz_post.post_order %>
+</p>
+
+<p>
+  <strong>Post guid:</strong>
+  <%= @pzz_post.post_guid %>
+</p>
+
+<p>
+  <strong>To ping:</strong>
+  <%= @pzz_post.to_ping %>
+</p>
+
+<p>
+  <strong>Pinged:</strong>
+  <%= @pzz_post.pinged %>
+</p>
+
+<p>
+  <strong>Ping status:</strong>
+  <%= @pzz_post.ping_status %>
+</p>
+
+<%= link_to 'Edit', edit_pzz_post_path(@pzz_post) %> |
+<%= link_to 'Back', pzz_posts_path %>

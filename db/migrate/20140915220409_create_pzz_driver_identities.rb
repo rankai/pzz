@@ -6,7 +6,7 @@ class CreatePzzDriverIdentities < ActiveRecord::Migration
       t.string :identity_dl_no,             null: false, default: ""
       t.attachment :identity_dl_image
       t.integer :identity_dl_type,          null: false, default: 0
-      t.datetime :identity_dl_expired,      null: false, default: '0000-00-00 00:00:00'
+      t.datetime :identity_dl_issued,       null: false, default: '0000-00-00 00:00:00'
       t.integer :identity_dl_status,        null: false, default: 0
       t.integer :identity_status,           null: false, default: 0
       t.text :indentity_remark

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Option name:</strong>
+  <%= @pzz_option.option_name %>
+</p>
+
+<p>
+  <strong>Option value:</strong>
+  <%= @pzz_option.option_value %>
+</p>
+
+<p>
+  <strong>Autoload:</strong>
+  <%= @pzz_option.autoload %>
+</p>
+
+<%= link_to 'Edit', edit_pzz_option_path(@pzz_option) %> |
+<%= link_to 'Back', pzz_options_path %>

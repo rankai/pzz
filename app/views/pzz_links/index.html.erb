@@ -1,0 +1,45 @@
+<h1>Listing pzz_links</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Link url</th>
+      <th>Link name</th>
+      <th>Link image</th>
+      <th>Link target</th>
+      <th>Link description</th>
+      <th>Link visible</th>
+      <th>Link rating</th>
+      <th>Link rel</th>
+      <th>Link notes</th>
+      <th>Link rss</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pzz_links.each do |pzz_link| %>
+      <tr>
+        <td><%= pzz_link.pzz_user_id %></td>
+        <td><%= pzz_link.link_url %></td>
+        <td><%= pzz_link.link_name %></td>
+        <td><%= pzz_link.link_image %></td>
+        <td><%= pzz_link.link_target %></td>
+        <td><%= pzz_link.link_description %></td>
+        <td><%= pzz_link.link_visible %></td>
+        <td><%= pzz_link.link_rating %></td>
+        <td><%= pzz_link.link_rel %></td>
+        <td><%= pzz_link.link_notes %></td>
+        <td><%= pzz_link.link_rss %></td>
+        <td><%= link_to 'Show', pzz_link %></td>
+        <td><%= link_to 'Edit', edit_pzz_link_path(pzz_link) %></td>
+        <td><%= link_to 'Destroy', pzz_link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pzz link', new_pzz_link_path %>

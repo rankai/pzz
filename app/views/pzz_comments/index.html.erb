@@ -1,0 +1,41 @@
+<h1>Listing pzz_comments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pzz user</th>
+      <th>Pzz post</th>
+      <th>User email</th>
+      <th>User url</th>
+      <th>User ip</th>
+      <th>Comment content</th>
+      <th>Comment approved</th>
+      <th>User agent</th>
+      <th>Comment parent</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pzz_comments.each do |pzz_comment| %>
+      <tr>
+        <td><%= pzz_comment.pzz_user_id %></td>
+        <td><%= pzz_comment.pzz_post_id %></td>
+        <td><%= pzz_comment.user_email %></td>
+        <td><%= pzz_comment.user_url %></td>
+        <td><%= pzz_comment.user_ip %></td>
+        <td><%= pzz_comment.comment_content %></td>
+        <td><%= pzz_comment.comment_approved %></td>
+        <td><%= pzz_comment.user_agent %></td>
+        <td><%= pzz_comment.comment_parent_id %></td>
+        <td><%= link_to 'Show', pzz_comment %></td>
+        <td><%= link_to 'Edit', edit_pzz_comment_path(pzz_comment) %></td>
+        <td><%= link_to 'Destroy', pzz_comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pzz comment', new_pzz_comment_path %>

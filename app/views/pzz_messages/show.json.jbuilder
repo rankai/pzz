@@ -1,0 +1,1 @@
+json.extract! @pzz_message, :id, :from_user_id, :to_user_id, :from_user_nickname, :message_subject, :message_content, :message_folder, :message_related_id, :message_status, :message_type, :created_at, :updated_at

@@ -138,7 +138,7 @@ ActiveRecord::Schema.define(version: 20140915223025) do
     t.integer  "identity_dl_image_file_size"
     t.datetime "identity_dl_image_updated_at"
     t.integer  "identity_dl_type",               default: 0,  null: false
-    t.datetime "identity_dl_expired",                         null: false
+    t.datetime "identity_dl_issued",                          null: false
     t.integer  "identity_dl_status",             default: 0,  null: false
     t.integer  "identity_status",                default: 0,  null: false
     t.text     "indentity_remark"

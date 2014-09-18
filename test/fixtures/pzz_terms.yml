@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  term_name: MyString
+  term_slug: MyString
+  term_group_id: 1
+
+two:
+  term_name: MyString
+  term_slug: MyString
+  term_group_id: 1

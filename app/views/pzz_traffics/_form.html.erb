@@ -1,0 +1,37 @@
+<%= form_for(@pzz_traffic) do |f| %>
+  <% if @pzz_traffic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pzz_traffic.errors.count, "error") %> prohibited this pzz_traffic from being saved:</h2>
+
+      <ul>
+      <% @pzz_traffic.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pzz_user_id %><br>
+    <%= f.number_field :pzz_user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :traffic_keywords %><br>
+    <%= f.number_field :traffic_keywords %>
+  </div>
+  <div class="field">
+    <%= f.label :traffic_image %><br>
+    <%= f.text_field :traffic_image %>
+  </div>
+  <div class="field">
+    <%= f.label :traffic_description %><br>
+    <%= f.text_field :traffic_description %>
+  </div>
+  <div class="field">
+    <%= f.label :traffic_gps %><br>
+    <%= f.text_field :traffic_gps %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

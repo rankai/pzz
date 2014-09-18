@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  term_id: 1
+  taxonomy_name: MyString
+  taxonomy_description: MyString
+  taxonomy_parent_id: 1
+  count: 1
+
+two:
+  term_id: 1
+  taxonomy_name: MyString
+  taxonomy_description: MyString
+  taxonomy_parent_id: 1
+  count: 1

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  pay_transaction_no: MyString
+  pay_method: 1
+  pay_amount: 9.99
+  pay_currency: 1
+  pay_description: MyString
+  pay_status: MyString
+
+two:
+  user_id: 1
+  pay_transaction_no: MyString
+  pay_method: 1
+  pay_amount: 9.99
+  pay_currency: 1
+  pay_description: MyString
+  pay_status: MyString

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pzz_user_id: 1
+  user_realname: MyString
+  user_gender: 1
+  identity_card_no: MyString
+  identity_image: 
+  identity_status: 1
+  identity_remark: MyText
+
+two:
+  pzz_user_id: 1
+  user_realname: MyString
+  user_gender: 1
+  identity_card_no: MyString
+  identity_image: 
+  identity_status: 1
+  identity_remark: MyText

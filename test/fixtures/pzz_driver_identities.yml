@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pzz_user_id: 1
+  user_realname: MyString
+  identity_dl_no: MyString
+  identity_dl_image: 
+  identity_dl_type: 1
+  identity_dl_issued: 2014-09-15 15:04:09
+  identity_dl_status: 1
+  identity_status: 1
+  indentity_remark: MyText
+
+two:
+  pzz_user_id: 1
+  user_realname: MyString
+  identity_dl_no: MyString
+  identity_dl_image: 
+  identity_dl_type: 1
+  identity_dl_issued: 2014-09-15 15:04:09
+  identity_dl_status: 1
+  identity_status: 1
+  indentity_remark: MyText

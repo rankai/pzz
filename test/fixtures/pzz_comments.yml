@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pzz_user_id: 1
+  pzz_post_id: 1
+  user_email: MyString
+  user_url: MyString
+  user_ip: MyString
+  comment_content: MyString
+  comment_approved: 1
+  user_agent: MyString
+  comment_parent_id: 1
+
+two:
+  pzz_user_id: 1
+  pzz_post_id: 1
+  user_email: MyString
+  user_url: MyString
+  user_ip: MyString
+  comment_content: MyString
+  comment_approved: 1
+  user_agent: MyString
+  comment_parent_id: 1

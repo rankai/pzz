@@ -1,0 +1,2 @@
+module PzzMessagesHelper
+end

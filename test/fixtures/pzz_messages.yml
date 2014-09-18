@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from_user_id: 1
+  to_user_id: 1
+  from_user_nickname: MyString
+  message_subject: MyString
+  message_content: MyString
+  message_folder: 1
+  message_related_id: 1
+  message_status: 1
+  message_type: 1
+
+two:
+  from_user_id: 1
+  to_user_id: 1
+  from_user_nickname: MyString
+  message_subject: MyString
+  message_content: MyString
+  message_folder: 1
+  message_related_id: 1
+  message_status: 1
+  message_type: 1

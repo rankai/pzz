@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Term:</strong>
+  <%= @pzz_term_taxonomy.pzz_term_id %>
+</p>
+
+<p>
+  <strong>Taxonomy name:</strong>
+  <%= @pzz_term_taxonomy.taxonomy_name %>
+</p>
+
+<p>
+  <strong>Taxonomy description:</strong>
+  <%= @pzz_term_taxonomy.taxonomy_description %>
+</p>
+
+<p>
+  <strong>Taxonomy parent:</strong>
+  <%= @pzz_term_taxonomy.taxonomy_parent_id %>
+</p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @pzz_term_taxonomy.count %>
+</p>
+
+<%= link_to 'Edit', edit_pzz_term_taxonomy_path(@pzz_term_taxonomy) %> |
+<%= link_to 'Back', pzz_term_taxonomies_path %>

@@ -1,0 +1,2 @@
+module PzzDrawConfiGsHelper
+end

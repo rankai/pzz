@@ -1,0 +1,37 @@
+<h1>Listing pzz_identities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pzz user</th>
+      <th>User realname</th>
+      <th>User gender</th>
+      <th>Identity card no</th>
+      <th>Identity image</th>
+      <th>Identity status</th>
+      <th>Identity remark</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pzz_identities.each do |pzz_identity| %>
+      <tr>
+        <td><%= pzz_identity.pzz_user_id %></td>
+        <td><%= pzz_identity.user_realname %></td>
+        <td><%= pzz_identity.user_gender %></td>
+        <td><%= pzz_identity.identity_card_no %></td>
+        <td><%= pzz_identity.identity_image %></td>
+        <td><%= pzz_identity.identity_status %></td>
+        <td><%= pzz_identity.identity_remark %></td>
+        <td><%= link_to 'Show', pzz_identity %></td>
+        <td><%= link_to 'Edit', edit_pzz_identity_path(pzz_identity) %></td>
+        <td><%= link_to 'Destroy', pzz_identity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pzz identity', new_pzz_identity_path %>

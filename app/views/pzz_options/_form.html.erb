@@ -1,0 +1,29 @@
+<%= form_for(@pzz_option) do |f| %>
+  <% if @pzz_option.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pzz_option.errors.count, "error") %> prohibited this pzz_option from being saved:</h2>
+
+      <ul>
+      <% @pzz_option.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :option_name %><br>
+    <%= f.text_field :option_name %>
+  </div>
+  <div class="field">
+    <%= f.label :option_value %><br>
+    <%= f.text_area :option_value %>
+  </div>
+  <div class="field">
+    <%= f.label :autoload %><br>
+    <%= f.number_field :autoload %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

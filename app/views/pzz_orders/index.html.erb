@@ -1,0 +1,53 @@
+<h1>Listing pzz_orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Order no</th>
+      <th>Passenger</th>
+      <th>Driver</th>
+      <th>Line</th>
+      <th>Passenger nickname</th>
+      <th>Passenger realname</th>
+      <th>Passenger phone</th>
+      <th>Passenger email</th>
+      <th>Driver nickname</th>
+      <th>Driver realname</th>
+      <th>Driver phone</th>
+      <th>Driver email</th>
+      <th>Order participants</th>
+      <th>Order status</th>
+      <th>Order remark</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pzz_orders.each do |pzz_order| %>
+      <tr>
+        <td><%= pzz_order.order_no %></td>
+        <td><%= pzz_order.passenger_id %></td>
+        <td><%= pzz_order.driver_id %></td>
+        <td><%= pzz_order.pzz_line_id %></td>
+        <td><%= pzz_order.passenger_nickname %></td>
+        <td><%= pzz_order.passenger_realname %></td>
+        <td><%= pzz_order.passenger_phone %></td>
+        <td><%= pzz_order.passenger_email %></td>
+        <td><%= pzz_order.driver_nickname %></td>
+        <td><%= pzz_order.driver_realname %></td>
+        <td><%= pzz_order.driver_phone %></td>
+        <td><%= pzz_order.driver_email %></td>
+        <td><%= pzz_order.order_participants %></td>
+        <td><%= pzz_order.order_status %></td>
+        <td><%= pzz_order.order_remark %></td>
+        <td><%= link_to 'Show', pzz_order %></td>
+        <td><%= link_to 'Edit', edit_pzz_order_path(pzz_order) %></td>
+        <td><%= link_to 'Destroy', pzz_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pzz order', new_pzz_order_path %>

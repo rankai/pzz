@@ -1,0 +1,33 @@
+<h1>Listing pzz_term_taxonomies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Term</th>
+      <th>Taxonomy name</th>
+      <th>Taxonomy description</th>
+      <th>Taxonomy parent</th>
+      <th>Count</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pzz_term_taxonomies.each do |pzz_term_taxonomy| %>
+      <tr>
+        <td><%= pzz_term_taxonomy.pzz_term_id %></td>
+        <td><%= pzz_term_taxonomy.taxonomy_name %></td>
+        <td><%= pzz_term_taxonomy.taxonomy_description %></td>
+        <td><%= pzz_term_taxonomy.taxonomy_parent_id %></td>
+        <td><%= pzz_term_taxonomy.count %></td>
+        <td><%= link_to 'Show', pzz_term_taxonomy %></td>
+        <td><%= link_to 'Edit', edit_pzz_term_taxonomy_path(pzz_term_taxonomy) %></td>
+        <td><%= link_to 'Destroy', pzz_term_taxonomy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pzz term taxonomy', new_pzz_term_taxonomy_path %>

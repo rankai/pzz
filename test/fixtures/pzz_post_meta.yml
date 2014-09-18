@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pzz_post_id: 1
+  postmeta_key: MyString
+  postmeta_value: MyText
+
+two:
+  pzz_post_id: 1
+  postmeta_key: MyString
+  postmeta_value: MyText

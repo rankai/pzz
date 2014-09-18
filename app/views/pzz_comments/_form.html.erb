@@ -1,0 +1,53 @@
+<%= form_for(@pzz_comment) do |f| %>
+  <% if @pzz_comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pzz_comment.errors.count, "error") %> prohibited this pzz_comment from being saved:</h2>
+
+      <ul>
+      <% @pzz_comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pzz_user_id %><br>
+    <%= f.number_field :pzz_user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :pzz_post_id %><br>
+    <%= f.number_field :pzz_post_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_email %><br>
+    <%= f.text_field :user_email %>
+  </div>
+  <div class="field">
+    <%= f.label :user_url %><br>
+    <%= f.text_field :user_url %>
+  </div>
+  <div class="field">
+    <%= f.label :user_ip %><br>
+    <%= f.text_field :user_ip %>
+  </div>
+  <div class="field">
+    <%= f.label :comment_content %><br>
+    <%= f.text_field :comment_content %>
+  </div>
+  <div class="field">
+    <%= f.label :comment_approved %><br>
+    <%= f.number_field :comment_approved %>
+  </div>
+  <div class="field">
+    <%= f.label :user_agent %><br>
+    <%= f.text_field :user_agent %>
+  </div>
+  <div class="field">
+    <%= f.label :comment_parent_id %><br>
+    <%= f.number_field :comment_parent_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>From user:</strong>
+  <%= @pzz_message.from_user_id %>
+</p>
+
+<p>
+  <strong>To user:</strong>
+  <%= @pzz_message.to_user_id %>
+</p>
+
+<p>
+  <strong>From user nickname:</strong>
+  <%= @pzz_message.from_user_nickname %>
+</p>
+
+<p>
+  <strong>Message subject:</strong>
+  <%= @pzz_message.message_subject %>
+</p>
+
+<p>
+  <strong>Message content:</strong>
+  <%= @pzz_message.message_content %>
+</p>
+
+<p>
+  <strong>Message folder:</strong>
+  <%= @pzz_message.message_folder %>
+</p>
+
+<p>
+  <strong>Message related:</strong>
+  <%= @pzz_message.message_related_id %>
+</p>
+
+<p>
+  <strong>Message status:</strong>
+  <%= @pzz_message.message_status %>
+</p>
+
+<p>
+  <strong>Message type:</strong>
+  <%= @pzz_message.message_type %>
+</p>
+
+<%= link_to 'Edit', edit_pzz_message_path(@pzz_message) %> |
+<%= link_to 'Back', pzz_messages_path %>

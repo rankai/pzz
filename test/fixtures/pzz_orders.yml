@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order_no: MyString
+  passenger_id: 1
+  driver_id: MyString
+  line_id: 1
+  passenger_nickname: MyString
+  passenger_realname: MyString
+  passenger_phone: MyString
+  passenger_email: MyString
+  driver_nickname: MyString
+  driver_realname: MyString
+  driver_phone: MyString
+  driver_email: MyString
+  order_participants: 1
+  order_status: 1
+  order_remark: MyText
+
+two:
+  order_no: MyString
+  passenger_id: 1
+  driver_id: MyString
+  line_id: 1
+  passenger_nickname: MyString
+  passenger_realname: MyString
+  passenger_phone: MyString
+  passenger_email: MyString
+  driver_nickname: MyString
+  driver_realname: MyString
+  driver_phone: MyString
+  driver_email: MyString
+  order_participants: 1
+  order_status: 1
+  order_remark: MyText

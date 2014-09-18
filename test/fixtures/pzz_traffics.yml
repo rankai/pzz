@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  traffic_keywords: 1
+  traffic_image: 
+  traffic_description: MyString
+  traffic_gps: MyString
+
+two:
+  user_id: 1
+  traffic_keywords: 1
+  traffic_image: 
+  traffic_description: MyString
+  traffic_gps: MyString

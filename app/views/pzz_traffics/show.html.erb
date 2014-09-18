@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @pzz_traffic.pzz_user_id %>
+</p>
+
+<p>
+  <strong>Traffic keywords:</strong>
+  <%= @pzz_traffic.traffic_keywords %>
+</p>
+
+<p>
+  <strong>Traffic image:</strong>
+  <%= @pzz_traffic.traffic_image %>
+</p>
+
+<p>
+  <strong>Traffic description:</strong>
+  <%= @pzz_traffic.traffic_description %>
+</p>
+
+<p>
+  <strong>Traffic gps:</strong>
+  <%= @pzz_traffic.traffic_gps %>
+</p>
+
+<%= link_to 'Edit', edit_pzz_traffic_path(@pzz_traffic) %> |
+<%= link_to 'Back', pzz_traffics_path %>

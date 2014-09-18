@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order no:</strong>
+  <%= @pzz_order.order_no %>
+</p>
+
+<p>
+  <strong>Passenger:</strong>
+  <%= @pzz_order.passenger_id %>
+</p>
+
+<p>
+  <strong>Driver:</strong>
+  <%= @pzz_order.driver_id %>
+</p>
+
+<p>
+  <strong>Line:</strong>
+  <%= @pzz_order.pzz_line_id %>
+</p>
+
+<p>
+  <strong>Passenger nickname:</strong>
+  <%= @pzz_order.passenger_nickname %>
+</p>
+
+<p>
+  <strong>Passenger realname:</strong>
+  <%= @pzz_order.passenger_realname %>
+</p>
+
+<p>
+  <strong>Passenger phone:</strong>
+  <%= @pzz_order.passenger_phone %>
+</p>
+
+<p>
+  <strong>Passenger email:</strong>
+  <%= @pzz_order.passenger_email %>
+</p>
+
+<p>
+  <strong>Driver nickname:</strong>
+  <%= @pzz_order.driver_nickname %>
+</p>
+
+<p>
+  <strong>Driver realname:</strong>
+  <%= @pzz_order.driver_realname %>
+</p>
+
+<p>
+  <strong>Driver phone:</strong>
+  <%= @pzz_order.driver_phone %>
+</p>
+
+<p>
+  <strong>Driver email:</strong>
+  <%= @pzz_order.driver_email %>
+</p>
+
+<p>
+  <strong>Order participants:</strong>
+  <%= @pzz_order.order_participants %>
+</p>
+
+<p>
+  <strong>Order status:</strong>
+  <%= @pzz_order.order_status %>
+</p>
+
+<p>
+  <strong>Order remark:</strong>
+  <%= @pzz_order.order_remark %>
+</p>
+
+<%= link_to 'Edit', edit_pzz_order_path(@pzz_order) %> |
+<%= link_to 'Back', pzz_orders_path %>

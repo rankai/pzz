@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Draw title:</strong>
+  <%= @pzz_draw_config.draw_title %>
+</p>
+
+<p>
+  <strong>Draw description:</strong>
+  <%= @pzz_draw_config.draw_description %>
+</p>
+
+<p>
+  <strong>Draw starttime:</strong>
+  <%= @pzz_draw_config.draw_starttime %>
+</p>
+
+<p>
+  <strong>Draw endtime:</strong>
+  <%= @pzz_draw_config.draw_endtime %>
+</p>
+
+<p>
+  <strong>User filter:</strong>
+  <%= @pzz_draw_config.user_filter %>
+</p>
+
+<p>
+  <strong>Draw count:</strong>
+  <%= @pzz_draw_config.draw_count %>
+</p>
+
+<p>
+  <strong>Draw type:</strong>
+  <%= @pzz_draw_config.draw_type %>
+</p>
+
+<p>
+  <strong>Draw status:</strong>
+  <%= @pzz_draw_config.draw_status %>
+</p>
+
+<%= link_to 'Edit', edit_pzz_draw_config_path(@pzz_draw_config) %> |
+<%= link_to 'Back', pzz_draw_configs_path %>

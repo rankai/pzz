@@ -1,0 +1,61 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  user_nickname: MyString
+  user_realname: MyString
+  user_phone: MyString
+  user_email: MyString
+  user_type: 1
+  line_type: 1
+  line_depart_datetime: 2014-09-10 15:15:41
+  line_return: 1
+  line_return_datetime: 2014-09-10 15:15:41
+  line_participants: 1
+  line_participants_available: 1
+  line_status: 1
+  line_price: 9.99
+  line_depart_city: MyString
+  line_depart_address: MyString
+  line_depart_gps: MyString
+  line_dest_city: MyString
+  line_dest_address: MyString
+  line_dest_gps: MyString
+  line_midway: MyText
+  line_milleage: 9.99
+  line_elapse: 1
+  line_fuel: 9.99
+  line_expire_datetime: 2014-09-10 15:15:41
+  line_plan_type: 1
+  line_week_day: MyString
+  line_remark: MyText
+
+two:
+  user_id: 1
+  user_nickname: MyString
+  user_realname: MyString
+  user_phone: MyString
+  user_email: MyString
+  user_type: 1
+  line_type: 1
+  line_depart_datetime: 2014-09-10 15:15:41
+  line_return: 1
+  line_return_datetime: 2014-09-10 15:15:41
+  line_participants: 1
+  line_participants_available: 1
+  line_status: 1
+  line_price: 9.99
+  line_depart_city: MyString
+  line_depart_address: MyString
+  line_depart_gps: MyString
+  line_dest_city: MyString
+  line_dest_address: MyString
+  line_dest_gps: MyString
+  line_midway: MyText
+  line_milleage: 9.99
+  line_elapse: 1
+  line_fuel: 9.99
+  line_expire_datetime: 2014-09-10 15:15:41
+  line_plan_type: 1
+  line_week_day: MyString
+  line_remark: MyText

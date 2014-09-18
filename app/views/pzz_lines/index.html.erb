@@ -1,0 +1,79 @@
+<h1>Listing pzz_lines</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>User nickname</th>
+      <th>User realname</th>
+      <th>User phone</th>
+      <th>User email</th>
+      <th>User type</th>
+      <th>Line type</th>
+      <th>Line depart datetime</th>
+      <th>Line return</th>
+      <th>Line return datetime</th>
+      <th>Line participants</th>
+      <th>Line participants available</th>
+      <th>Line status</th>
+      <th>Line price</th>
+      <th>Line depart city</th>
+      <th>Line depart address</th>
+      <th>Line depart gps</th>
+      <th>Line dest city</th>
+      <th>Line dest address</th>
+      <th>Line dest gps</th>
+      <th>Line midway</th>
+      <th>Line milleage</th>
+      <th>Line elapse</th>
+      <th>Line fuel</th>
+      <th>Line expire datetime</th>
+      <th>Line plan type</th>
+      <th>Line week day</th>
+      <th>Line remark</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pzz_lines.each do |pzz_line| %>
+      <tr>
+        <td><%= pzz_line.pzz_user_id %></td>
+        <td><%= pzz_line.user_nickname %></td>
+        <td><%= pzz_line.user_realname %></td>
+        <td><%= pzz_line.user_phone %></td>
+        <td><%= pzz_line.user_email %></td>
+        <td><%= pzz_line.user_type %></td>
+        <td><%= pzz_line.line_type %></td>
+        <td><%= pzz_line.line_depart_datetime %></td>
+        <td><%= pzz_line.line_return %></td>
+        <td><%= pzz_line.line_return_datetime %></td>
+        <td><%= pzz_line.line_participants %></td>
+        <td><%= pzz_line.line_participants_available %></td>
+        <td><%= pzz_line.line_status %></td>
+        <td><%= pzz_line.line_price %></td>
+        <td><%= pzz_line.line_depart_city %></td>
+        <td><%= pzz_line.line_depart_address %></td>
+        <td><%= pzz_line.line_depart_gps %></td>
+        <td><%= pzz_line.line_dest_city %></td>
+        <td><%= pzz_line.line_dest_address %></td>
+        <td><%= pzz_line.line_dest_gps %></td>
+        <td><%= pzz_line.line_midway %></td>
+        <td><%= pzz_line.line_milleage %></td>
+        <td><%= pzz_line.line_elapse %></td>
+        <td><%= pzz_line.line_fuel %></td>
+        <td><%= pzz_line.line_expire_datetime %></td>
+        <td><%= pzz_line.line_plan_type %></td>
+        <td><%= pzz_line.line_week_day %></td>
+        <td><%= pzz_line.line_remark %></td>
+        <td><%= link_to 'Show', pzz_line %></td>
+        <td><%= link_to 'Edit', edit_pzz_line_path(pzz_line) %></td>
+        <td><%= link_to 'Destroy', pzz_line, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pzz line', new_pzz_line_path %>

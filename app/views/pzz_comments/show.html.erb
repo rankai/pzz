@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pzz user:</strong>
+  <%= @pzz_comment.pzz_user_id %>
+</p>
+
+<p>
+  <strong>Pzz post:</strong>
+  <%= @pzz_comment.pzz_post_id %>
+</p>
+
+<p>
+  <strong>User email:</strong>
+  <%= @pzz_comment.user_email %>
+</p>
+
+<p>
+  <strong>User url:</strong>
+  <%= @pzz_comment.user_url %>
+</p>
+
+<p>
+  <strong>User ip:</strong>
+  <%= @pzz_comment.user_ip %>
+</p>
+
+<p>
+  <strong>Comment content:</strong>
+  <%= @pzz_comment.comment_content %>
+</p>
+
+<p>
+  <strong>Comment approved:</strong>
+  <%= @pzz_comment.comment_approved %>
+</p>
+
+<p>
+  <strong>User agent:</strong>
+  <%= @pzz_comment.user_agent %>
+</p>
+
+<p>
+  <strong>Comment parent:</strong>
+  <%= @pzz_comment.comment_parent_id %>
+</p>
+
+<%= link_to 'Edit', edit_pzz_comment_path(@pzz_comment) %> |
+<%= link_to 'Back', pzz_comments_path %>

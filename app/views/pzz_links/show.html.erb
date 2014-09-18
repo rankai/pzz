@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @pzz_link.pzz_user_id %>
+</p>
+
+<p>
+  <strong>Link url:</strong>
+  <%= @pzz_link.link_url %>
+</p>
+
+<p>
+  <strong>Link name:</strong>
+  <%= @pzz_link.link_name %>
+</p>
+
+<p>
+  <strong>Link image:</strong>
+  <%= @pzz_link.link_image %>
+</p>
+
+<p>
+  <strong>Link target:</strong>
+  <%= @pzz_link.link_target %>
+</p>
+
+<p>
+  <strong>Link description:</strong>
+  <%= @pzz_link.link_description %>
+</p>
+
+<p>
+  <strong>Link visible:</strong>
+  <%= @pzz_link.link_visible %>
+</p>
+
+<p>
+  <strong>Link rating:</strong>
+  <%= @pzz_link.link_rating %>
+</p>
+
+<p>
+  <strong>Link rel:</strong>
+  <%= @pzz_link.link_rel %>
+</p>
+
+<p>
+  <strong>Link notes:</strong>
+  <%= @pzz_link.link_notes %>
+</p>
+
+<p>
+  <strong>Link rss:</strong>
+  <%= @pzz_link.link_rss %>
+</p>
+
+<%= link_to 'Edit', edit_pzz_link_path(@pzz_link) %> |
+<%= link_to 'Back', pzz_links_path %>

@@ -1,0 +1,53 @@
+<%= form_for(@pzz_message) do |f| %>
+  <% if @pzz_message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pzz_message.errors.count, "error") %> prohibited this pzz_message from being saved:</h2>
+
+      <ul>
+      <% @pzz_message.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :from_user_id %><br>
+    <%= f.number_field :from_user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :to_user_id %><br>
+    <%= f.number_field :to_user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :from_user_nickname %><br>
+    <%= f.text_field :from_user_nickname %>
+  </div>
+  <div class="field">
+    <%= f.label :message_subject %><br>
+    <%= f.text_field :message_subject %>
+  </div>
+  <div class="field">
+    <%= f.label :message_content %><br>
+    <%= f.text_field :message_content %>
+  </div>
+  <div class="field">
+    <%= f.label :message_folder %><br>
+    <%= f.number_field :message_folder %>
+  </div>
+  <div class="field">
+    <%= f.label :message_related_id %><br>
+    <%= f.number_field :message_related_id %>
+  </div>
+  <div class="field">
+    <%= f.label :message_status %><br>
+    <%= f.number_field :message_status %>
+  </div>
+  <div class="field">
+    <%= f.label :message_type %><br>
+    <%= f.number_field :message_type %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

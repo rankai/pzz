@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pzz user:</strong>
+  <%= @pzz_identity.pzz_user_id %>
+</p>
+
+<p>
+  <strong>User realname:</strong>
+  <%= @pzz_identity.user_realname %>
+</p>
+
+<p>
+  <strong>User gender:</strong>
+  <%= @pzz_identity.user_gender %>
+</p>
+
+<p>
+  <strong>Identity card no:</strong>
+  <%= @pzz_identity.identity_card_no %>
+</p>
+
+<p>
+  <strong>Identity image:</strong>
+  <%= @pzz_identity.identity_image %>
+</p>
+
+<p>
+  <strong>Identity status:</strong>
+  <%= @pzz_identity.identity_status %>
+</p>
+
+<p>
+  <strong>Identity remark:</strong>
+  <%= @pzz_identity.identity_remark %>
+</p>
+
+<%= link_to 'Edit', edit_pzz_identity_path(@pzz_identity) %> |
+<%= link_to 'Back', pzz_identities_path %>

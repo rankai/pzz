@@ -1,0 +1,77 @@
+<%= form_for(@pzz_order) do |f| %>
+  <% if @pzz_order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pzz_order.errors.count, "error") %> prohibited this pzz_order from being saved:</h2>
+
+      <ul>
+      <% @pzz_order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :order_no %><br>
+    <%= f.text_field :order_no %>
+  </div>
+  <div class="field">
+    <%= f.label :passenger_id %><br>
+    <%= f.number_field :passenger_id %>
+  </div>
+  <div class="field">
+    <%= f.label :driver_id %><br>
+    <%= f.text_field :driver_id %>
+  </div>
+  <div class="field">
+    <%= f.label :pzz_line_id %><br>
+    <%= f.number_field :pzz_line_id %>
+  </div>
+  <div class="field">
+    <%= f.label :passenger_nickname %><br>
+    <%= f.text_field :passenger_nickname %>
+  </div>
+  <div class="field">
+    <%= f.label :passenger_realname %><br>
+    <%= f.text_field :passenger_realname %>
+  </div>
+  <div class="field">
+    <%= f.label :passenger_phone %><br>
+    <%= f.text_field :passenger_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :passenger_email %><br>
+    <%= f.text_field :passenger_email %>
+  </div>
+  <div class="field">
+    <%= f.label :driver_nickname %><br>
+    <%= f.text_field :driver_nickname %>
+  </div>
+  <div class="field">
+    <%= f.label :driver_realname %><br>
+    <%= f.text_field :driver_realname %>
+  </div>
+  <div class="field">
+    <%= f.label :driver_phone %><br>
+    <%= f.text_field :driver_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :driver_email %><br>
+    <%= f.text_field :driver_email %>
+  </div>
+  <div class="field">
+    <%= f.label :order_participants %><br>
+    <%= f.number_field :order_participants %>
+  </div>
+  <div class="field">
+    <%= f.label :order_status %><br>
+    <%= f.number_field :order_status %>
+  </div>
+  <div class="field">
+    <%= f.label :order_remark %><br>
+    <%= f.text_area :order_remark %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,49 @@
+<%= form_for(@pzz_draw_config) do |f| %>
+  <% if @pzz_draw_config.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pzz_draw_config.errors.count, "error") %> prohibited this pzz_draw_config from being saved:</h2>
+
+      <ul>
+      <% @pzz_draw_config.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :draw_title %><br>
+    <%= f.text_field :draw_title %>
+  </div>
+  <div class="field">
+    <%= f.label :draw_description %><br>
+    <%= f.text_area :draw_description %>
+  </div>
+  <div class="field">
+    <%= f.label :draw_starttime %><br>
+    <%= f.datetime_select :draw_starttime %>
+  </div>
+  <div class="field">
+    <%= f.label :draw_endtime %><br>
+    <%= f.datetime_select :draw_endtime %>
+  </div>
+  <div class="field">
+    <%= f.label :user_filter %><br>
+    <%= f.number_field :user_filter %>
+  </div>
+  <div class="field">
+    <%= f.label :draw_count %><br>
+    <%= f.number_field :draw_count %>
+  </div>
+  <div class="field">
+    <%= f.label :draw_type %><br>
+    <%= f.number_field :draw_type %>
+  </div>
+  <div class="field">
+    <%= f.label :draw_status %><br>
+    <%= f.number_field :draw_status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

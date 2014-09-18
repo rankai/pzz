@@ -1,0 +1,51 @@
+<h1>Listing pzz_posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pzz user</th>
+      <th>Post title</th>
+      <th>Post name</th>
+      <th>Post content</th>
+      <th>Post excerpt</th>
+      <th>Post status</th>
+      <th>Comment status</th>
+      <th>Post content filtered</th>
+      <th>Comment count</th>
+      <th>Post order</th>
+      <th>Post guid</th>
+      <th>To ping</th>
+      <th>Pinged</th>
+      <th>Ping status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pzz_posts.each do |pzz_post| %>
+      <tr>
+        <td><%= pzz_post.pzz_user_id %></td>
+        <td><%= pzz_post.post_title %></td>
+        <td><%= pzz_post.post_name %></td>
+        <td><%= pzz_post.post_content %></td>
+        <td><%= pzz_post.post_excerpt %></td>
+        <td><%= pzz_post.post_status %></td>
+        <td><%= pzz_post.comment_status %></td>
+        <td><%= pzz_post.post_content_filtered %></td>
+        <td><%= pzz_post.comment_count %></td>
+        <td><%= pzz_post.post_order %></td>
+        <td><%= pzz_post.post_guid %></td>
+        <td><%= pzz_post.to_ping %></td>
+        <td><%= pzz_post.pinged %></td>
+        <td><%= pzz_post.ping_status %></td>
+        <td><%= link_to 'Show', pzz_post %></td>
+        <td><%= link_to 'Edit', edit_pzz_post_path(pzz_post) %></td>
+        <td><%= link_to 'Destroy', pzz_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pzz post', new_pzz_post_path %>

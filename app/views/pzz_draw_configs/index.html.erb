@@ -1,0 +1,39 @@
+<h1>Listing pzz_draw_configs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Draw title</th>
+      <th>Draw description</th>
+      <th>Draw starttime</th>
+      <th>Draw endtime</th>
+      <th>User filter</th>
+      <th>Draw count</th>
+      <th>Draw type</th>
+      <th>Draw status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pzz_draw_configs.each do |pzz_draw_config| %>
+      <tr>
+        <td><%= pzz_draw_config.draw_title %></td>
+        <td><%= pzz_draw_config.draw_description %></td>
+        <td><%= pzz_draw_config.draw_starttime %></td>
+        <td><%= pzz_draw_config.draw_endtime %></td>
+        <td><%= pzz_draw_config.user_filter %></td>
+        <td><%= pzz_draw_config.draw_count %></td>
+        <td><%= pzz_draw_config.draw_type %></td>
+        <td><%= pzz_draw_config.draw_status %></td>
+        <td><%= link_to 'Show', pzz_draw_config %></td>
+        <td><%= link_to 'Edit', edit_pzz_draw_config_path(pzz_draw_config) %></td>
+        <td><%= link_to 'Destroy', pzz_draw_config, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pzz draw config', new_pzz_draw_config_path %>

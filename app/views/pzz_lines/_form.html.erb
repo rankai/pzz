@@ -1,0 +1,129 @@
+<%= form_for(@pzz_line) do |f| %>
+  <% if @pzz_line.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pzz_line.errors.count, "error") %> prohibited this pzz_line from being saved:</h2>
+
+      <ul>
+      <% @pzz_line.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pzz_user_id %><br>
+    <%= f.number_field :pzz_user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_nickname %><br>
+    <%= f.text_field :user_nickname %>
+  </div>
+  <div class="field">
+    <%= f.label :user_realname %><br>
+    <%= f.text_field :user_realname %>
+  </div>
+  <div class="field">
+    <%= f.label :user_phone %><br>
+    <%= f.text_field :user_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :user_email %><br>
+    <%= f.text_field :user_email %>
+  </div>
+  <div class="field">
+    <%= f.label :user_type %><br>
+    <%= f.number_field :user_type %>
+  </div>
+  <div class="field">
+    <%= f.label :line_type %><br>
+    <%= f.number_field :line_type %>
+  </div>
+  <div class="field">
+    <%= f.label :line_depart_datetime %><br>
+    <%= f.datetime_select :line_depart_datetime %>
+  </div>
+  <div class="field">
+    <%= f.label :line_return %><br>
+    <%= f.number_field :line_return %>
+  </div>
+  <div class="field">
+    <%= f.label :line_return_datetime %><br>
+    <%= f.datetime_select :line_return_datetime %>
+  </div>
+  <div class="field">
+    <%= f.label :line_participants %><br>
+    <%= f.number_field :line_participants %>
+  </div>
+  <div class="field">
+    <%= f.label :line_participants_available %><br>
+    <%= f.number_field :line_participants_available %>
+  </div>
+  <div class="field">
+    <%= f.label :line_status %><br>
+    <%= f.number_field :line_status %>
+  </div>
+  <div class="field">
+    <%= f.label :line_price %><br>
+    <%= f.text_field :line_price %>
+  </div>
+  <div class="field">
+    <%= f.label :line_depart_city %><br>
+    <%= f.text_field :line_depart_city %>
+  </div>
+  <div class="field">
+    <%= f.label :line_depart_address %><br>
+    <%= f.text_field :line_depart_address %>
+  </div>
+  <div class="field">
+    <%= f.label :line_depart_gps %><br>
+    <%= f.text_field :line_depart_gps %>
+  </div>
+  <div class="field">
+    <%= f.label :line_dest_city %><br>
+    <%= f.text_field :line_dest_city %>
+  </div>
+  <div class="field">
+    <%= f.label :line_dest_address %><br>
+    <%= f.text_field :line_dest_address %>
+  </div>
+  <div class="field">
+    <%= f.label :line_dest_gps %><br>
+    <%= f.text_field :line_dest_gps %>
+  </div>
+  <div class="field">
+    <%= f.label :line_midway %><br>
+    <%= f.text_area :line_midway %>
+  </div>
+  <div class="field">
+    <%= f.label :line_milleage %><br>
+    <%= f.text_field :line_milleage %>
+  </div>
+  <div class="field">
+    <%= f.label :line_elapse %><br>
+    <%= f.number_field :line_elapse %>
+  </div>
+  <div class="field">
+    <%= f.label :line_fuel %><br>
+    <%= f.text_field :line_fuel %>
+  </div>
+  <div class="field">
+    <%= f.label :line_expire_datetime %><br>
+    <%= f.datetime_select :line_expire_datetime %>
+  </div>
+  <div class="field">
+    <%= f.label :line_plan_type %><br>
+    <%= f.number_field :line_plan_type %>
+  </div>
+  <div class="field">
+    <%= f.label :line_week_day %><br>
+    <%= f.text_field :line_week_day %>
+  </div>
+  <div class="field">
+    <%= f.label :line_remark %><br>
+    <%= f.text_area :line_remark %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

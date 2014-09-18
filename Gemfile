@@ -30,6 +30,8 @@ gem 'mysql2'
 
 # authentication
 gem 'devise'
+# not working
+# gem 'devise-token_authenticatable' # enable token-auth for devise > 3.3.0
 
 # authorization based on roles
 gem 'cancan'

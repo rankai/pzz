@@ -1,0 +1,29 @@
+<h1>Listing pzz_options</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option name</th>
+      <th>Option value</th>
+      <th>Autoload</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pzz_options.each do |pzz_option| %>
+      <tr>
+        <td><%= pzz_option.option_name %></td>
+        <td><%= pzz_option.option_value %></td>
+        <td><%= pzz_option.autoload %></td>
+        <td><%= link_to 'Show', pzz_option %></td>
+        <td><%= link_to 'Edit', edit_pzz_option_path(pzz_option) %></td>
+        <td><%= link_to 'Destroy', pzz_option, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pzz option', new_pzz_option_path %>

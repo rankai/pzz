@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  draw_config_id: 1
+  place: MyString
+  place_name: MyString
+  min_degree: 1
+  max_degree: 1
+  prize_content: MyString
+  prize_stock: 1
+  winning_chance: 1
+
+two:
+  draw_config_id: 1
+  place: MyString
+  place_name: MyString
+  min_degree: 1
+  max_degree: 1
+  prize_content: MyString
+  prize_stock: 1
+  winning_chance: 1

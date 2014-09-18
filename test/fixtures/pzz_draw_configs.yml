@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  draw_title: MyString
+  draw_description: MyText
+  draw_starttime: 2014-09-11 05:43:47
+  draw_endtime: 2014-09-11 05:43:47
+  user_filter: 1
+  draw_count: 1
+  draw_type: 1
+  draw_status: 1
+
+two:
+  draw_title: MyString
+  draw_description: MyText
+  draw_starttime: 2014-09-11 05:43:47
+  draw_endtime: 2014-09-11 05:43:47
+  user_filter: 1
+  draw_count: 1
+  draw_type: 1
+  draw_status: 1

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Template key:</strong>
+  <%= @pzz_template.template_key %>
+</p>
+
+<p>
+  <strong>Template value:</strong>
+  <%= @pzz_template.template_value %>
+</p>
+
+<p>
+  <strong>Template type:</strong>
+  <%= @pzz_template.template_type %>
+</p>
+
+<%= link_to 'Edit', edit_pzz_template_path(@pzz_template) %> |
+<%= link_to 'Back', pzz_templates_path %>
