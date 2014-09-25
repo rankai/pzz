@@ -2,6 +2,7 @@ class PzzLinesController < ApplicationController
   before_action :set_pzz_line, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_pzz_user!, except: [:index]
 
+  wrap_parameters PzzLine
 
   # GET /pzz_lines
   # GET /pzz_lines.json
@@ -76,6 +77,6 @@ class PzzLinesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pzz_line_params
-      params.require(:pzz_line).permit(:user_id, :user_nickname, :user_realname, :user_phone, :user_email, :user_type, :line_type, :line_depart_datetime, :line_return, :line_return_datetime, :line_participants, :line_participants_available, :line_status, :line_price, :line_depart_city, :line_depart_address, :line_depart_gps, :line_dest_city, :line_dest_address, :line_dest_gps, :line_midway, :line_milleage, :line_elapse, :line_fuel, :line_expire_datetime, :line_plan_type, :line_week_day, :line_remark)
+      params.require(:pzz_line).permit(:pzz_user_id, :user_nickname, :user_realname, :user_phone, :user_email, :user_type, :line_type, :line_depart_datetime, :line_return, :line_return_datetime, :line_participants, :line_participants_available, :line_status, :line_price, :line_depart_city, :line_depart_address, :line_depart_gps, :line_dest_city, :line_dest_address, :line_dest_gps, :line_midway, :line_milleage, :line_elapse, :line_fuel, :line_expire_datetime, :line_plan_type, :line_week_day, :line_remark)
     end
 end

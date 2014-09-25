@@ -1,0 +1,2 @@
+module PzzPostsHelper
+end

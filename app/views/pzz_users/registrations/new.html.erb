@@ -1,84 +1,93 @@
-<script type="text/javascript">
-	$(function() {
+<script>
+    $(document).ready(function(){
+        $("#mobile-psd").hide();
+        $("#mobile-rpsd").hide();
+        $("#mobile-verify").hide();
+        $("#mobile-name").hide();
+        $("#mail-psd").hide();
+        $("#mail-rpsd").hide();
+        $("#mail-verify").hide();
+        $("#mail-name").hide();
+        // 跳转到激活邮箱界面
+        $("#mail-active").click(function() {
+            window.location.href="mail-active.html"
+        });
 
-		$("#user_username").change(function(e){
+        $("#reg-mobile").show();
+        $("#reg-mail").hide();
 
-			e.preventDefault();
+        $("#mail-reg").click(function(){
+            $("#reg-mobile").show();
+            $("#reg-mail").hide();
+        });
+        $("#mobile-reg").click(function() {
+            $("#reg-mail").show();
+            $("#reg-mobile").hide();
+        });
 
-			$.ajax({
-                url: "<%= pzz_users_phone_registered_path %>",
-                method: "get",
-                dataType: "json",
-                data: {username:$("#user_username").val()},
-                success: function(data) {
-                	console.log("can register");
-                	$(".alert").text("");
-                	return true;
-                },
-                error: function(data){
-                	console.log("already exist");
-                	$(".alert").text("Username already registered, please try another one.");
-                	return false;
-                }
-            });
-            
-		});
-
-		// jquery validate
-
-        // jquery validate
-    $("#new_user").validate({
-        rules: {
-            "user[username]": {
-                required: true
-            },
-            "user[password]": {
-              required: true,
-              minlength: 3
-            },
-            "user[password_confirmation]": {
-              required: true,
-              minlength: 3,
-              equalTo: "#user_password"
-            }
-        },
-
-        highlight: function(element) {
-            $(element).closest(".form-group").addClass('has-error');
-        },
-        unhighlight: function(element) {
-            $(element).closest('.form-group').removeClass('has-error');
-        },
-
-
-        errorElement: 'span',
-        errorClass: 'help-block',
-        errorPlacement: function(error, element) {
-            if(element.parent('.input-group').length) {
-                error.insertAfter(element.parent());
-            } else {
-                error.insertAfter(element);
-            }
-        },
-        submitHandler: function(form) {
-            //jQuery(form).ajaxSubmit(options);
-            form.submit();
-        }
     });
-
-
-
-	});
 </script>
 
-<div class="container-fluid">
-  	<div class="row text-center">
-    	<div class="login-reg-box col-md-12">
-		     <p class="top-login-reg">Already a member? <%= link_to "Sign in", new_pzz_user_session_path %></p>
-		     <h2 class="page page-header">New user registration</h2>
-		     <%= render "form" %>
-  		</div><!--span12--> 
-	</div><!--row fluid-->
-</div><!-- container-fluid --> 
+<div class="wrapper">
+    <div class="text-center m30">
+        <a href="index.html"><%= image_tag "logo.jpg" %></a>
+    </div>
+    <div class="container">
+        <div class="row frame-border frame-bgw">
+            <div id="reg-mobile" class="col-xs-8 frame-bg mt30">
+                <div class=" text-center m10">
+                    <h3>用户注册</h3>
+                </div>
+                
+                <!-- by phone -->
+                <%= render "by_phone" %>
 
+            </div>
+            
+            <div id="reg-mail" class="col-xs-8 frame-bg mt30">
+                <div class=" text-center m10">
+                    <h3>用户注册</h3>
+                </div>
+                <!-- by email -->
+                <%= render "by_email" %>
 
+            </div>
+            <div class="col-xs-4 pl20 frame-lborder mt120">
+                <p class="text-center frame-bborder pb30">
+                    已经注册现在去
+                    <%= link_to "登录", new_pzz_user_session_path %></p>
+                </p>
+                <h3 class="pager text-center">最轻松便捷的拼座</h3>
+                <div class="text-center">
+                    <p class="pt10"><i class="fa fa-star cr5b pr10"></i>分担油费，乐在其中</p>
+                    <p class="pt10"><i class="fa fa-star cr5b pr10"></i>分享路况，收益大家</p>
+                    <p class="pt10"><i class="fa fa-star cr5b pr10"></i>以车会友，其乐无穷</p>
+                    <p class="pt10"><i class="fa fa-star cr5b pr10"></i>偕同相伴，美化旅途</p>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>  
+    <!-- footer start -->
+    <div id="footer" class="text-center wmw footer-bg p30 mt15" >
+        <p>
+            <a href="">关于拼座族</a>
+            |
+            <a href="">关于拼座族</a>
+            |
+            <a href="">关于拼座族</a>
+            |
+            <a href="">关于拼座族</a>
+            |
+            <a href="">关于拼座族</a>
+        </p>
+        <p>
+            <a href="">
+                Copyright Reserved 2014-2015 拼座族拼车、搭乘顺风车，仅在拼座族网ICP备585858588
+            </a>
+        </p>
+    </div>
+    <!-- footer end -->
+</div>
+<!-- wrapper end -->

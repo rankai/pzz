@@ -1,0 +1,60 @@
+/* kevin 2014-9-21 */
+/* add #error_explanation */
+#error_explanation {
+	padding: 20px;
+	background-color: #f8f8f8;
+}
+.frame-border{
+	border: #eee 1px solid !important;
+}
+.frame-rborder{
+	border-right:#eee 1px solid !important;
+}
+.frame-lborder{
+	border-left:#eee 1px solid !important;
+}
+.frame-nlborder{
+	border: #eee 1px solid !important;
+	border-left-color:transparent !important;
+}
+.frame-bborder{
+	border-bottom: #eee 1px solid !important;
+}
+.frame-tborder{
+	border-top: #eee 1px solid !important;
+}
+.comm-line{
+	height: 1px;
+	border-bottom: dashed 1px;
+}
+.frame-nborder{
+	border: none !important;
+}
+.frame-nradius{
+	border-radius: 0px !important;
+}
+/*转换块级元素*/
+/*.ele-a{
+	display: block !important; 
+}*/
+/*background颜色*/
+.frame-bgw{
+	background: #fff;
+}
+/* span button等转为块级元素*/
+.com-block{
+	display: block !important;
+}
+.com-initial{
+	display: initial !important; 
+}
+.com-overflow{
+	overflow: auto;
+}
+.top-bg{
+	background: #efefef;
+}
+.top-bg-usercenter{
+	 height: 50px;
+	 background: #3399cc;
+}

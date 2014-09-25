@@ -2,6 +2,8 @@ class PzzTrafficsController < ApplicationController
   before_action :set_pzz_traffic, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_pzz_user!, except: ['index']
 
+  wrap_parameters PzzTraffic
+
   # GET /pzz_traffics
   # GET /pzz_traffics.json
   def index
@@ -70,6 +72,6 @@ class PzzTrafficsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pzz_traffic_params
-      params.require(:pzz_traffic).permit(:user_id, :traffic_keywords, :traffic_image, :traffic_description, :traffic_gps)
+      params.require(:pzz_traffic).permit(:pzz_user_id, :traffic_keywords, :traffic_image, :traffic_description, :traffic_gps)
     end
 end

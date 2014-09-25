@@ -1,23 +1,41 @@
- <%= form_for(resource, as: resource_name, url: session_path(resource_name), role: "form") do |f| %>
-	<%= devise_error_messages! %>
-	<div class="form-group" style="text-align: -webkit-center">
-		<div class="input-group" >
-			<%= f.text_field :login, autofocus: true, class: "form-control", placeholder: "email or phone" %>
-		</div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), role: "form", html: {class: "m30"}) do |f| %>
+  	<%= devise_error_messages! %>
+    <div class="form-group">
+      <label for="exampleInputEmail1">登录拼座族网</label>
+    </div>
+    <div class="form-group ">
+      <%= f.text_field :login, autofocus: true, class: "form-control input-lg frame-nradius", placeholder: "手机/邮箱" %>
+    </div>
+    <div class="form-group ">
+      <span id="mobile-name" class="f12 p10 crred control-label tl fa fa-times-circle">
+      手机格式不对
+     </span>
+    </div>
+    <div class="form-group">
+      <%= f.password_field :password, autocomplete: "off", class: "form-control input-lg frame-nradius",  id: "exampleInputPassword1", placeholder: "密码" %>
+    </div>
+    <div class="form-group ">
+      <span id="mobile-name" class="f12 p10 crred control-label tl fa fa-times-circle">
+      手机格式不对
+     </span>
+    </div>
+    <div class="form-group">
+	  <div class="">
+	    <div class="checkbox">
+	      <label>
+	      	<%= f.check_box :remember_me %>
+	      	<%= f.label :remember_me do  %>
+	      		记住密码
+	      	<% end %>
+	      </label>
+	      <%= link_to "立即注册", new_pzz_user_registration_path, class: "cr5b ml15 f14 fr" %>
+	      <span class="s ml15 f14 fr">|</span>
+        <%= link_to "忘记密码", new_password_path(resource_name), class: "cr5b ml15 f14 fr" %><br />
+	    </div>
+	  </div>
 	</div>
-	<div class="form-group" style="text-align: -webkit-center">
-		<div class="input-group" >
-	  		<%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "password" %>
-	  	</div>
-	</div>
-	<div class="form-group" style="text-align: -webkit-center">
-		<div class="input-group" >
-	  		<%= f.check_box :remember_me %> <%= f.label :remember_me, class: "inset"  %>
-	  	</div>
-	</div>
-	
-	<div class="form-group">
-	    <%= f.submit "Sign in", class: "btn btn-primary" %>
-	    <input type="reset"  value="Reset" class="btn btn-primary">
-	</div>
-<% end %>
+    <div class="mt30 pb20">
+           <%= f.submit "立即登录", class: "btn btn-info btn-lg w frame-nradius" %>
+    </div>
+ 
+  <% end %>

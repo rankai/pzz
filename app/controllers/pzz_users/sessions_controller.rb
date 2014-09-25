@@ -1,4 +1,8 @@
 class PzzUsers::SessionsController < Devise::SessionsController
+
+	wrap_parameters :pzz_user, 
+		include: [:login, :password, :remember_me]
+
 	def create 
 		self.resource = warden.authenticate!(auth_options)
  		  set_flash_message(:notice, :signed_in) if is_flashing_format?

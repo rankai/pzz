@@ -11,12 +11,19 @@ Rails.application.routes.draw do
 
   resources :pzz_posts
 
+  resources :cors
+  # match '/', :to => proc {|env| [200, {'Content-Type' => 'text/plain'}, ["Hello world"]] },
+  #            :via => [:get, :post, :put, :delete, :options, :head, :patch]
+
   # devise_for :pzz_users
   devise_for :pzz_users, controllers: {registrations: "pzz_users/registrations", sessions: "pzz_users/sessions"}
 
   devise_scope :pzz_user do
-    get 'pzz_users/phone_registered', to: "pzz_users/registrations#phone_registered?"
-    get 'pzz_users/email_registered', to: "pzz_users/registrations#email_registered?"
+    get 'pzz_users/phone_registered', to: "pzz_users/registrations#phone_registered"
+    get 'pzz_users/email_registered', to: "pzz_users/registrations#email_registered"
+    post 'pzz_users/avatar',          to: "pzz_users/users#avatar"
+    get 'pzz_users/:id',              to: "pzz_users/users#show"
+    put 'pzz_users/:id',              to: "pzz_users/registrations#update_with_token"
   end
 
   mount Rich::Engine => '/rich', :as => 'rich'

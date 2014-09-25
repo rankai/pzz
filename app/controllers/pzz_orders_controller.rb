@@ -2,6 +2,8 @@ class PzzOrdersController < ApplicationController
   before_action :set_pzz_order, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_pzz_user!
 
+  wrap_parameters PzzOrder
+
   # GET /pzz_orders
   # GET /pzz_orders.json
   def index

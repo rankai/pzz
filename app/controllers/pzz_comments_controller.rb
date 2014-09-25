@@ -1,4 +1,4 @@
-class PzzCommenTsController < ApplicationController
+class PzzCommentsController < ApplicationController
   before_action :set_pzz_comment, only: [:show, :edit, :update, :destroy]
 
   # GET /pzz_comments

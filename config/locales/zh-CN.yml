@@ -330,6 +330,11 @@ zh-CN:
         pending: "等待"
         success: "充值成功"
         failed: "充值失败"
+        wait: "等待买家付款"
+        closed: "交易关闭"
+        success: "交易成功"
+        pendding: "等待卖家收款"
+        finished: "交易完成"
     # post
     pzz_post:
       post_status:

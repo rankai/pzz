@@ -51,6 +51,12 @@
 //= require rich/base
 //= require rails_admin/custom/ui
 //= require rich
+//= require daterangepicker
+//= require easyResponsiveTabs
+//= require moment.min
+//= require rome
+//= require strength-meter.min
 //= require home
+//= require style.js
 //= require turbolinks
-//= require_tree .
+//= require_self

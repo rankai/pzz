@@ -1,6 +1,8 @@
 class PzzIdentitiesController < ApplicationController
   before_action :set_pzz_identity, only: [:show, :edit, :update, :destroy]
 
+  wrap_parameters PzzIdentity
+
   # GET /pzz_identities
   # GET /pzz_identities.json
   def index

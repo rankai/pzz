@@ -1,10 +1,1053 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<p>disable email confirmation </p>
-<% if current_pzz_user %>
-  <%= link_to('退出', destroy_pzz_user_session_path, :method => :delete) %> |
-  <%= link_to('修改密码', edit_registration_path(:pzz_user)) %>
-<% else %>
-  <%= link_to('注册', new_registration_path(:pzz_user)) %> |
-  <%= link_to('登录', new_session_path(:pzz_user)) %>
-<% end %><span></span>
+<script type="text/javascript" 
+    src="http://api.map.baidu.com/api?v=2.0&ak=xmyNRRC4grtX6rp4hv0rp7q8">
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        // alert("hi");
+        $("#detail-search").click(function() {
+            window.location.href = "detail-search.html"
+        });
+    });
+</script>
+
+<div class="wrapper">
+    <!-- start-header -->
+    <div class="header">
+        <!-- top -->
+        <div id="top1" class="wmw">
+            <div class="container">
+                <div class="left-content">
+                    <span class="left-descrip-span">
+                        拼座族，拼车的最佳选择
+                    </span>
+                    <!-- <span class="left-attention-span">关注我们:</span>
+                    -->
+                    <!-- <a href="" class="left-attention-a">
+                    <img src="images/qqzone.gif">关注</a>
+                    <a href="" class="left-attention-a">
+                    <img src="images/xinlang.png">关注</a>
+                    -->
+                    <!-- <a href="" class="left-phone-a">
+                    <img src="images/home-tel.png" height="20">手机版</a>
+                    -->
+                    <% if pzz_user_signed_in? %>
+ 
+                    <a class="pl30 f14 cr666 pr10" href="user-center.html">
+                        <%= current_pzz_user.user_nickname %>
+                    </a>
+                    <%= link_to destroy_pzz_user_session_path, class: "f14 cr666 pr10", method: :delete, data: { confirm: '您确认要退出登录么？' }, onclick: "clear_session()" do %> 
+                        退出
+                    <%end %>
+
+                    <% else %>
+
+                    <%= link_to new_pzz_user_session_path, class: "pl30 f14 cr666 pr10" do %> 
+                        登录
+                    <% end %>
+                    <span class="f12 crd9d">|</span>
+                    <%= link_to new_pzz_user_registration_path, class: "pl10 f14 cr666" do %> 
+                        免费注册
+                    <% end %>
+
+                    <% end %>
+                   
+                </div>
+                <ul class="nav nav-pills pull-right">
+                    <li class="pull-right dropdown">
+                        <a class="f14 cr666 right-padding" data-toggle="dropdown" href="">
+                            网站导航▼
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="text-center">
+                                <a href="#">
+                                    test
+                                </a>
+                            </li>
+                            <li class="text-center">
+                                <a href="#">
+                                    test
+                                </a>
+                            </li>
+                            <li class="text-center">
+                                <a href="#">
+                                    test
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="pull-right dropdown">
+                        <a class="f14 cr666 right-padding right-li" href="#">
+                            如何拼座？
+                        </a>
+                    </li>
+                    <li class="pull-right dropdown">
+                        <a class="f14 cr666 right-padding right-li" href="index.html">
+                            返回首页
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- top end -->
+        <div class="container header_top">
+            <div class="logo">
+                <a href="index.html">
+                    <%= image_tag "logo.jpg" %>
+                </a>
+            </div>
+            <div class="menu">
+                <a class="toggleMenu" href="#">
+                    <%= image_tag "nav_icon.png" %>
+                </a>
+                <ul class="nav" id="nav">
+                    <li class="current">
+                        <a href="index.html">
+                            首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="local.html">
+                            上下班拼座
+                        </a>
+                    </li>
+                    <li>
+                        <a href="long-distance.html">
+                            长途拼座
+                        </a>
+                    </li>
+                    <li>
+                        <a href="passenger-need.html">
+                            乘客需求
+                        </a>
+                    </li>
+                    <li>
+                        <a href="passenger-share.html">
+                            拼座分享
+                        </a>
+                    </li>
+                    <li>
+                        <a href="release-route.html">
+                            发布线路
+                        </a>
+                    </li>
+                    <div class="clearfix">
+                    </div>
+                </ul>
+            </div>
+            <div class="clearfix">
+            </div>
+            <!-- End-top-nav -->
+        </div>
+    </div>
+    <!-- End-header -->
+    <!-- banner -->
+    <div id="banner" class="banner-bg wmw home-search-banner h500">
+        <div id="myCarousel" class="carousel slide">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active">
+                </li>
+                <li data-target="#myCarousel" data-slide-to="1">
+                </li>
+                <li data-target="#myCarousel" data-slide-to="2">
+                </li>
+            </ol>
+            <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <%= image_tag "slider6.jpg", class: "w h500", alt: "" %>
+                </div>
+                <div class="item">
+                    <%= image_tag "slider7.jpg", class: "w h500", alt: "" %>
+                </div>
+                <div class="item">
+                    <%= image_tag "slider8.jpg", class: "w h500", alt: "" %>
+                </div>
+            </div>
+            <!-- 轮播（Carousel）导航 -->
+            <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                &lsaquo;
+            </a>
+            <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                &rsaquo;
+            </a>
+        </div>
+        <!-- <img class="img-responsive" src="images/slide1.jpg" height="553"
+        style="height:553px;">
+        -->
+        <!-- 发布线路 -->
+        <div class="container home-search-route">
+            <div id="search" class="home-search-bg">
+                <form class="form-horizontal home-search-form" role="form">
+                    <div class="form-group">
+                        <label for="originCar" class="col-xs-2 control-label crfff">
+                            上车地点
+                        </label>
+                        <div class="col-xs-4">
+                            <input class="form-control" id="originCar" placeholder="出发城市">
+                        </div>
+                        <div class="col-xs-6">
+                            <input class="form-control border-radius-style" id="dDestinationCityD"
+                            placeholder="详细地址">
+                            <span onclick="mark('end')" class="r10 cr3b offer-position-icon fa fa-map-marker fa-lg form-control-feedback">
+                            </span>
+                            <div id="searchdDestinationCityD" class="offer-map-detail">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="destinationCar" class="col-xs-2 control-label crfff">
+                            下车地点
+                        </label>
+                        <div class="col-xs-4">
+                            <input class="form-control" id="destinationCar" placeholder="目的城市">
+                        </div>
+                        <div class="col-xs-6">
+                            <input class="form-control border-radius-style" id="dDestinationCityD"
+                            placeholder="详细地址">
+                            <span onclick="mark('end')" class="cr3b r10 offer-position-icon fa fa-map-marker fa-lg form-control-feedback">
+                            </span>
+                            <div id="searchdDestinationCityD" class="offer-map-detail">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-offset-2 col-xs-10">
+                            <button type="search" class="btn btn-info text-btn">
+                                立即搜索
+                            </button>
+                            <button id="detail-search" type="button" class="btn btn-info text-btn home-detail-search-btn">
+                                去详细搜索
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- search cotainer end -->
+    </div>
+    <!-- banner end -->
+    <div class="container" id="main">
+        <div class="row">
+            <!-- left -->
+            <div class="col-xs-8">
+                <div id="work" class="page-list-bg p10 mt20 frame-border">
+                    <div class="page-list-title">
+                        <h4 class="page-header passenger-h">
+                            <i class="fa fa-car cr5b mr10">
+                            </i>
+                            上下班拼座
+                        </h4>
+                        <a href="#" class="more">
+                            更多
+                        </a>
+                    </div>
+                    <div class="page-list">
+                        <ul>
+                            <li>
+                                <div class="mt10">
+                                    <dl>
+                                        <dt>
+                                            <%= image_tag "car.jpg" %>
+                                        </dt>
+                                        <dd>
+                                            <a href="">
+                                                绍兴市：绍兴县绍兴市
+                                                <i class="icon">
+                                                </i>
+                                                绍兴市：绍兴县
+                                            </a>
+                                        </dd>
+                                        <dd>
+                                            <span>
+                                                出发时间：
+                                                <strong>
+                                                    2014-09-09&nbsp;
+                                                </strong>
+                                            </span>
+                                            <span>
+                                                提供座位：
+                                                <strong>
+                                                    1
+                                                </strong>
+                                                个
+                                            </span>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="page-list-price-div">
+                                    <span class="page-list-span">
+                                        ￥18元/位
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="last">
+                                <div class="mt10">
+                                    <dl>
+                                        <dt>
+                                            <%= image_tag "car.jpg" %>
+
+                                        </dt>
+                                        <dd>
+                                            <a href="">
+                                                绍兴市：绍兴县绍兴市
+                                                <i class="icon">
+                                                </i>
+                                                绍兴市：绍兴县
+                                            </a>
+                                        </dd>
+                                        <dd>
+                                            <span>
+                                                出发时间：
+                                                <strong>
+                                                    2014-09-09&nbsp;
+                                                </strong>
+                                            </span>
+                                            <span>
+                                                提供座位：
+                                                <strong>
+                                                    1
+                                                </strong>
+                                                个
+                                            </span>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="page-list-price-div">
+                                    <span class="page-list-span">
+                                        ￥18元/位
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- work end -->
+                <div id="long-distance" class="page-list-bg p10 mt20 frame-border">
+                    <div class="page-list-title">
+                        <h4 class="page-header passenger-h">
+                            <i class="fa fa-car cr5b mr10">
+                            </i>
+                            长途拼座
+                        </h4>
+                        <a href="#" class="more">
+                            更多
+                        </a>
+                    </div>
+                    <div class="page-list">
+                        <ul>
+                            <li>
+                                <div class="mt10">
+                                    <dl>
+                                        <dt>
+                                            <%= image_tag "car.jpg" %>
+                                        </dt>
+                                        <dd>
+                                            <a href="">
+                                                绍兴市：绍兴县绍兴市
+                                                <i class="icon">
+                                                </i>
+                                                绍兴市：绍兴县
+                                            </a>
+                                        </dd>
+                                        <dd>
+                                            <span>
+                                                出发时间：
+                                                <strong>
+                                                    2014-09-09&nbsp;
+                                                </strong>
+                                            </span>
+                                            <span>
+                                                提供座位：
+                                                <strong>
+                                                    1
+                                                </strong>
+                                                个
+                                            </span>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="page-list-price-div">
+                                    <span class="page-list-span">
+                                        ￥18元/位
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="last">
+                                <div class="mt10">
+                                    <dl>
+                                        <dt>
+                                            <%= image_tag "car.jpg" %>
+                                        </dt>
+                                        <dd>
+                                            <a href="">
+                                                绍兴市：绍兴县绍兴市
+                                                <i class="icon">
+                                                </i>
+                                                绍兴市：绍兴县
+                                            </a>
+                                        </dd>
+                                        <dd>
+                                            <span>
+                                                出发时间：
+                                                <strong>
+                                                    2014-09-09&nbsp;
+                                                </strong>
+                                            </span>
+                                            <span>
+                                                提供座位：
+                                                <strong>
+                                                    1
+                                                </strong>
+                                                个
+                                            </span>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="page-list-price-div">
+                                    <span class="page-list-span">
+                                        ￥18元/位
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- long-distance end -->
+                <div id="passenger-need" class="page-list-bg p10 mt20 frame-border">
+                    <div class="page-list-title">
+                        <h4 class="page-header passenger-h">
+                            <i class="fa fa-user cr5b mr10">
+                            </i>
+                            乘客需求
+                        </h4>
+                        <a href="#" class="more">
+                            更多
+                        </a>
+                    </div>
+                    <div class="page-list">
+                        <ul>
+                            <li>
+                                <div class="mt10">
+                                    <dl>
+                                        <dt>
+                                            <%= image_tag "car.jpg" %>
+                                        </dt>
+                                        <dd>
+                                            <a href="">
+                                                绍兴市：绍兴县绍兴市
+                                                <i class="icon">
+                                                </i>
+                                                绍兴市：绍兴县
+                                            </a>
+                                        </dd>
+                                        <dd>
+                                            <span>
+                                                出发时间：
+                                                <strong>
+                                                    2014-09-09&nbsp;
+                                                </strong>
+                                            </span>
+                                            <span>
+                                                需求座位：
+                                                <strong>
+                                                    1
+                                                </strong>
+                                                个
+                                            </span>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="page-list-price-div">
+                                    <span class="page-list-span">
+                                        ￥18元/位
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="last">
+                                <div class="mt10">
+                                    <dl>
+                                        <dt>
+                                            <%= image_tag "car.jpg" %>
+                                        </dt>
+                                        <dd>
+                                            <a href="">
+                                                绍兴市：绍兴县绍兴市
+                                                <i class="icon">
+                                                </i>
+                                                绍兴市：绍兴县
+                                            </a>
+                                        </dd>
+                                        <dd>
+                                            <span>
+                                                出发时间：
+                                                <strong>
+                                                    2014-09-09&nbsp;
+                                                </strong>
+                                            </span>
+                                            <span>
+                                                需求座位：
+                                                <strong>
+                                                    1
+                                                </strong>
+                                                个
+                                            </span>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="page-list-price-div">
+                                    <span class="page-list-span">
+                                        ￥18元/位
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 乘客需求 end -->
+            </div>
+            <!-- right -->
+            <div class="col-xs-4">
+                <div id="diary-share" class="page-list-bg p10 mt20 frame-border">
+                    <div class="page-list-title">
+                        <h4 class="page-header passenger-h">
+                            <i class="fa fa-file-image-o cr5b mr10">
+                            </i>
+                            旅游日记
+                        </h4>
+                        <a href="#" class="more">
+                            更多
+                        </a>
+                    </div>
+                    <div class="module-travel-diary">
+                        <ul>
+                            <li>
+                                <%= image_tag "travel.jpg" %>
+                                <p>
+                                    <a href="">
+                                        与美女拼车_一次心灵的纠结
+                                    </a>
+                                </p>
+                            </li>
+                            <li>
+                                <%= image_tag "travel.jpg" %>
+                                <p>
+                                    <a href="">
+                                        与美女拼车_一次心灵的纠结
+                                    </a>
+                                </p>
+                            </li>
+                            <li>
+                                <%= image_tag "travel.jpg" %>
+                                <p>
+                                    <a href="">
+                                        与美女拼车_一次心灵的纠结
+                                    </a>
+                                </p>
+                            </li>
+                            <li>
+                                <%= image_tag "travel.jpg" %>
+                                <p>
+                                    <a href="">
+                                        与美女拼车_一次心灵的纠结
+                                    </a>
+                                </p>
+                            </li>
+                            <li class="last">
+                                <%= image_tag "travel.jpg" %>
+                                <p>
+                                    <a href="">
+                                        与美女拼车_一次心灵的纠结
+                                    </a>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- travel-share end -->
+                <div id="roude-share" class="page-list-bg p10 mt20 frame-border">
+                    <div class="page-list-title">
+                        <h4 class="page-header passenger-h">
+                            <i class="fa fa-file-video-o cr5b mr10">
+                            </i>
+                            路况信息
+                        </h4>
+                        <a href="#" class="more">
+                            更多
+                        </a>
+                    </div>
+                    <div class="module-msg">
+                        <ul class="m15">
+                            <li>
+                                <a href="">
+                                    与美女拼车_一次心灵的纠结
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    与美女拼车_一次心灵的纠结
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    与美女拼车_一次心灵的纠结
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    与美女拼车_一次心灵的纠结
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    与美女拼车_一次心灵的纠结
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    与美女拼车_一次心灵的纠结
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    与美女拼车_一次心灵的纠结
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- roude-meg end -->
+            </div>
+            <!-- right end -->
+        </div>
+        <!-- row end -->
+        <div class="row">
+            <div class=" page-list-bg p10 mt20 frame-border home-menber">
+                <div class="page-list-title">
+                    <h4 class="page-header passenger-h">
+                        <i class="fa fa-users cr5b mr10">
+                        </i>
+                        和我们一起拼座吧
+                    </h4>
+                </div>
+                <div style="margin:10px 40px;">
+                    <%= image_tag "header.jpg" %> 
+                    <%= image_tag "header1.jpg" %> 
+                    <%= image_tag "header1.jpg" %> 
+                    <%= image_tag "header2.jpg" %> 
+                    <%= image_tag "header1.jpg" %> 
+                    <%= image_tag "header.jpg" %> 
+                    <%= image_tag "header1.jpg" %> 
+                    <%= image_tag "header2.jpg" %> 
+                </div>
+            </div>
+        </div>
+       <!-- friends-links -->
+            <div class="row">
+                <div class=" page-list-bg p10 mt20 frame-border  friends-links">
+                    <dl>
+                        <dt class="cr333 mb10 f14">
+                            新手上路
+                        </dt>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt class="cr333 f14 mb10">
+                            新手上路
+                        </dt>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt class="cr333 f14 mb10">
+                            新手上路
+                        </dt>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt class="cr333 f14 mb10">
+                            新手上路
+                        </dt>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt class="cr333 f14 mb10">
+                            新手上路
+                        </dt>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt class="cr333 f14 mb10">
+                            新手上路
+                        </dt>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                        <dd>
+                            <a class="cr999 f12 p5" href="">
+                                新手入门
+                            </a>
+                        </dd>
+                    </dl>
+                    <dl class="friends-links-code-dl">
+                        <dt class="cr333 f14 mb5">
+                            加我们微信
+                        </dt>
+                        <dd class="friends-links-code-dd">
+                            <%= image_tag "code.png", class: "friends-links-code-img" %>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <!-- row end -->
+        <!-- friends-links end -->
+    </div>
+    <!-- main end -->
+    <!-- footer start -->
+    <div class=" text-center wmw p30 footer-bg">
+        <p>
+            <a href="">
+                关于拼座族
+            </a>
+            |
+            <a href="">
+                关于拼座族
+            </a>
+            |
+            <a href="">
+                关于拼座族
+            </a>
+            |
+            <a href="">
+                关于拼座族
+            </a>
+            |
+            <a href="">
+                关于拼座族
+            </a>
+        </p>
+        <p>
+            <a href="">
+                Copyright Reserved 2014-2015 拼座族拼车、搭乘顺风车，仅在拼座族网ICP备585858588
+            </a>
+        </p>
+    </div>
+    <!-- footer end -->
+</div>
+<!-- wrapper -->
+
+<script type="text/javascript">
+    var map = new BMap.Map("drivernewmap");
+    map.centerAndZoom(new BMap.Point(116.404, 39.915), 12);
+    map.enableScrollWheelZoom(); //启用滚轮放大缩小，默认禁用
+    map.enableContinuousZoom(); //启用地图惯性拖拽，默认禁用
+    var transit = new BMap.DrivingRoute(map, {
+        renderOptions: {
+            map: map,
+            //panel: "r-result",
+            //enableDragging : true //起终点可进行拖拽
+        },
+    });
+    var myCity = new BMap.LocalCity();
+    myCity.get(myFun);
+
+    var cityName;
+    function myFun(result) {
+        cityName = result.name;
+        map.setCenter(cityName);
+    }
+    //transit.search("固安","廊坊市");
+    var sIcon = new BMap.Icon("http://api0.map.bdimg.com/images/dest_markers.png", new BMap.Size(42, 34), {
+        anchor: new BMap.Size(15, 32),
+        imageOffset: new BMap.Size(0, 0)
+    });
+    var eIcon = new BMap.Icon("http://api0.map.bdimg.com/images/dest_markers.png", new BMap.Size(42, 34), {
+        anchor: new BMap.Size(15, 32),
+        imageOffset: new BMap.Size(0, -34)
+    });
+    var s_marker; //起点标记
+    var e_marker; //终点标记
+    var myGeo = new BMap.Geocoder();
+
+    //建立一个自动完成的对象
+    var startPlace = new BMap.Autocomplete({
+        "input": "dOriginCityD",
+        "location": map
+    });
+    var endPlace = new BMap.Autocomplete({
+        "input": "dDestinationCityD",
+        "location": map
+    });
+    //鼠标放在下拉列表上的事件
+    startPlace.addEventListener("onhighlight",
+    function(e) {
+        var str = "";
+        var _value = e.fromitem.value;
+        var value = "";
+        if (e.fromitem.index > -1) {
+            value = _value.province + _value.city + _value.district + _value.street + _value.business;
+        }
+        str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+        value = "";
+        if (e.toitem.index > -1) {
+            _value = e.toitem.value;
+            value = _value.province + _value.city + _value.district + _value.street + _value.business;
+        }
+        str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
+        $("#searchdOriginCityD").innerHTML = str;
+    });
+
+    endPlace.addEventListener("onhighlight",
+    function(e) {
+        var str = "";
+        var _value = e.fromitem.value;
+        var value = "";
+        if (e.fromitem.index > -1) {
+            value = _value.province + _value.city + _value.district + _value.street + _value.business;
+        }
+        str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+        value = "";
+        if (e.toitem.index > -1) {
+            _value = e.toitem.value;
+            value = _value.province + _value.city + _value.district + _value.street + _value.business;
+        }
+        str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
+        $("#searchdDestinationCityD").innerHTML = str;
+    });
+
+    var myStartValue;
+    var myEndValue;
+    //鼠标点击下拉列表后的事件
+    startPlace.addEventListener("onconfirm",
+    function(e) {
+        var _value = e.item.value;
+        myStartValue = _value.province + _value.city + _value.district + _value.street + _value.business;
+        $("#searchdOriginCityD").innerHTML = "onconfirm<br />index=" + e.item.index + "<br />myStartValue= " + myStartValue;
+        setStartPlace();
+    });
+    endPlace.addEventListener("onconfirm",
+    function(e) {
+        var _value = e.item.value;
+
+        myEndValue = _value.province + _value.city + _value.district + _value.street + _value.business;
+        $("#searchdDestinationCityD").innerHTML = "onconfirm<br />index=" + e.item.index + "<br />myEndValue= " + myEndValue;
+        setEndPlace();
+    });
+
+    function setStartPlace() {
+        if (s_marker != null && s_marker != "") {
+            map.removeOverlay(s_marker); //清除单个标记
+        }
+        var sLocal = new BMap.LocalSearch(map, {
+            onSearchComplete: myStartFun
+        });
+        sLocal.search(myStartValue);
+        function myStartFun() {
+            //获取第一个智能搜索的结果
+            var sPoint = sLocal.getResults().getPoi(0).point;
+            map.centerAndZoom(sPoint, 12);
+            s_marker = new BMap.Marker(sPoint, {
+                icon: sIcon
+            });
+            map.addOverlay(s_marker); //将标记添加到地图中
+            s_marker.enableDragging(); //设置可拖动标记
+            s_marker.addEventListener('dragend',
+            function(e) {
+                myGeo.getLocation(e.point,
+                function(rs) {
+                    var addComp = rs.addressComponents;
+                    $("#dOriginCityD").val(addComp.district + addComp.street + addComp.streetNumber);
+                });
+            });
+        }
+    }
+    function setEndPlace() {
+        if (e_marker != null && e_marker != "") {
+            map.removeOverlay(e_marker); //清除单个标记
+        }
+        var eLocal = new BMap.LocalSearch(map, {
+            onSearchComplete: myEndFun
+        });
+        eLocal.search(myEndValue);
+        function myEndFun() {
+            //获取第一个智能搜索的结果
+            var ePoint = eLocal.getResults().getPoi(0).point;
+            map.centerAndZoom(ePoint, 12);
+            e_marker = new BMap.Marker(ePoint, {
+                icon: eIcon
+            });
+            map.addOverlay(e_marker); //将标记添加到地图中
+            e_marker.enableDragging(); //设置可拖动标记
+            e_marker.addEventListener('dragend',
+            function(e) {
+                myGeo.getLocation(e.point,
+                function(rs) {
+                    var addComp = rs.addressComponents;
+                    $("#dDestinationCityD").val(addComp.district + addComp.street + addComp.streetNumber);
+                });
+            });
+        }
+    }
+
+    function mark(place) {
+        if (place == 'start') {
+
+            myGeo.getPoint(cityName,
+            function(point) {
+                if (point) {
+
+                    map.centerAndZoom(point, 12);
+                    //map.clearOverlays();//清除所有标记
+                    map.removeOverlay(s_marker); //清除单个标记
+                    s_marker = new BMap.Marker(point, {
+                        icon: sIcon
+                    }); //创建标记，icon为标记图标
+                    map.addOverlay(s_marker); //将标记添加到地图中
+                    s_marker.enableDragging(); //设置可拖动标记
+                    s_marker.addEventListener('dragend',
+                    function(e) {
+                        // $("#detail-s-place").val(e.point.lng + ", " + e.point.lat);
+                        myGeo.getLocation(e.point,
+                        function(rs) {
+                            var addComp = rs.addressComponents;
+                            //alert(addComp.street+addComp.streetNumber);
+                            $("#dOriginCityD").val(addComp.district + addComp.street + addComp.streetNumber);
+                        });
+                    });
+                }
+            });
+            // var focus_point=new BMap.Point($(this).attr("lng"),$(this).attr("lat"));
+            // s_marker = new BMap.Marker(map.getCenter(),{icon:sIcon});
+            // s_marker.setPosition(focus_point);
+            // map.centerAndZoom(focus_point,17);
+        } else {
+            myGeo.getPoint(cityName,
+            function(point) {
+                if (point) {
+                    map.centerAndZoom(point, 12);
+                    map.removeOverlay(e_marker); //清除单个标记
+                    e_marker = new BMap.Marker(point, {
+                        icon: eIcon
+                    }); //创建标记，icon为标记图标
+                    map.addOverlay(e_marker); //将标记添加到地图中
+                    e_marker.enableDragging(); //设置可拖动标记
+                    e_marker.addEventListener('dragend',
+                    function(e) {
+                        // $("#detail-e-place").val(e.point.lng + ", " + e.point.lat);
+                        myGeo.getLocation(e.point,
+                        function(rs) {
+                            var addComp = rs.addressComponents;
+                            $("#dDestinationCityD").val(addComp.district + addComp.street + addComp.streetNumber);
+                        });
+                    });
+                }
+            });
+        }
+    }
+</script>

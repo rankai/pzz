@@ -17,7 +17,8 @@ class PzzUser < ActiveRecord::Base
   enum user_status: [:active, :disabled, :locked]
   enum user_contact_prefer: [:email, :phone, :both]
   enum user_grade: [:low, :middle, :high]
-  has_attached_file :user_avatar, :styles => { :medium => "240x240>", :thumb => "120x120>" }, :default_url => ""
+  has_attached_file :user_avatar, :styles => { :medium => "100x100#", :thumb => "50x50#" }, 
+  :default_url => "/images/:style/head.jpg"
 
   # validates 
   validates_attachment :user_avatar,
@@ -29,6 +30,7 @@ class PzzUser < ActiveRecord::Base
         :case_sensitive => false
       }#, 
       #:format => {}
+
 
   # relationships
   has_many :pzz_user_metas, dependent: :destroy 
@@ -55,6 +57,12 @@ class PzzUser < ActiveRecord::Base
     else
       where(conditions).first
     end
+  end
+
+  # omit email when using user_phone
+  protected
+    def email_required?
+    false
   end
 
 
@@ -89,5 +97,19 @@ class PzzUser < ActiveRecord::Base
     end
   end
 
+
+  public
+  def make_image(name)
+    file = File.join("#{name}")
+    io = File.new(file)
+    self.user_avatar = io
+  end
+
+  def crop_avatar(user, x, y, w, h)
+    tmp_image = "#{Rails.root}/tmp/" + "#{Time.now.to_i}#{Time.now.to_i}.png"
+    avatar = "#{Rails.root}/public" + "#{user.user_avatar.url}".split("?")[0]
+    system "convert \"#{avatar}\" -crop #{w}x#{h}+#{x}+#{y} \"#{tmp_image}\""
+    make_image(tmp_image)
+  end
 
 end

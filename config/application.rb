@@ -32,6 +32,19 @@ module Pzz
       #r301      %r{/wiki/(\w+)_\w+},    '/$1'
     end
 
+    # rack cors
+    config.middleware.use Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', 
+        :headers => :any, 
+        :methods => [:get, :delete, :put, :post, :options],
+        :max_age => 0
+      end
+    end
+
+
     ENV['RAILS_ADMIN_THEME'] = 'flatly_theme'
+
   end
 end

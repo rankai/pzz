@@ -103,6 +103,12 @@ gem 'enum_help'
 # rest api documentation
 gem 'apipie-rails'
 
+# cors support
+gem 'rack-cors', :require => 'rack/cors'
+
+# alipay
+gem 'alipay', :github => 'chloerei/alipay'
+
 # pzz app gems end
 
 

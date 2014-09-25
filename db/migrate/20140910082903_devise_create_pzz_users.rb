@@ -60,9 +60,9 @@ class DeviseCreatePzzUsers < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :pzz_users, :email,                unique: true
+    add_index :pzz_users, [:email, :user_phone], unique: true
    #add_index :pzz_users, :user_login,           unique: true
-    add_index :pzz_users, :user_phone,           unique: true
+   #add_index :pzz_users, :user_phone,           unique: true
     add_index :pzz_users, :reset_password_token, unique: true
     add_index :pzz_users, :confirmation_token,   unique: true
     add_index :pzz_users, :unlock_token,         unique: true

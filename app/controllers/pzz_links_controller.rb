@@ -70,6 +70,6 @@ class PzzLinksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pzz_link_params
-      params.require(:pzz_link).permit(:user_id, :link_url, :link_name, :link_image, :link_target, :link_description, :link_visible, :link_rating, :link_rel, :link_notes, :link_rss)
+      params.require(:pzz_link).permit(:pzz_user_id, :link_url, :link_name, :link_image, :link_target, :link_description, :link_visible, :link_rating, :link_rel, :link_notes, :link_rss)
     end
 end

@@ -1,0 +1,61 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), role: "form", html: {class: "form-horizontal mt50 mb50"}) do |f| %>
+   <div class="form-group m30"> 
+
+    <%= f.label :email, class: "col-xs-3 control-label" do  %>
+                邮箱：
+    <% end %>
+    <div class="col-xs-5">
+        <%= f.email_field :email, autofocus: true, class: "form-control frame-nradius", placeholder: "邮箱" %>
+    </div>
+
+    <span id="mail-email" class="col-xs-4 f12  control-label tl"> 亲，请输入正确邮箱格式 </span> 
+   </div> 
+   <div class="form-group m15"> 
+    <div class="col-xs-offset-3  col-xs-9"> 
+     <label> 没有邮箱？ <a id="mail-reg" href="javascript:void(0)">用手机注册</a> </label> 
+    </div> 
+   </div> 
+   <div class="form-group m30 "> 
+
+    <%= f.label :pasword, "输入密码：", class: "col-xs-3 control-label" %>
+    <div class="col-xs-5">
+    <%= f.password_field :password, autocomplete: "off", class: "form-control frame-nradius", placeholder: "输入密码" %> 
+    </div> 
+
+    <span id="mobile-psd" class="col-xs-4 f12 crred control-label tl"> <i class="fa fa-times-circle crred fa-lg mr5"></i>输入密码 </span> 
+   </div> 
+   <div class="form-group m30 "> 
+
+
+    <%= f.label :pasword_confirmation, "输入密码：", class: "col-xs-3 control-label" %>
+    <div class="col-xs-5"> 
+     <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control frame-nradius", placeholder: "确认密码" %> 
+    </div> 
+
+    <!-- kevin 2014-09-21 -->
+    <!-- remove fa-check-circle class from span -->
+    <span id="mobile-rpsd" class="col-xs-4 crred f12 cr5a control-label tl"><i class="fa fa-lg cr5a fa-check-circle"></i> </span> 
+   </div> 
+   <div class="form-group m30"> 
+
+    <%= f.label :user_nickname, "姓名/昵称：", class: "col-xs-3 control-label" %>
+    <div class="col-xs-5"> 
+        <%= f.password_field :user_nickname, autocomplete: "off", class: "form-control frame-nradius", placeholder: "姓名/昵称" %>
+    </div> 
+    
+    <span id="mobile-name" class="col-xs-4 f12 crred control-label tl fa fa-times-circle"> 姓名或昵称不能为空 </span>
+   </div> 
+
+   <div class="form-group m30"> 
+    <div class="col-xs-offset-3 col-xs-9"> 
+     <div class="checkbox"> 
+      <label> <input type="checkbox" /> 我接受 <a href="">《拼座族服务使用协议》</a> <span>及</span> <a href="">《隐私条款》</a> </label> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="form-group m30"> 
+    <div class="col-xs-offset-3 col-xs-5"> 
+     <%= f.submit "立即注册", class: "btn btn-lg w btn-info p20 frame-nradius" %>
+    </div> 
+   </div> 
+  <% end %>

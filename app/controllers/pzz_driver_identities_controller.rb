@@ -1,6 +1,8 @@
 class PzzDriverIdentitiesController < ApplicationController
   before_action :set_pzz_driver_identity, only: [:show, :edit, :update, :destroy]
 
+  wrap_parameters PzzDriverIdentity
+
   # GET /pzz_driver_identities
   # GET /pzz_driver_identities.json
   def index
