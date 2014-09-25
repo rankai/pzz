@@ -1,21 +1,35 @@
+require 'date'
 class PzzLinesController < ApplicationController
   before_action :set_pzz_line, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_pzz_user!, except: [:index]
+  before_filter :authenticate_user_from_token!, except: [:index, :search]
+  before_filter :authenticate_pzz_user!, except: [:index, :search]
 
   wrap_parameters PzzLine
 
   # GET /pzz_lines
   # GET /pzz_lines.json
-  api :GET, '/pzz_lines', "Get all pz lines"
-  api :GET, '/pzz_lines.json', "Get all pz lines in json"
+  api :GET, '/pzz_lines', "返回所有的线路"
+  api :GET, '/pzz_lines.json', "返回所有的线路（JSON格式）"
   def index
     @pzz_lines = PzzLine.all
   end
 
+  # GET /pzz_users/:pzz_user_id/pzz_lines
+  # GET /pzz_users/:pzz_user_id/pzz_lines.json
+  api :GET, '/pzz_users/:pzz_user_id/pzz_lines', "返回指定用户的所有线路"
+  api :GET, '/pzz_users/:pzz_user_id/pzz_lines.json', "返回指定用户的所有线路（JSON格式）"
+  def user_lines
+    @pzz_lines = PzzLine.find_by(pzz_user_id: params[:pzz_user_id])
+    respond_to do |format|
+      format.json { render json: @pzz_lines }
+    end
+  end
+
+
   # GET /pzz_lines/1
   # GET /pzz_lines/1.json
-  api :GET, '/pzz_lines/:id', "Get a pz line by id"
-  api :GET, '/pzz_lines/:id.json', "Get a pz line in json by id"
+  api :GET, '/pzz_lines/:id', "根据ID获取指定的线路"
+  api :GET, '/pzz_lines/:id.json', "根据ID获取指定的线路（JSON格式）"
   param :id, :number
   def show
   end
@@ -32,6 +46,22 @@ class PzzLinesController < ApplicationController
   # POST /pzz_lines
   # POST /pzz_lines.json
   def create
+
+    begin
+      format = '%Y-%m-%d %H:%M:%S'
+      depart_at_formatted = DateTime.parse(pzz_line_params[:line_depart_datetime].to_s).strftime(format)
+      return_at_formatted = DateTime.parse(pzz_line_params[:line_return_datetime].to_s).strftime(format)
+
+      pzz_line_params[:line_depart_datetime] = depart_at_formatted
+      pzz_line_params[:line_return_datetime] = return_at_formatted
+      p "#{pzz_line_params[:line_depart_datetime]}"
+  rescue => e
+      logger.error "pzz_line_controller::create => exception #{e.class.name} : #{e.message}"
+      # redirect somewhere sensible?
+      head :unprocessable_entity
+      return
+    end
+
     @pzz_line = PzzLine.new(pzz_line_params)
 
     respond_to do |format|
@@ -66,6 +96,16 @@ class PzzLinesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to pzz_lines_url, notice: 'Pzz line was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+
+  api :POST, '/pzz_lines/search', '返回所有满足筛选条件的线路'
+  api :POST, '/pzz_lines/search.json', '返回所有满足筛选条件的线路（JSON格式）'
+  def search
+    @pzz_lines = PzzLine.where(params[:pzz_line])
+    respond_to do |format|
+      format.json { render json: @pzz_lines}
     end
   end
 

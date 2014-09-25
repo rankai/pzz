@@ -19,11 +19,12 @@ Rails.application.routes.draw do
   devise_for :pzz_users, controllers: {registrations: "pzz_users/registrations", sessions: "pzz_users/sessions"}
 
   devise_scope :pzz_user do
-    get 'pzz_users/phone_registered', to: "pzz_users/registrations#phone_registered"
-    get 'pzz_users/email_registered', to: "pzz_users/registrations#email_registered"
-    post 'pzz_users/avatar',          to: "pzz_users/users#avatar"
-    get 'pzz_users/:id',              to: "pzz_users/users#show"
-    put 'pzz_users/:id',              to: "pzz_users/registrations#update_with_token"
+    get 'pzz_users/phone_registered', to: 'pzz_users/registrations#phone_registered'
+    get 'pzz_users/email_registered', to: 'pzz_users/registrations#email_registered'
+    post 'pzz_users/avatar',          to: 'pzz_users/users#avatar'
+    get 'pzz_users/:id',              to: 'pzz_users/users#show'
+    put 'pzz_users/:id',              to: 'pzz_users/registrations#update_with_token'
+    get '/pzz_users/:pzz_user_id/pzz_lines', to: 'pzz_lines#user_lines'
   end
 
   mount Rich::Engine => '/rich', :as => 'rich'
@@ -45,7 +46,14 @@ Rails.application.routes.draw do
 
   resources :pzz_orders
 
-  resources :pzz_lines
+  resources :pzz_lines do
+    collection do 
+      post '/search', to: 'pzz_lines#search'
+    end
+  end
+
+
+
 
   get 'home/index'
 
