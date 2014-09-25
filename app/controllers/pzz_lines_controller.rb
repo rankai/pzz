@@ -9,7 +9,7 @@ class PzzLinesController < ApplicationController
   # GET /pzz_lines
   # GET /pzz_lines.json
   api :GET, '/pzz_lines', "返回所有的线路"
-  api :GET, '/pzz_lines.json', "返回所有的线路（JSON格式）"
+  api :GET, '/pzz_lines.json', "返回所有的线路（JSON）"
   def index
     @pzz_lines = PzzLine.all
   end
@@ -17,9 +17,9 @@ class PzzLinesController < ApplicationController
   # GET /pzz_users/:pzz_user_id/pzz_lines
   # GET /pzz_users/:pzz_user_id/pzz_lines.json
   api :GET, '/pzz_users/:pzz_user_id/pzz_lines', "返回指定用户的所有线路"
-  api :GET, '/pzz_users/:pzz_user_id/pzz_lines.json', "返回指定用户的所有线路（JSON格式）"
+  api :GET, '/pzz_users/:pzz_user_id/pzz_lines.json', "返回指定用户的所有线路（JSON）"
   def user_lines
-    @pzz_lines = PzzLine.find_by(pzz_user_id: params[:pzz_user_id])
+    @pzz_lines = PzzLine.where(params[:pzz_user_id])
     respond_to do |format|
       format.json { render json: @pzz_lines }
     end
@@ -29,7 +29,7 @@ class PzzLinesController < ApplicationController
   # GET /pzz_lines/1
   # GET /pzz_lines/1.json
   api :GET, '/pzz_lines/:id', "根据ID获取指定的线路"
-  api :GET, '/pzz_lines/:id.json', "根据ID获取指定的线路（JSON格式）"
+  api :GET, '/pzz_lines/:id.json', "根据ID获取指定的线路（JSON）"
   param :id, :number
   def show
   end
@@ -45,6 +45,8 @@ class PzzLinesController < ApplicationController
 
   # POST /pzz_lines
   # POST /pzz_lines.json
+  api :POST, '/pzz_lines', '发布线路'
+  api :POST, '/pzz_lines.json', '发布线路（JSON）'
   def create
 
     begin
@@ -101,7 +103,7 @@ class PzzLinesController < ApplicationController
 
 
   api :POST, '/pzz_lines/search', '返回所有满足筛选条件的线路'
-  api :POST, '/pzz_lines/search.json', '返回所有满足筛选条件的线路（JSON格式）'
+  api :POST, '/pzz_lines/search.json', '返回所有满足筛选条件的线路（JSON）'
   def search
     @pzz_lines = PzzLine.where(params[:pzz_line])
     respond_to do |format|
