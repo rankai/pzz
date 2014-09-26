@@ -11,7 +11,8 @@ class PzzUsers::UsersController < ApplicationController
 
   # GET /pzz_users/1
   # GET /pzz_users/1.json
-  api :get, "/pzz_users/:id.json", "get user info in json"
+  api :GET, '/pzz_users/:id', "根据ID获取指定的用户"
+  api :GET, '/pzz_users/:id.json', "根据ID获取指定的用户（JSON）"
   def show
     respond_to do |format|
       format.json {
@@ -23,7 +24,7 @@ class PzzUsers::UsersController < ApplicationController
 
 
   # set avatar
-  api :post, "/pzz_users/avatar", "make or update user avatar"
+  api :post, "/pzz_users/avatar", "设定用户头像"
   def avatar
     respond_to do |format|
       format.json {

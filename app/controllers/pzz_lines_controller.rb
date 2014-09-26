@@ -6,22 +6,60 @@ class PzzLinesController < ApplicationController
 
   wrap_parameters PzzLine
 
+  def_param_group :kaminari do
+    param :page, String, :desc => "第几页", :required => false
+    param :per_page, String, :desc => "每页路线条数", :required => false
+  end
+
+  def_param_group :pzz_line do 
+    param :pzz_user_id,                   Integer,  :desc => "用户ID", :required => true
+    param :user_nickname,                 String,   :desc => "昵称", :required => true 
+    param :user_realname,                 String,   :desc => "真实姓名", :required => true 
+    param :user_phone,                    String,   :desc => "联系电话", :required => true 
+    param :user_email,                    String,   :desc => "邮箱", :required => true 
+    param :user_type,                     Integer,  :desc => "用户类型", :required => true 
+    param :line_type,                     Integer,  :desc => "线路类型", :required => true 
+    param :line_depart_datetime,          String,   :desc => "出发时间", :required => true 
+    param :line_return,                   Integer,  :desc => "是否返程", :required => true 
+    param :line_return_datetime,          String,   :desc => "返程时间", :required => true 
+    param :line_participants,             Integer,  :desc => "乘客拼车座位数", :required => true 
+    param :line_participants_available,   Integer,  :desc => "司机提供座位数", :required => true 
+    param :line_status,                   Integer,  :desc => "线路状态", :required => true 
+    param :line_price,                    Integer,  :desc => "价格", :required => true 
+    param :line_depart_city,              String,   :desc => "出发城市", :required => true 
+    param :line_depart_address,           String,   :desc => "出发地地址", :required => true 
+    param :line_depart_gps,               String,   :desc => "出发地GPS", :required => true 
+    param :line_dest_city,                String,   :desc => "目的城市", :required => true 
+    param :line_dest_address,             String,   :desc => "目的地地址", :required => true 
+    param :line_dest_gps,                 String,   :desc => "目的地GPS", :required => true 
+    param :line_midway,                   String,   :desc => "线路途径地点", :required => true 
+    param :line_milleage,                 Integer,  :desc => "线路里程", :required => true 
+    param :line_elapse,                   Integer,  :desc => "线路时间", :required => true 
+    param :line_fuel,                     Integer,  :desc => "邮费", :required => true 
+    param :line_expire_datetime,          String,   :desc => "过期时间", :required => true 
+    param :line_plan_type,                Integer,  :desc => "线路计划类型", :required => true 
+    param :line_week_day,                 String,   :desc => "拼车周期", :required => true 
+    param :line_remark,                   String,   :desc => "拼车追加需求", :required => true
+  end
+
+
   # GET /pzz_lines
   # GET /pzz_lines.json
   api :GET, '/pzz_lines', "返回所有的线路"
   api :GET, '/pzz_lines.json', "返回所有的线路（JSON）"
+  param_group :kaminari
   def index
-    @pzz_lines = PzzLine.all
+    @pzz_lines = PzzLine.page(params[:page]).per(params[:per_page])
   end
 
   # GET /pzz_users/:pzz_user_id/pzz_lines
   # GET /pzz_users/:pzz_user_id/pzz_lines.json
   api :GET, '/pzz_users/:pzz_user_id/pzz_lines', "返回指定用户的所有线路"
   api :GET, '/pzz_users/:pzz_user_id/pzz_lines.json', "返回指定用户的所有线路（JSON）"
+  param_group :kaminari
   def user_lines
-    @pzz_lines = PzzLine.where(params[:pzz_user_id])
     respond_to do |format|
-      format.json { render json: @pzz_lines }
+      format.json { render json: PzzLine.where(params[:pzz_user_id]).page(params[:page]).per(params[:per_page]) }
     end
   end
 
@@ -32,6 +70,18 @@ class PzzLinesController < ApplicationController
   api :GET, '/pzz_lines/:id.json', "根据ID获取指定的线路（JSON）"
   param :id, :number
   def show
+    @pzz_line = PzzLine.find(params[:id])
+    respond_to do |format|
+      format.html { super }
+      format.json {
+        if @pzz_line.nil?
+          head :not_found
+        else
+          render json: JSON::parse(@pzz_line.to_json).merge("extras" => { "line_intro" => "#{PzzLine.tell_line(@pzz_line)}", 
+            "user_avatar_url" => @pzz_line.pzz_user.user_avatar.url(:thumb)}).to_json 
+        end
+      }
+    end
   end
 
   # GET /pzz_lines/new
@@ -104,10 +154,11 @@ class PzzLinesController < ApplicationController
 
   api :POST, '/pzz_lines/search', '返回所有满足筛选条件的线路'
   api :POST, '/pzz_lines/search.json', '返回所有满足筛选条件的线路（JSON）'
+  param_group :kaminari
+  param_group :pzz_line
   def search
-    @pzz_lines = PzzLine.where(params[:pzz_line])
     respond_to do |format|
-      format.json { render json: @pzz_lines}
+      format.json { render json: PzzLine.where(params[:pzz_line]).page(params[:page]).per(params[:per_page]) }
     end
   end
 

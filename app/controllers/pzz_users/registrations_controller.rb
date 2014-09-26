@@ -9,6 +9,16 @@ class PzzUsers::RegistrationsController < Devise::RegistrationsController
 			:user_description, :user_status, 
 			:user_display_name, :user_age, :user_contact_prefer, :user_qq]
 
+
+	api :POST, '/pzz_users', '注册用户'
+	api :POST, '/pzz_users.json', '注册用户（JSON）'
+	param :pzz_user, Hash, :desc => "用户信息" do
+	  param :user_phone, String, :desc => "用户手机号（手机号邮箱二选一）", :required => true
+	  param :user_email, String, :desc => "用户邮箱（手机号邮箱二选一）", :required => true
+	  param :password, String, :desc => "用户密码", :required => true
+	  param :password_confirmation, String, :desc => "用户确认密码", :required => true
+	  param :user_nickname, String, :desc => "用户昵称", :required => true
+	end
 	def create
 
 		respond_to do |format|  
@@ -26,6 +36,7 @@ class PzzUsers::RegistrationsController < Devise::RegistrationsController
 		end
  	end
 
+  	api :PUT, '/pzz_users', "更新指定用户的信息"
 	def update
 		@resource = PzzUser.find(current_pzz_user.id)
 
@@ -48,9 +59,12 @@ class PzzUsers::RegistrationsController < Devise::RegistrationsController
 		end
 	end
 
+
+
+
   # PUT /pzz_users
   # PUT /pzz_users.json
-  api :put, "/pzz_users/:id.json", "update user info with token"
+  api :PUT, '/pzz_users/:id.json', "更新指定用户的信息(JSON)"
   def update_with_token
 
     respond_to do |format|
@@ -108,7 +122,9 @@ class PzzUsers::RegistrationsController < Devise::RegistrationsController
 
   	public 
 
-  	api :GET, "pzz_users/phone_registered", "Test if a phone is registered"
+
+
+  	api :GET, "pzz_users/phone_registered", "判断指定手机号是否已经注册"
 	# param :user_phone
 	def phone_registered
 		respond_to do |format|
@@ -123,7 +139,7 @@ class PzzUsers::RegistrationsController < Devise::RegistrationsController
 		end
 	end
 
-	api :GET, "pzz_users/email_registered", "Test if an email is registered"
+	api :GET, "pzz_users/email_registered", "判断指定邮箱是否已经注册"
 	# param :email
 	def email_registered
 		respond_to do |format|
