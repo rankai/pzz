@@ -39,7 +39,7 @@ class PzzUser < ActiveRecord::Base
   has_many :passenger_orders, foreign_key: "passenger_id", class_name: "PzzOrder", dependent: :nullify
   has_one  :pzz_car, dependent: :destroy
   has_one  :pzz_identity, dependent: :destroy
-  has_one  :pzz_driver__identity, dependent: :destroy
+  has_one  :pzz_driver_identity, dependent: :destroy
   has_many :pzz_sms_histories, dependent: :nullify
   has_many :pzz_traffics, dependent: :nullify
   has_many :sent_messages, foreign_key: "from_user_id", class_name: "PzzMessage"
@@ -89,6 +89,7 @@ class PzzUser < ActiveRecord::Base
   end
  
   private
+
   
   def generate_authentication_token
     loop do
@@ -110,6 +111,11 @@ class PzzUser < ActiveRecord::Base
     avatar = "#{Rails.root}/public" + "#{user.user_avatar.url}".split("?")[0]
     system "convert \"#{avatar}\" -crop #{w}x#{h}+#{x}+#{y} \"#{tmp_image}\""
     make_image(tmp_image)
+  end
+
+  # to_json 获取正确的url
+  def user_avatar_url
+    user_avatar.url(:medium)
   end
 
 end

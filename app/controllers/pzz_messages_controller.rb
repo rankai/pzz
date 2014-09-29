@@ -2,28 +2,32 @@ class PzzMessagesController < ApplicationController
   before_action :set_pzz_message, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_pzz_user!
 
-  # GET /pzz_messages
-  # GET /pzz_messages.json
+  # GET /pzz_users/:pzz_user_id/pzz_messages
+  # GET /pzz_users/:pzz_user_id/pzz_messages.json
   def index
-    @pzz_messages = PzzMessage.all
+    @pzz_messages = PzzMessage.all.order(created_at: :desc)
   end
 
-  # GET /pzz_messages/1
-  # GET /pzz_messages/1.json
+  # GET /pzz_users/:pzz_user_id/pzz_messages/1
+  # GET /pzz_users/:pzz_user_id/pzz_messages/1.json
   def show
+
+    @pzz_message.read!
+
+    super
   end
 
-  # GET /pzz_messages/new
+  # GET /pzz_users/:pzz_user_id/pzz_messages/new
   def new
     @pzz_message = PzzMessage.new
   end
 
-  # GET /pzz_messages/1/edit
+  # GET /pzz_users/:pzz_user_id/pzz_messages/1/edit
   def edit
   end
 
-  # POST /pzz_messages
-  # POST /pzz_messages.json
+  # POST /pzz_users/:pzz_user_id/pzz_messages
+  # POST /pzz_users/:pzz_user_id/pzz_messages.json
   def create
     @pzz_message = PzzMessage.new(pzz_message_params)
 
@@ -38,8 +42,8 @@ class PzzMessagesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /pzz_messages/1
-  # PATCH/PUT /pzz_messages/1.json
+  # PATCH/PUT /pzz_users/:pzz_user_id/pzz_messages/1
+  # PATCH/PUT /pzz_users/:pzz_user_id/pzz_messages/1.json
   def update
     respond_to do |format|
       if @pzz_message.update(pzz_message_params)
@@ -52,8 +56,8 @@ class PzzMessagesController < ApplicationController
     end
   end
 
-  # DELETE /pzz_messages/1
-  # DELETE /pzz_messages/1.json
+  # DELETE /pzz_users/:pzz_user_id/pzz_messages/1
+  # DELETE /pzz_users/:pzz_user_id/pzz_messages/1.json
   def destroy
     @pzz_message.destroy
     respond_to do |format|
