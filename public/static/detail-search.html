@@ -15,6 +15,29 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/style.js"></script>
+    <script type="text/javascript">
+           
+            $(document).ready(function() {
+                $("#route-detail").css('display','none');
+                $("#route-more").click(function() {
+                    $("#route-detail").slideToggle('slow',function(){
+                        if ($("#route-more").html()=="收起更多&nbsp;▲"){
+                            $("#route-more").html("展开更多&nbsp;▼")
+                        }else{
+                             $("#route-more").html("收起更多&nbsp;▲")
+                        }
+
+                       
+                    });
+
+                    
+                    
+                });
+               
+                        });
+          
+ 
+    </script>
 </head>
 <body>
     <div class="wrapper">
@@ -67,6 +90,8 @@
     </div>
 </div>
 <!-- top end -->
+
+
 <div class="container header_top">
     <div class="logo">
         <a href="index.html">
@@ -104,73 +129,81 @@
 </div>
 <!---- //End-header---->
 <!-- banner -->
-<div id="banner" class="banner-bg wmw home-search-banner h500" >
-<div id="myCarousel" class="carousel slide">
-    <!-- 轮播（Carousel）指标 -->
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    <!-- 轮播（Carousel）项目 -->
-    <div class="carousel-inner">
-        <div class="item active">
-            <img class="w h500"  src="images/slider6.jpg"  alt="First slide" ></div>
-        <div class="item">
-            <img class="w h500" src="images/slider7.jpg"  alt="Second slide" ></div>
-        <div class="item">
-            <img class="w h500" src="images/slider8.jpg"  alt="Third slide" ></div>
-    </div>
-    <!-- 轮播（Carousel）导航 -->
-    <a class="carousel-control left" href="#myCarousel" 
-      data-slide="prev">&lsaquo;</a>
-    <a class="carousel-control right" href="#myCarousel" 
-      data-slide="next">&rsaquo;</a>
-</div>
-<!-- <img class="img-responsive" src="images/slide1.jpg" height="553"
-                style="height:553px;">
--->
-<!-- 发布线路 -->
-
-<div class="container home-search-route">
-    <div id="search" class="home-search-bg">
-        <form class="form-horizontal home-search-form" role="form">
-            <div class="form-group">
-                <label for="originCar" class="col-xs-2 control-label crfff">上车地点</label>
-                <div class="col-xs-4">
-                    <input class="form-control" id="originCar" placeholder="出发城市"></div>
-                <div class="col-xs-6">
-                    <input   class="form-control border-radius-style" id="dDestinationCityD" placeholder="详细地址">
-                    <span onclick="mark('end')" class="r10 cr3b offer-position-icon fa fa-map-marker fa-lg form-control-feedback"></span>
-                    <div id="searchdDestinationCityD" class="offer-map-detail"></div>
+            <div id="banner" class="banner-bg wmw home-other-banner home-search-banner ">
+                <!-- 发布线路 -->
+                <div class="container ">
+                    <div id="search" class="home-search-bg ">
+                        <form class="form-horizontal home-search-local com-rposition"  role="form">
+                             <a id="route-more" style="bottom: 0px;position: absolute;right: 320px;" class="crfff" href="javascript:void(0)">展开更多<i class="fa fa-caret-down"></i></a>
+                            <div class="p10 form-group ml20">
+                            
+                            </div>
+                            <div class="form-group ">
+                                <label for="originCar" class="col-xs-2 control-label crfff">
+                                    上车地点
+                                </label>
+                                <div class="col-xs-4">
+                                    <input class="form-control border-radius-style" id="originCar" placeholder="城市">
+                                </div>
+                                <div class="col-xs-6">
+                                    <input class="form-control border-radius-style" id="dDestinationCityD"
+                                    placeholder="详细地址">
+                                    <span onclick="mark('end')" class="r10 cr3b offer-position-icon fa fa-map-marker fa-lg form-control-feedback">
+                                    </span>
+                                    <div id="searchdDestinationCityD" class="offer-map-detail">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <label for="destinationCar" class="col-xs-2 control-label crfff">
+                                    下车地点
+                                </label>
+                               <div class="col-xs-4">
+                                    <input class="form-control border-radius-style" id="originCar" placeholder="城市">
+                                </div>
+                                <div class="col-xs-6">
+                                    <input class="form-control border-radius-style" id="dDestinationCityD"
+                                    placeholder="详细地址">
+                                   
+                                    <span onclick="mark('end')" class="cr3b r10 offer-position-icon fa fa-map-marker fa-lg form-control-feedback">
+                                    </span>
+                                    <div id="searchdDestinationCityD" class="offer-map-detail">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="route-detail" >
+                               <div class="form-group ">
+                                <label for="destinationCar" class="col-xs-2 control-label crfff">
+                                    出发时间
+                                </label>
+                                <div class="col-xs-3">
+                                    <input class="form-control border-radius-style" id="destinationCar" placeholder="出发时间">
+                                </div>
+                            </div>
+                             <div class="form-group ">
+                                <label for="destinationCar" class="col-xs-2 control-label crfff">
+                                    座位数
+                                </label>
+                                <div class="col-xs-3">
+                                    <input class="form-control border-radius-style" id="destinationCar" placeholder="座位数">
+                                </div>
+                            </div> 
+                            </div>
+                          
+                             
+                            <div class="form-group">
+                                <div class="col-xs-offset-2 col-xs-10">
+                                    <button type="search" class="btn btn-info text-btn border-radius-style">
+                                        立即搜索
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
+                <!-- search cotainer end -->
             </div>
-            <div class="form-group">
-                <label for="destinationCar" class="col-xs-2 control-label crfff">下车地点</label>
-                <div class="col-xs-4">
-                    <input class="form-control" id="destinationCar" placeholder="目的城市"></div>
-                <div class="col-xs-6">
-                    <input   class="form-control border-radius-style" id="dDestinationCityD" placeholder="详细地址">
-                    <span onclick="mark('end')" class="cr3b r10 offer-position-icon fa fa-map-marker fa-lg form-control-feedback"></span>
-                    <div id="searchdDestinationCityD" class="offer-map-detail"></div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-xs-offset-2 col-xs-10">
-
-                    <button type="search" class="btn btn-info text-btn">立即搜索</button>
-                    <button type="search" class="btn btn-info text-btn home-detail-search-btn">去详细搜索</button>
-
-                </div>
-            </div>
-
-        </form>
-    </div>
-</div>
-<!-- search cotainer end  -->
-
-</div>
-<!-- banner end -->
+            <!-- banner end -->
 <div class="container" id="main">
 <div class="row" >
     <!-- left -->

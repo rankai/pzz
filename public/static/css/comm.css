@@ -61,3 +61,7 @@
 .com-clear{
 	clear: both !important;
 }
+.com-row{
+	margin-right: 0px !important;
+	margin-left: 0px !important;
+}

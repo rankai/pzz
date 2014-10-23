@@ -1,0 +1,979 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <link href="css/comm.css" rel='stylesheet' type='text/css' />
+    <link href="css/cssreset.css" rel='stylesheet' type='text/css' />
+    <link href="css/module.css" rel='stylesheet' type='text/css' />
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- Custom Theme files -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/style.js"></script>
+    <script type="text/javascript">
+           
+            $(document).ready(function() {
+                $("#route-detail").css('display','none');
+                $("#route-more").click(function() {
+                    $("#route-detail").css('display','block');
+                    $("#route-more").html("收起更多&nbsp;▲");
+                });
+            });
+
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <!----start-header---->
+        <div class="header">
+            <!-- top -->
+            <div id="top1"  class="wmw">
+                <div class="container">
+                    <div class="left-content">
+                        <span class="left-descrip-span">拼座族，拼车的最佳选择</span>
+                        <!-- <span class="left-attention-span" >关注我们:</span>
+                    -->
+                    <!-- <a href="" class="left-attention-a">
+                    <img src="images/qqzone.gif">关注</a>
+                <a href="" class="left-attention-a">
+                    <img src="images/xinlang.png">关注</a>
+                -->
+                <!-- <a href="" class="left-phone-a">
+                <img src="images/home-tel.png" height="20">手机版</a>
+            -->
+            <a class="pl30 f14 cr666 pr10" href="user-login.html">登录</a>
+            <span class="f12 crd9d">|</span>
+            <a class="pl10 f14 cr666" href="user-register.html">免费注册</a>
+
+        </div>
+        <ul class="nav nav-pills pull-right">
+
+            <li class="pull-right dropdown">
+                <a class="f14 cr666 right-padding"
+                   data-toggle="dropdown"  href="">网站导航▼</a>
+                <ul class="dropdown-menu">
+                    <li  class="text-center">
+                        <a href="#">test</a>
+                    </li>
+                    <li  class="text-center">
+                        <a href="#">test</a>
+                    </li>
+                    <li  class="text-center">
+                        <a href="#">test</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="pull-right dropdown">
+                <a class="f14 cr666 right-padding right-li" href="#">如何拼座？</a>
+            </li>
+            <li class="pull-right dropdown">
+                <a class="f14 cr666 right-padding right-li" href="index.html">返回首页</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- top end -->
+<div class="container header_top">
+    <div class="logo">
+        <a href="index.html">
+            <img src="images/logo.jpg" alt=""></a>
+    </div>
+    <div class="menu">
+        <a class="toggleMenu" href="#">
+            <img src="images/nav_icon.png" alt="" />
+        </a>
+        <ul class="nav" id="nav">
+            <li>
+                <a href="index.html">首页</a>
+            </li>
+            <li  class="current">
+                <a href="local.html">上下班拼座</a>
+            </li>
+            <li>
+                <a href="long-distance.html">长途拼座</a>
+            </li>
+            <li>
+                <a href="passenger-need.html">乘客需求</a>
+            </li>
+            <li>
+                <a href="passenger-share.html">拼座分享</a>
+            </li>
+            <li >
+                <a href="release-route.html">发布线路</a>
+            </li>
+            <div class="clearfix"></div>
+        </ul>
+    </div>
+    <div class="clearfix"></div>
+    <!----//End-top-nav---->
+</div>
+</div>
+<!---- //End-header---->
+<!-- banner -->
+            <div id="banner" class="home-other-banner wmw home-search-banner h260 ">
+              
+                <!-- 发布线路 -->
+                <div class="container home-search-route">
+                    <div id="search" class="home-search-bg">
+                        <form class="form-horizontal home-search-local"  role="form">
+                            <div class="p10 form-group ml20">
+                                <div class="col-xs-offset-0 col-xs-12">
+                                    <span class="crfff">廊坊市</span><a class="crfff ml10" href=""><b>[</b><strong>切换城市</strong><b>]</b></a>
+                                    <span class="crfff ml20">共有<strong class="crred">1500</strong>条线路</span>
+                                </div>
+                            
+                            </div>
+                            <div class="form-group">
+                                <label for="originCar" class="col-xs-2 control-label crfff">
+                                    上车地点
+                                </label>
+                                <div class="col-xs-4">
+                                    <input class="form-control border-radius-style" id="originCar" placeholder="出发城市">
+                                </div>
+                                <div class="col-xs-6">
+                                    <input class="form-control border-radius-style" id="dDestinationCityD"
+                                    placeholder="详细地址">
+                                    <span onclick="mark('end')" class="r10 cr3b offer-position-icon fa fa-map-marker fa-lg form-control-feedback">
+                                    </span>
+                                    <div id="searchdDestinationCityD" class="offer-map-detail">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="destinationCar" class="col-xs-2 control-label crfff">
+                                    下车地点
+                                </label>
+                                <div class="col-xs-4">
+                                    <input class="form-control border-radius-style" id="destinationCar" placeholder="目的城市">
+                                </div>
+                                <div class="col-xs-6">
+                                    <input class="form-control border-radius-style" id="dDestinationCityD"
+                                    placeholder="详细地址">
+                                    <span onclick="mark('end')" class="cr3b r10 offer-position-icon fa fa-map-marker fa-lg form-control-feedback">
+                                    </span>
+                                    <div id="searchdDestinationCityD" class="offer-map-detail">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-offset-2 col-xs-10">
+                                    <button type="search" class="btn btn-info text-btn border-radius-style">
+                                        立即搜索
+                                    </button>
+                                    <button type="search" class="btn btn-info text-btn home-detail-search-btn">
+                                        去详细搜索
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- search cotainer end -->
+            </div>
+            <!-- banner end -->
+<div class="container" id="main">
+<div class="row" >
+  <div class=" page-list-bg p10 mt20 frame-border  friends-links" style="">
+<div>
+                <div class="web-map clearfix">
+                    <dl>
+                        <dt class=" fl">A</dt>
+                        <dd class="fl">
+                        
+                            <a title="安庆市" target="_blank" href="">安庆</a>
+                        
+                            <a title="安康市" target="_blank" href="">安康</a>
+                        
+                            <a title="阿坝藏族羌族自治州" target="_blank" href="">阿坝州</a>
+                        
+                            <a title="安顺市" target="_blank" href="">安顺</a>
+                        
+                            <a title="安阳市" target="_blank" href="">安阳</a>
+                        
+                            <a title="阿拉善盟" target="_blank" href="">阿拉善盟</a>
+                        
+                            <a title="阿里地区" target="_blank" href="">阿里地区</a>
+                        
+                            <a title="阿克苏地区" target="_blank" href="">阿克苏</a>
+                        
+                            <a title="阿勒泰地区" target="_blank" href="">阿勒泰</a>
+                        
+                            <a title="鞍山市" target="_blank" href="">鞍山</a>
+                        
+                            <a title="澳门特别行政区" target="_blank" href="">澳门</a>
+                        
+                        </dd>
+                    </dl>
+                </div>  
+                
+                <div class="web-map clearfix">
+                    <dl>
+                        <dt class="fl">B</dt>
+                        <dd class="fl">
+                        
+                            <a title="北海市" target="_blank" href="">北海</a>
+                        
+                            <a title="百色市" target="_blank" href="">百色</a>
+                        
+                            <a title="滨州市" target="_blank" href="">滨州</a>
+                        
+                            <a title="白山市" target="_blank" href="">白山</a>
+                        
+                            <a title="白城市" target="_blank" href="">白城</a>
+                        
+                            <a title="本溪市" target="_blank" href="http://www.aapinche.cn/city-bx/">本溪</a>
+                        
+                            <a title="博尔塔拉蒙古自治州" target="_blank" href="">博尔塔拉</a>
+                        
+                            <a title="巴音郭楞蒙古自治州" target="_blank" href="">巴音郭楞</a>
+                        
+                            <a title="巴彦淖尔市" target="_blank" href="">巴彦淖尔</a>
+                        
+                            <a title="包头市" target="_blank" href="">包头</a>
+                        
+                            <a title="保山市" target="_blank" href="">保山</a>
+                        
+                            <a title="白银市" target="_blank" href="">白银</a>
+                        
+                            <a title="毕节市" target="_blank" href="">毕节</a>
+                        
+                            <a title="巴中市" target="_blank" href="">巴中</a>
+                        
+                            <a title="宝鸡市" target="_blank" href="">宝鸡</a>
+                        
+                            <a title="蚌埠市" target="_blank" href="">蚌埠</a>
+                        
+                            <a title="亳州市" target="_blank" href="">亳州</a>
+                        
+                        </dd>
+                    </dl>
+                </div>  
+                
+                <div class="web-map clearfix">
+                    <dl>
+                        <dt class="yahei fl">C</dt>
+                        <dd class="fl">
+                        
+                            <a title="滁州" target="_blank" href="">滁州</a>
+                        
+                            <a title="巢湖市" target="_blank" href="">巢湖</a>
+                        
+                            <a title="池州市" target="_blank" href="">池州</a>
+                        
+                            <a title="常德市" target="_blank" href="">常德</a>
+                        
+                            <a title="郴州市" target="_blank" href="">郴州</a>
+                        
+                            <a title="长治市" target="_blank" href="">长治</a>
+                        
+                            <a title="潮州市" target="_blank" href="">潮州</a>
+                        
+                            <a title="沧州市" target="_blank" href="">沧州</a>
+                        
+                            <a title="承德市" target="_blank" href="">承德</a>
+                        
+                            <a title="楚雄彝族自治州" target="_blank" href="">楚雄</a>
+                        
+                            <a title="赤峰市" target="_blank" href="">赤峰</a>
+                        
+                            <a title="昌都地区" target="_blank" href="">昌都</a>
+                        
+                            <a title="昌吉回族自治州" target="_blank" href="">昌吉</a>
+                        
+                            <a title="朝阳市" target="_blank" href="">朝阳</a>
+                        
+                            <a title="常州市" target="_blank" href="">常州</a>
+                        
+                            <a title="崇左市" target="_blank" href="">崇左</a>
+                        
+                        </dd>
+                    </dl>
+                </div>  
+                
+                <div class="web-map clearfix">
+                    <dl>
+                        <dt class="yahei fl">D</dt>
+                        <dd class="fl">
+                        
+                            <a title="德州市" target="_blank" href="">德州</a>
+                        
+                            <a title="东营市" target="_blank" href="">东营</a>
+                        
+                            <a title="迪庆藏族自治州" target="_blank" href="">迪庆</a>
+                        
+                            <a title="丹东市" target="_blank" href="">丹东</a>
+                        
+                            <a title="德宏傣族景颇族自治州" target="_blank" href="">德宏</a>
+                        
+                            <a title="大理白族自治州" target="_blank" href="">大理</a>
+                        
+                            <a title="定西市" target="_blank" href="">定西</a>
+                        
+                            <a title="达州市" target="_blank" href="">达州</a>
+                        
+                            <a title="德阳市" target="_blank" href="">德阳</a>
+                        
+                            <a title="大同市" target="_blank" href="">大同</a>
+                        
+                            <a title="大庆市" target="_blank" href="">大庆</a>
+                        
+                            <a title="大兴安岭地区" target="_blank" href="">大兴安岭地区</a>
+                        
+                        </dd>
+                    </dl>
+                </div>  
+                
+                <div class="web-map clearfix">
+                    <dl>
+                        <dt class="yahei fl">E</dt>
+                        <dd class="fl">
+                        
+                            <a title="鄂尔多斯市" target="_blank" href="">鄂尔多斯</a>
+                        
+                            <a title="鄂州市" target="_blank" href="">鄂州</a>
+                        
+                            <a title="恩施土家族苗族自治州" target="_blank" href="">恩施</a>
+                        
+                        </dd>
+                    </dl>
+                </div>  
+                
+                <div class="web-map clearfix">
+                    <dl>
+                        <dt class="yahei fl">F</dt>
+                        <dd class="fl">
+                        
+                            <a title="防城港市" target="_blank" href="">防城港</a>
+                        
+                            <a title="抚州市" target="_blank" href="">抚州</a>
+                        
+                            <a title="阜新市" target="_blank" href="">阜新</a>
+                        
+                            <a title="抚顺市" target="_blank" href="">抚顺</a>
+                        
+                            <a title="阜阳市" target="_blank" href="">阜阳</a>
+                        
+                        </dd>
+                    </dl>
+                </div>  
+                
+                <div class="web-map clearfix">
+                    <dl>
+                        <dt class="fl">G</dt>
+                        <dd class="fl">
+                        
+                            <a title="广元市" target="_blank" href="">广元</a>
+                        
+                            <a title="广安市" target="_blank" href="">广安</a>
+                        
+                            <a title="甘孜藏族自治州" target="_blank" href="">甘孜藏族自治州</a>
+                        
+                            <a title="果洛藏族自治州" target="_blank" href="">果洛</a>
+                        
+                            <a title="固原市" target="_blank" href="">固原</a>
+                        
+                            <a title="甘南藏族自治州" target="_blank" href="">甘南</a>
+                        
+                            <a title="赣州市" target="_blank" href="">赣州</a>
+                        
+                            <a title="贵港市" target="_blank" href="">贵港</a>
+                        
+                            <a title="桂林市" target="_blank" href="">桂林</a>
+                        
+                            <a title="高雄县" target="_blank" href="">高雄县</a>
+                        
+                        </dd>
+                    </dl>
+                </div>  
+                
+                <div class="web-map clearfix">
+                    <dl>
+                        <dt class="fl">H</dt>
+                        <dd class="fl">
+                        
+                            <a title="黄冈市" target="_blank" href="">黄冈</a>
+                        
+                            <a title="菏泽市" target="_blank" href="">菏泽</a>
+                        
+                            <a title="黄石市" target="_blank" href="">黄石</a>
+                        
+                            <a title="贺州市" target="_blank" href="">贺州</a>
+                        
+                            <a title="河池市" target="_blank" href="">河池</a>
+                        
+                            <a title="葫芦岛市" target="_blank" href="">葫芦岛</a>
+                        
+                            <a title="淮安市" target="_blank" href="">淮安</a>
+                        
+                            <a title="红河哈尼族彝族自治州" target="_blank" href="">红河</a>
+                        
+                            <a title="呼伦贝尔市" target="_blank" href="">呼伦贝尔</a>
+                        
+                            <a title="哈密地区" target="_blank" href="">哈密</a>
+                        
+                            <a title="和田地区" target="_blank" href="">和田地区</a>
+                        
+                            <a title="海西蒙古族藏族自治州" target="_blank" href="">海西</a>
+                        
+                            <a title="海东地区" target="_blank" href=>海东地区</a>
+                        
+                            <a title="黄南藏族自治州" target="_blank" href="#">黄南</a>
+                        
+                            <a title="海南藏族自治州" target="_blank" href="#">海南</a>
+                        
+                            <a title="惠州市" target="_blank" href="#">惠州</a>
+                        
+                            <a title="河源市" target="_blank" href="#">河源</a>
+                        
+                            <a title="邯郸市" target="_blank" href="#">邯郸</a>
+                        
+                            <a title="湖州市" target="_blank" href="#">湖州</a>
+                        
+                            <a title="衡水市" target="_blank" href="#">衡水</a>
+                        
+                            <a title="鹤壁市" target="_blank" href="#">鹤壁</a>
+                        
+                            <a title="怀化市" target="_blank" href="#">怀化</a>
+                        
+                            <a title="汉中" target="_blank" href="#">汉中</a>
+                        
+                            <a title="黄山市" target="_blank" href="#">黄山</a>
+                        
+                            <a title="淮南市" target="_blank" href="#">淮南</a>
+                        
+                            <a title="淮北市" target="_blank" href="#">淮北</a>
+                        
+                            <a title="哈尔滨市" target="_blank" href="#">哈尔滨</a>
+                        
+                            <a title="衡阳市" target="_blank" href="#">衡阳</a>
+                        
+                            <a title="鹤岗市" target="_blank" href="#">鹤岗</a>
+                        
+                            <a title="黑河市" target="_blank" href="#">黑河</a>
+                        
+                        </dd>
+                    </dl>
+                </div>  
+                
+                <div class="web-map clearfix">
+                    <dl>
+                        <dt class="yahei fl">J</dt>
+                        <dd class="fl">
+                        
+                            <a title="佳木斯市" target="_blank" href="#">佳木斯</a>
+                        
+                            <a title="鸡西市" target="_blank" href="#">鸡西</a>
+                        
+                            <a title="晋城市" target="_blank" href="#">晋城</a>
+                        
+                            <a title="晋中市" target="_blank" href="#">晋中</a>
+                        
+                            <a title="焦作市" target="_blank" href="#">焦作</a>
+                        
+                            <a title="金华市" target="_blank" href="#">金华</a>
+                        
+                            <a title="嘉兴市" target="_blank" href="#">嘉兴</a>
+                        
+                            <a title="江门市" target="_blank" href="#">江门</a>
+                        
+                            <a title="揭阳市" target="_blank" href="#">揭阳</a>
+                        
+                            <a title="吉林市" target="_blank" href="#">吉林</a>
+                        
+                            <a title="锦州市" target="_blank" href="#">锦州</a>
+                        
+                            <a title="嘉峪关市" target="_blank" href="#">嘉峪关</a>
+                        
+                            <a title="金昌市" target="_blank" href="#">金昌</a>
+                        
+                            <a title="酒泉市" target="_blank" href="#">酒泉</a>
+                        
+                            <a title="九江市" target="_blank" href="#">九江</a>
+                        
+                            <a title="景德镇市" target="_blank" href="#">景德镇</a>
+                        
+                            <a title="吉安市" target="_blank" href="#">吉安</a>
+                        
+                            <a title="荆州市" target="_blank" href="#">荆州</a>
+                        
+                            <a title="荆门市" target="_blank" href="#">荆门</a>
+                        
+                        </dd>
+                    </dl>
+                </div>  
+                
+                <div class="web-map clearfix">
+                    <dl>
+                        <dt class="yahei fl">K</dt>
+                        <dd class="fl">
+                        
+                            <a title="克孜勒苏柯尔克孜自治州" href="#">克孜勒苏柯尔克孜自治州</a>
+                        
+                            <a title="喀什地区" target="_blank" href="#">喀什</a>
+                        
+                            <a title="克拉玛依市" target="_blank" href="#">克拉玛依</a>
+                        
+                            <a title="开封市" target="_blank" href="#">开封</a>
+                        
+                        </dd>
+                    </dl>
+                </div>  
+                
+                <div class="web-map clearfix">
+                    <dl>
+                        <dt class="yahei fl">L</dt>
+                        <dd class="fl">
+                        
+                            <a title="漯河市" target="_blank" href="#">漯河</a>
+                        
+                            <a title="龙岩市" target="_blank" href="#">龙岩</a>
+                        
+                            <a title="廊坊市" target="_blank" href="#">廊坊</a>
+                        
+                            <a title="丽水市" target="_blank" href="#">丽水</a>
+                        
+                            <a title="六盘水市" target="_blank" href="#">六盘水</a>
+                        
+                            <a title="凉山彝族自治州" target="_blank" href="#">凉山</a>
+                        
+                            <a title="临汾市" target="_blank" href="#">临汾</a>
+                        
+                            <a title="吕梁市" target="_blank" href="#">吕梁</a>
+                        
+                            <a title="泸州市" target="_blank" href="#">泸州</a>
+                        
+                            <a title="乐山市" target="_blank" href="#">乐山</a>
+                        
+                            <a title="娄底市" target="_blank" href="#">娄底</a>
+                        
+                            <a title="六安市" target="_blank" href="#">六安</a>
+                        
+                            <a title="辽源市" target="_blank" href="#">辽源</a>
+                        
+                            <a title="陇南市" target="_blank" href="#">陇南</a>
+                        
+                            <a title="临夏回族自治州" target="_blank" href="#">临夏回族自治州</a>
+                        
+                            <a title="丽江市" target="_blank" href="#">丽江</a>
+                        
+                            <a title="临沧市" target="_blank" href="#">临沧市</a>
+                        
+                            <a title="林芝地区" target="_blank" href="#">林芝</a>
+                        
+                            <a title="来宾市" target="_blank" href="#">来宾</a>
+                        
+                            <a title="莱芜市" target="_blank" href="#">莱芜</a>
+                        
+                            <a title="柳州市" target="_blank" href="#"柳州</a>
+                        
+                            <a title="连云港市" target="_blank" href="#">连云港</a>
+                        
+                            <a title="辽阳市" target="_blank" href="#">辽阳</a>
+                        
+                            <a title="聊城市" target="_blank" href="#">聊城</a>
+                        
+                            <a title="临沂市" target="_blank" href="#">临沂</a>
+                        
+                        </dd>
+                    </dl>
+                </div>  
+                
+                <div class="web-map clearfix">
+                    <dl>
+                        <dt class="yahei fl">M</dt>
+                        <dd class="fl">
+                        
+                            <a title="马鞍山市" target="_blank" href="#">马鞍山</a>
+                        
+                            <a title="牡丹江市" target="_blank" href="#">牡丹江</a>
+                        
+                            <a title="绵阳市" target="_blank" href="#">绵阳</a>
+                        
+                            <a title="眉山市" target="_blank" href="#">眉山</a>
+                        
+                            <a title="茂名市" target="_blank" href="#">茂名</a>
+                        
+                            <a title="梅州市" target="_blank" href="#">梅州</a>
+                        
+                        </dd>
+                    </dl>
+                </div>  
+                
+                <div class="web-map clearfix">
+                    <dl>
+                        <dt class="yahei fl">N</dt>
+                        <dd class="fl">
+                        
+                            <a title="宁德市" target="_blank" href="#">宁德</a>
+                        
+                            <a title="南平市" target="_blank" href="#">南平</a>
+                        
+                            <a title="南充市" target="_blank" href="#">南充</a>
+                        
+                            <a title="内江市" target="_blank" href="#">内江</a>
+                        
+                            <a title="怒江傈僳族自治州" target="_blank" href="#">怒江</a>
+                        
+                            <a title="那曲地区" target="_blank" href="#">那曲</a>
+                        
+                        </dd>
+                    </dl>
+                </div>  
+                
+                <div class="web-map clearfix">
+                    <dl>
+                        <dt class="yahei fl">P</dt>
+                        <dd class="fl">
+                        
+                            <a title="普洱市" target="_blank" href="#">普洱市</a>
+                        
+                            <a title="平凉市" target="_blank" href="#">平凉</a>
+                        
+                            <a title="盘锦市" target="_blank" href="#">盘锦</a>
+                        
+                            <a title="萍乡市" target="_blank" href="#">萍乡</a>
+                        
+                            <a title="攀枝花市" target="_blank" href="#">攀枝花</a>
+                        
+                            <a title="平顶山市" target="_blank" href="#">平顶山市</a>
+                        
+                            <a title="濮阳市" target="_blank" href="#">濮阳</a>
+                        
+                        </dd>
+                    </dl>
+                </div>  
+                
+                <div class="web-map clearfix">
+                    <dl>
+                        <dt class="yahei fl">Q</dt>
+                        <dd class="fl">
+                        
+                            <a title="秦皇岛市" target="_blank" href="#">秦皇岛</a>
+                        
+                            <a title="衢州市" target="_blank" href="#">衢州</a>
+                        
+                            <a title="清远市" target="_blank" href="#">清远</a>
+                        
+                            <a title="黔南布依族苗族自治州" target="_blank" href="#">黔南</a>
+                        
+                            <a title="黔西南布依族苗族自治州" target="_blank" href="#">黔西</a>
+                        
+                            <a title="黔东南苗族侗族自治州" target="_blank" href="#">黔东南</a>
+                        
+                            <a title="七台河市" target="_blank" href="#">七台河</a>
+                        
+                            <a title="齐齐哈尔市" target="_blank" href="#">齐齐哈尔</a>
+                        
+                            <a title="钦州市" target="_blank" href="#">钦州</a>
+                        
+                            <a title="庆阳市" target="_blank" href="#">庆阳</a>
+                        
+                            <a title="曲靖市" target="_blank" href="#">曲靖</a>
+                        
+                        </dd>
+                    </dl>
+                </div>  
+                
+                <div class="web-map clearfix">
+                    <dl>
+                        <dt class="yahei fl">R</dt>
+                        <dd class="fl">
+                        
+                            <a title="日喀则地区" target="_blank" href="#">日喀则</a>
+                        
+                            <a title="日照市" target="_blank" href="#">日照</a>
+                        
+                        </dd>
+                    </dl>
+                </div>  
+                
+                <div class="web-map clearfix">
+                    <dl>
+                        <dt class="yahei fl">S</dt>
+                        <dd class="fl">
+                        
+                            <a title="随州市" target="_blank" href="#">随州</a>
+                        
+                            <a title="十堰市" target="_blank" href="#">十堰</a>
+                        
+                            <a title="上饶市" target="_blank" href="#">上饶</a>
+                        
+                            <a title="宿迁市" target="_blank" href="#">宿迁</a>
+                        
+                            <a title="四平市" target="_blank" href="#">四平</a>
+                        
+                            <a title="石嘴山市" target="_blank" href="#">石嘴山</a>
+                        
+                            <a title="山南地区" target="_blank" href="#">山南地区</a>
+                        
+                            <a title="三亚市" target="_blank" href="#">三亚</a>
+                        
+                            <a title="宿州市" target="_blank" href="#">宿州</a>
+                        
+                            <a title="邵阳市" target="_blank" href="#">邵阳</a>
+                        
+                            <a title="绥化市" target="_blank" href="#">绥化</a>
+                        
+                            <a title="双鸭山市" target="_blank" href="#">双鸭山</a>
+                        
+                            <a title="遂宁市" target="_blank" href="#">遂宁</a>
+                        
+                            <a title="朔州市" target="_blank" href="#">朔州</a>
+                        
+                            <a title="商洛市" target="_blank" href="#">商洛</a>
+                        
+                            <a title="汕尾市" target="_blank" href="#">汕尾</a>
+                        
+                            <a title="汕头市" target="_blank" href="#">汕头</a>
+                        
+                            <a title="韶关市" target="_blank" href="#">韶关市</a>
+                        
+                            <a title="绍兴市" target="_blank" href="#">绍兴</a>
+                        
+                            <a title="三明市" target="_blank" href="#">三明</a>
+                        
+                            <a title="三门峡市" target="_blank" href="#">三门峡</a>
+                        
+                            <a title="商丘市" target="_blank" href="#">商丘</a>
+                        
+                        </dd>
+                    </dl>
+                </div>  
+                
+                <div class="web-map clearfix">
+                    <dl>
+                        <dt class="yahei fl">T</dt>
+                        <dd class="fl">
+                        
+                            <a title="天水市" target="_blank" href="#">天水</a>
+                        
+                            <a title="铜川市" target="_blank" href="#">铜川</a>
+                        
+                            <a title="铜陵市" target="_blank" href="#">铜陵</a>
+                        
+                            <a title="通辽市" target="_blank" href="#">通辽</a>
+                        
+                            <a title="通化市" target="_blank" href="#">通化</a>
+                        
+                            <a title="吐鲁番地区" target="_blank" href="#">吐鲁番</a>
+                        
+                            <a title="塔城地区" target="_blank" href="#">塔城</a>
+                        
+                            <a title="泰州市" target="_blank" href="#">泰州</a>
+                        
+                            <a title="泰安市" target="_blank" href="#">泰安</a>
+                        
+                            <a title="铁岭市" target="_blank" href="#">铁岭</a>
+                        
+                        </dd>
+                    </dl>
+                </div>  
+                
+                <div class="web-map clearfix">
+                    <dl>
+                        <dt class="yahei fl">W</dt>
+                        <dd class="fl">
+                        
+                            <a title="威海市" target="_blank" href="#">威海</a>
+                        
+                            <a title="潍坊市" target="_blank" href="#">潍坊</a>
+                        
+                            <a title="梧州市" target="_blank" href="#">梧州</a>
+                        
+                            <a title="吴忠市" target="_blank" href="#">吴忠</a>
+                        
+                            <a title="乌海市" target="_blank" href="#">乌海</a>
+                        
+                            <a title="乌兰察布市" target="_blank" href="#">乌兰察布</a>
+                        
+                            <a title="文山壮族苗族自治州" target="_blank" href="#">文山</a>
+                        
+                            <a title="渭南市" target="_blank" href="#">渭南</a>
+                        
+                            <a title="武威市" target="_blank" href="#">武威</a>
+                        
+                        </dd>
+                    </dl>
+                </div>  
+                
+                <div class="web-map clearfix">
+                    <dl>
+                        <dt class="yahei fl">X</dt>
+                        <dd class="fl">
+                        
+                            <a title="许昌市" target="_blank" href="#">许昌</a>
+                        
+                            <a title="新乡市" target="_blank" href="#">新乡</a>
+                        
+                            <a title="邢台市" target="_blank" href="#">邢台</a>
+                        
+                            <a title="厦门市" target="_blank" href="#">厦门</a>
+                        
+                            <a title="忻州市" target="_blank" href="#">忻州</a>
+                        
+                            <a title="咸阳市" target="_blank" href="#">咸阳</a>
+                        
+                            <a title="湘西土家族苗族自治州" href="#">湘西</a>
+                        
+                            <a title="宣城市" target="_blank" href="#">宣城</a>
+                        
+                            <a title="湘潭市" target="_blank" href="#">湘潭</a>
+                        
+                            <a title="西双版纳傣族自治州" target="_blank" href="#">西双版纳</a>
+                        
+                            <a title="兴安盟" target="_blank" href="#">兴安</a>
+                        
+                            <a title="锡林郭勒盟" target="_blank" href="#">锡林郭勒盟</a>
+                        
+                            <a title="信阳市" target="_blank" href="#">信阳</a>
+                        
+                            <a title="咸宁市" target="_blank" href="#">咸宁</a>
+                        
+                            <a title="香港特别行政区" target="_blank" href="#">香港</a>
+                        
+                            <a title="襄樊市" target="_blank" href="#">襄樊</a>
+                        
+                            <a title="孝感市" target="_blank" href="#">孝感</a>
+                        
+                            <a title="新竹县" target="_blank" href="#">新竹县</a>
+                        
+                            <a title="新余市" target="_blank" href="#">新余</a>
+                        
+                        </dd>
+                    </dl>
+                </div>  
+                
+                <div class="web-map clearfix">
+                    <dl>
+                        <dt class="yahei fl">Y</dt>
+                        <dd class="fl">
+                        
+                            <a title="鹰潭市" target="_blank" href="#">鹰潭</a>
+                        
+                            <a title="宜春市" target="_blank" href="#">宜春</a>
+                        
+                            <a title="盐城市" target="_blank" href="#">盐城</a>
+                        
+                            <a title="扬州市" target="_blank" href="#">扬州</a>
+                        
+                            <a title="玉林市" target="_blank" href="#">玉林</a>
+                        
+                            <a title="宜昌市" target="_blank" href="#">宜昌</a>
+                        
+                            <a title="玉溪市" target="_blank" href="#">玉溪</a>
+                        
+                            <a title="营口市" target="_blank" href="#">营口</a>
+                        
+                            <a title="伊犁哈萨克自治州" target="_blank" href="#">伊犁哈萨克自治州</a>
+                        
+                            <a title="岳阳市" target="_blank" href="#">岳阳</a>
+                        
+                            <a title="伊春市" target="_blank" href="#">伊春</a>
+                        
+                            <a title="榆林市" target="_blank" href="#">榆林</a>
+                        
+                            <a title="益阳市" target="_blank" href="#">益阳</a>
+                        
+                            <a title="永州" target="_blank" href="#">永州</a>
+                        
+                            <a title="延安市" target="_blank" href="#">延安</a>
+                        
+                            <a title="阳泉市" target="_blank" href="#">阳泉</a>
+                        
+                            <a title="运城市" target="_blank" href="#">运城</a>
+                        
+                            <a title="宜宾市" target="_blank" href="#">宜宾</a>
+                        
+                            <a title="雅安市" target="_blank" href="#">雅安</a>
+                        
+                            <a title="阳江市" target="_blank" href="#">阳江</a>
+                        
+                            <a title="云浮市" target="_blank" href="#">云浮</a>
+                        
+                        </dd>
+                    </dl>
+                </div>  
+                
+                <div class="web-map clearfix">
+                    <dl>
+                        <dt class="yahei fl">Z</dt>
+                        <dd class="fl">
+                        
+                            <a title="遵义市" target="_blank" href="#">遵义</a>
+                        
+                            <a title="中山市" target="_blank" href="#">中山</a>
+                        
+                            <a title="资阳市" target="_blank" href="#">>资阳</a>
+                        
+                            <a title="湛江市" target="_blank" href="#">>湛江</a>
+                        
+                            <a title="肇庆市" target="_blank" href="#">>肇庆</a>
+                        
+                            <a title="珠海市" target="_blank" href="#">>珠海</a>
+                        
+                            <a title="漳州市" target="_blank" href="#">>漳州</a>
+                        
+                            <a title="舟山市" target="_blank" href="#">>舟山</a>
+                        
+                            <a title="张家口市" target="_blank" href="#">>张家口</a>
+                        
+                            <a title="张掖市" target="_blank" href="#">>张掖</a>
+                        
+                            <a title="周口市" target="_blank" href="#">>周口</a>
+                        
+                            <a title="驻马店市" target="_blank" href="#">>驻马店</a>
+                        
+                            <a title="自贡市" target="_blank" href="#">>自贡</a>
+                        
+                            <a title="张家界市" target="_blank" href="#">>张家界</a>
+                        
+                            <a title="株洲市" target="_blank" href="#">>株洲市</a>
+                        
+                            <a title="中卫市" target="_blank" href="#">>中卫</a>
+                        
+                            <a title="昭通市" target="_blank" href="#">>昭通</a>
+                        
+                            <a title="镇江市" target="_blank" href="#">>镇江</a>
+                        
+                            <a title="淄博市" target="_blank" href="#">>淄博</a>
+                        
+                            <a title="枣庄市" target="_blank" href="#">枣庄</a>
+                        
+                        </dd>
+                    </dl>
+                </div>  
+                
+            </div>
+  </div>
+</div>
+</div>
+
+<!-- main  end -->
+<!-- footer start -->
+<div id="footer" class="text-center  wmw p30 footer-bg" >
+<p>
+<a href="">关于拼座族</a>
+|
+<a href="">关于拼座族</a>
+|
+<a href="">关于拼座族</a>
+|
+<a href="">关于拼座族</a>
+|
+<a href="">关于拼座族</a>
+</p>
+<p>
+<a href="">Copyright Reserved 2014-2015 拼座族拼车、搭乘顺风车，仅在拼座族网ICP备585858588</a>
+</p>
+</div>
+<!-- footer end -->
+</div>
+<!-- wrapper -->
+
+</body>
+</html>

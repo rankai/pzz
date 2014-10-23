@@ -1,534 +1,716 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Home</title>
-  <link href="css/cssreset.css" rel='stylesheet' type='text/css' />
-  <link href="css/module.css" rel='stylesheet' type='text/css' />
-  <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-  <!-- Custom Theme files -->
-  <link href="css/style.css" rel='stylesheet' type='text/css' />
-  <link href="css/font-awesome.min.css" rel="stylesheet">
-  <!-- date css -->
-    <!-- time add date -->
-  <link href='css/rome.css' rel='stylesheet' type='text/css' />
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/style.js"></script>
-
-  <script type="text/javascript" 
-        src="http://api.map.baidu.com/api?v=2.0&ak=xmyNRRC4grtX6rp4hv0rp7q8"></script>
-  <!-- date start -->
-  <!-- time add date -->
-  
-  <!-- date end -->
-    <script> 
-        $(function(){ 
-        $(".addseat").click(function(){ 
-        var t=$(this).parent().find('input[class*=numseat]'); 
-        t.val(parseInt(t.val())+1) 
-        // setTotal(); 
-        }) 
-        $(".minseat").click(function(){ 
-        var t=$(this).parent().find('input[class*=numseat]'); 
-        t.val(parseInt(t.val())-1) 
-        if(parseInt(t.val())<0){ 
-        t.val(0); 
-        } 
-        }) 
-        }) 
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>
+            Home
+        </title>
+        <link href="css/cssreset.css" rel='stylesheet' type='text/css' />
+        <link href="css/module.css" rel='stylesheet' type='text/css' />
+        <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+        <!-- Custom Theme files -->
+        <link href="css/style.css" rel='stylesheet' type='text/css' />
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <!-- date css -->
+        <!-- time add date -->
+        <link href='css/rome.css' rel='stylesheet' type='text/css' />
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!-- city -->
+        <link href="css/cityquery.css" rel="stylesheet" type="text/css" />
+        <script src="js/jquery.min.js">
         </script>
- <script>
-    $(document).ready(function(){
-        $("#dendplace").hide();
-        $("#dpassplace").hide();
-        $("#dstartdate").hide();
-        $("#dbackdate").hide();
+        <script type="text/javascript" src="js/style.js">
+        </script>
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=xmyNRRC4grtX6rp4hv0rp7q8">
+        </script>
+        <!-- date start -->
+        <!-- time add date -->
+        <!-- date end -->
+        <script>
+            $(function() {
+                $(".addseat").click(function() {
+                    var t = $(this).parent().find('input[class*=numseat]');
+                    t.val(parseInt(t.val()) + 1)
+                    // setTotal(); 
+                }) $(".minseat").click(function() {
+                    var t = $(this).parent().find('input[class*=numseat]');
+                    t.val(parseInt(t.val()) - 1) if (parseInt(t.val()) < 0) {
+                        t.val(0);
+                    }
+                })
+            })
+        </script>
+        <script>
+            $(document).ready(function() {
+                $("#dendplace").hide();
+                $("#dpassplace").hide();
+                $("#dstartdate").hide();
+                $("#dbackdate").hide();
 
-});
-</script>
-</head>
-<body>
-  <div class="wrapper">
-    <!----start-header---->
-    <div class="header">
-      <!-- top -->
-      <div id="top1" class="wmw">
-        <div class="container" >
-          <div class="left-content">
-            <span class="left-descrip-span">拼座族，拼车的最佳选择</span>
-            <!-- <span class="left-attention-span" >关注我们:</span>
-          -->
-          <!-- <a href="" class="left-attention-a">
-          <img src="images/qqzone.gif">关注</a>
-        <a href="" class="left-attention-a">
-          <img src="images/xinlang.png">关注</a>
-        -->
-        <!-- <a href="" class="left-phone-a">
-        <img src="images/home-tel.png" height="20">手机版</a>
-      -->
-      <!-- <a class="pl30 f14 cr666 pr10" href="">登录</a>
-    -->
-    <a class="pl30 f14 cr666 pr10" href="user-center.html">心情</a>
-    <!-- <span class="f12 crd9d">|</span>
-  <a class="pl10 f14 cr666" href="">免费注册</a>
-  -->
-</div>
-<ul class="nav nav-pills pull-right">
+            });
+        </script>
+        <!-- city -->
+        <script type='text/javascript' src='js/citylist.js'>
+        </script>
+        <script type='text/javascript' src='js/querycity.js'>
+        </script>
+        <script type="text/javascript">
+            var labelFromcity = new Array();
+            labelFromcity['热门城市'] = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40);
+            labelFromcity['A-F'] = new Array(0, 3, 4, 5, 6, 28, 29);
+            labelFromcity['G-J'] = new Array(1, 7, 8, 9, 30, 31, 32, 33, 37, 40);
+            labelFromcity['K-N'] = new Array(10, 11, 12, 34, 35, 38);
+            labelFromcity['P-W'] = new Array(13, 14, 15, 16, 17, 18, 22, 24, 25, 36);
+            labelFromcity['X-Z'] = new Array(2, 19, 20, 21, 26, 27, 39);
+            // labelFromcity ['国际城市'] = new Array(41,42,43,44,45,46,47,48,49);
+            var hotList = new Array(14, 15, 16, 17, 18, 19);
 
-  <li class="pull-right dropdown">
-    <a class="f14 cr666 right-padding"
-                   data-toggle="dropdown"  href="">网站导航▼</a>
-    <ul class="dropdown-menu">
-      <li  class="text-center">
-        <a href="#">test</a>
-      </li>
-      <li  class="text-center">
-        <a href="#">test</a>
-      </li>
-      <li  class="text-center">
-        <a href="#">test</a>
-      </li>
-    </ul>
-  </li>
-  <li class="pull-right dropdown">
-    <a class="f14 cr666 right-padding right-li" href="#">如何拼座？</a>
-  </li>
-  <li class="pull-right dropdown">
-    <a class="f14 cr666 right-padding right-li" href="index.html">返回首页</a>
-  </li>
-</ul>
-</div>
-</div>
-<!-- top end -->
-<div class="container header_top">
-<div class="logo">
-<a href="index.html">
-  <img src="images/logo.jpg" alt=""></a>
-</div>
-<div class="menu">
-<a class="toggleMenu" href="#">
-  <img src="images/nav_icon.png" alt="" />
-</a>
-<ul class="nav" id="nav">
-  <li >
-    <a href="index.html">首页</a>
-  </li>
-  <li>
-    <a href="local.html">上下班拼座</a>
-  </li>
-  <li>
-    <a href="long-distance.html">长途拼座</a>
-  </li>
-  <li>
-    <a href="passenger-need.html">乘客需求</a>
-  </li>
-  <li>
-    <a href="passenger-share.html">拼座分享</a>
-  </li>
-  <li >
-        <a href="release-route.html">发布线路</a>
-    </li>
-  <div class="clearfix"></div>
-</ul>
-</div>
-<div class="clearfix"></div>
-<!----//End-top-nav---->
-</div>
-</div>
-<!---- //End-header---->
-<!-- banner  -->
-<div id="banner" class="wmw">
-<img class="img-responsive"  src="images/show.png"></div>
-<!-- banner end -->
-<div class="container mt15" id="main">
-<div class="row page-list-bg">
-<div id="driver-add-roude">
-<div id="drivernewmap" class="m30 h300"></div>
-<form class="form-horizontal mauto  m50" role="form">
-
-   <div class="form-group has-feedback">
-              <label for="originCar" class="col-xs-2  f16 control-label"><b class="crred f12 p2">*</b>出发地点：</label>
-              <div class="col-xs-2">
-                <input class="form-control border-radius-style" id="dOriginCity" placeholder="城市">
-                
-               </div>
-              <div class="col-xs-4">
-                <input   class="form-control border-radius-style" id="dOriginCityD" placeholder="详细地址">
-              <span onclick="mark('start')" class="cr3b offer-position-icon fa fa-map-marker fa-lg form-control-feedback"></span>
-               <div id="searchdOriginCityD" class="offer-map-detail"></div>
-             </div>
-             <span id="dstartplace" class="col-xs-4 f12 control-label tl">
-                        亲，填写出发地点
-                    </span>
+            $(document).ready(function() {
+                $('#dOriginCity').querycity({
+                    'data': citysFlight,
+                    'tabs': labelFromcity,
+                    'hotList': hotList
+                },
+                "startcity");
+                $('#dDestinationCity').querycity({
+                    'data': citysFlight,
+                    'tabs': labelFromcity,
+                    'hotList': hotList
+                },
+                "endcity");
+                //$('#tocity').querycity({'data':citysFlightTo});
+            });
+        </script>
+        <!-- city end -->
+    </head>
+    
+    <body>
+        <div class="wrapper">
+            <!----start-header---->
+            <div class="header">
+                <!-- top -->
+                <div id="top1" class="wmw">
+                    <div class="container">
+                        <div class="left-content">
+                            <span class="left-descrip-span">
+                                拼座族，拼车的最佳选择
+                            </span>
+                            <!-- <span class="left-attention-span">关注我们:</span>
+                            -->
+                            <!-- <a href="" class="left-attention-a">
+                            <img src="images/qqzone.gif">关注</a>
+                            <a href="" class="left-attention-a">
+                            <img src="images/xinlang.png">关注</a>
+                            -->
+                            <!-- <a href="" class="left-phone-a">
+                            <img src="images/home-tel.png" height="20">手机版</a>
+                            -->
+                            <!-- <a class="pl30 f14 cr666 pr10" href="">登录</a>
+                            -->
+                            <a class="pl30 f14 cr666 pr10" href="user-center.html">
+                                心情
+                            </a>
+                            <!-- <span class="f12 crd9d">|</span>
+                            <a class="pl10 f14 cr666" href="">免费注册</a>
+                            -->
+                        </div>
+                        <ul class="nav nav-pills pull-right">
+                            <li class="pull-right dropdown">
+                                <a class="f14 cr666 right-padding" data-toggle="dropdown" href="">
+                                    网站导航▼
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="text-center">
+                                        <a href="#">
+                                            test
+                                        </a>
+                                    </li>
+                                    <li class="text-center">
+                                        <a href="#">
+                                            test
+                                        </a>
+                                    </li>
+                                    <li class="text-center">
+                                        <a href="#">
+                                            test
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="pull-right dropdown">
+                                <a class="f14 cr666 right-padding right-li" href="#">
+                                    如何拼座？
+                                </a>
+                            </li>
+                            <li class="pull-right dropdown">
+                                <a class="f14 cr666 right-padding right-li" href="index.html">
+                                    返回首页
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- top end -->
+                <div class="container header_top">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="images/logo.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="menu">
+                        <a class="toggleMenu" href="#">
+                            <img src="images/nav_icon.png" alt="" />
+                        </a>
+                        <ul class="nav" id="nav">
+                            <li>
+                                <a href="index.html">
+                                    首页
+                                </a>
+                            </li>
+                            <li>
+                                <a href="local.html">
+                                    上下班拼座
+                                </a>
+                            </li>
+                            <li>
+                                <a href="long-distance.html">
+                                    长途拼座
+                                </a>
+                            </li>
+                            <li>
+                                <a href="passenger-need.html">
+                                    乘客需求
+                                </a>
+                            </li>
+                            <li>
+                                <a href="passenger-share.html">
+                                    拼座分享
+                                </a>
+                            </li>
+                            <li>
+                                <a href="release-route.html">
+                                    发布线路
+                                </a>
+                            </li>
+                            <div class="clearfix">
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="clearfix">
+                    </div>
+                    <!----//End-top-nav---->
+                </div>
             </div>
-            <div class="form-group has-feedback">
-              <label for="destinationCar" class="col-xs-2 control-label"><b class="crred f12 p2">*</b>目的地点：</label>
-              <div class="col-xs-2">
-                <input  class="form-control border-radius-style" id="dDestinationCity" placeholder="目的城市"></div>
-              <div class="col-xs-4">
-                <input   class="form-control border-radius-style" id="dDestinationCityD" placeholder="详细地址">
-                <span onclick="mark('end')" class="crfb offer-position-icon fa fa-map-marker fa-lg form-control-feedback"></span>
-                <div id="searchdDestinationCityD" class="offer-map-detail"></div>
-              </div>
-              <span id="dendplace" class="col-xs-4 f12 crred control-label tl">
-                        <i class="fa fa-times-circle crred fa-lg mr5"></i>填写目的地
-                    </span>
+            <!---- //End-header---->
+            <!-- banner -->
+            <div id="banner" class="wmw">
+                <img class="w img-responsive" src="images/show.png">
             </div>
-  <div class="form-group">
-    <label for="destinationCar" class="col-xs-2 control-label">途径哪里：</label>
-    <div class="col-xs-6">
-      <input  class="form-control border-radius-style" id="destinationCar" placeholder="途径地"></div>
-      <span id="dpassplace" class="col-xs-4 f12 crred control-label tl">
-                        <i class="fa fa-times-circle crred fa-lg mr5"></i>不是必填，选择途径地点
-                    </span>
-  </div>
-  <div class="form-group">
-    <label for="destinationCar" class="col-xs-2 control-label">途径里程：</label>
-    <div class="col-xs-10">
-      <span class="form-control-static offer-kilometre-span offer-kilometre-span-font">0</span>
-      <span class="form-control-static offer-kilometre-span">km</span>
-    </div>
-  </div>
-  <!--start time -->
-  <div class="form-group">
-    <label for="destinationCar" class="col-xs-2 control-label"><b class="crred f12 p2">*</b>出发日期：</label>
-    <div class="control-group col-xs-3">
-      <div class="controls">
-        <div class="input-prepend input-group ">
-          <span class="add-on input-group-addon border-radius-style"> <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-          </span>
-          <input type="text" id='d' class="form-control border-radius-style offer-date-input"   />
+            <!-- banner end -->
+            <div class="container mt15" id="main">
+                <div class="row page-list-bg">
+                    <div id="driver-add-roude">
+                        <div id="drivernewmap" class="m30 h300">
+                        </div>
+                        <form class="form-horizontal mauto  m50" role="form">
+                            <div class="form-group has-feedback">
+                                <label for="originCar" class="col-xs-2  f16 control-label">
+                                    <b class="crred f12 p2">
+                                        *
+                                    </b>
+                                    出发地点：
+                                </label>
+                                <div class="col-xs-2 startcity">
+                                    <input class="form-control border-radius-style" id="dOriginCity" placeholder="城市">
+                                </div>
+                                <div class="col-xs-4">
+                                    <input class="form-control border-radius-style" id="dOriginCityD" placeholder="详细地址">
+                                    <span onclick="mark('start')" class="cr3b offer-position-icon fa fa-map-marker fa-lg form-control-feedback">
+                                    </span>
+                                    <div id="searchdOriginCityD" class="offer-map-detail">
+                                    </div>
+                                </div>
+                                <span id="dstartplace" class="col-xs-4 f12 control-label tl">
+                                    亲，填写出发地点
+                                </span>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label for="destinationCar" class="col-xs-2 control-label">
+                                    <b class="crred f12 p2">
+                                        *
+                                    </b>
+                                    目的地点：
+                                </label>
+                                <div class="col-xs-2 endcity">
+                                    <input class="form-control border-radius-style" id="dDestinationCity"
+                                    placeholder="目的城市">
+                                </div>
+                                <div class="col-xs-4">
+                                    <input class="form-control border-radius-style" id="dDestinationCityD"
+                                    placeholder="详细地址">
+                                    <span onclick="mark('end')" class="crfb offer-position-icon fa fa-map-marker fa-lg form-control-feedback">
+                                    </span>
+                                    <div id="searchdDestinationCityD" class="offer-map-detail">
+                                    </div>
+                                </div>
+                                <span id="dendplace" class="col-xs-4 f12 crred control-label tl">
+                                    <i class="fa fa-times-circle crred fa-lg mr5">
+                                    </i>
+                                    填写目的地
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label for="destinationCar" class="col-xs-2 control-label">
+                                    途径哪里：
+                                </label>
+                                <div class="col-xs-6">
+                                    <input class="form-control border-radius-style" id="destinationCar" placeholder="途径地">
+                                </div>
+                                <span id="dpassplace" class="col-xs-4 f12 crred control-label tl">
+                                    <i class="fa fa-times-circle crred fa-lg mr5">
+                                    </i>
+                                    不是必填，选择途径地点
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label for="destinationCar" class="col-xs-2 control-label">
+                                    途径里程：
+                                </label>
+                                <div class="col-xs-10">
+                                    <span class="form-control-static offer-kilometre-span offer-kilometre-span-font">
+                                        0
+                                    </span>
+                                    <span class="form-control-static offer-kilometre-span">
+                                        km
+                                    </span>
+                                </div>
+                            </div>
+                            <!--start time -->
+                            <div class="form-group">
+                                <label for="destinationCar" class="col-xs-2 control-label">
+                                    <b class="crred f12 p2">
+                                        *
+                                    </b>
+                                    出发日期：
+                                </label>
+                                <div class="control-group col-xs-3">
+                                    <div class="controls">
+                                        <div class="input-prepend input-group ">
+                                            <span class="add-on input-group-addon border-radius-style">
+                                                <i class="glyphicon glyphicon-calendar fa fa-calendar">
+                                                </i>
+                                            </span>
+                                            <input type="text" id='d' class="form-control border-radius-style offer-date-input"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="control-group col-xs-3">
+                                    <div class="controls">
+                                        <div class="input-prepend input-group ">
+                                            <span class="add-on input-group-addon border-radius-style">
+                                                <i class="glyphicon glyphicon-calendar fa fa fa-clock-o">
+                                                </i>
+                                            </span>
+                                            <input type="text" id='t' class="form-control border-radius-style offer-date-input"
+                                            value="08:00" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <span id="dstartdate" class="col-xs-4 f12 crred control-label tl">
+                                    <i class="fa fa-times-circle crred fa-lg mr5">
+                                    </i>
+                                    选择出发日期
+                                </span>
+                            </div>
+                            <!--start time end -->
+                            <div class="form-group">
+                                <div class="col-xs-offset-2 col-xs-10">
+                                    <div class="checkbox" id="ifback">
+                                        <label>
+                                            <input type="checkbox">
+                                            是否返程
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- backtime -->
+                            <div class="form-group" id="backtime">
+                                <label for="destinationCar" class="col-xs-2 control-label">
+                                    <b class="crred f12 p2">
+                                        *
+                                    </b>
+                                    返程日期：
+                                </label>
+                                <div class="control-group col-xs-3">
+                                    <div class="controls">
+                                        <div class="input-prepend input-group ">
+                                            <span class="add-on input-group-addon border-radius-style">
+                                                <i class="glyphicon glyphicon-calendar fa fa-calendar">
+                                                </i>
+                                            </span>
+                                            <input type="text" id='db' class="form-control border-radius-style offer-date-input"
+                                            data-ro />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="control-group col-xs-3">
+                                    <div class="controls">
+                                        <div class="input-prepend input-group ">
+                                            <span class="add-on input-group-addon border-radius-style">
+                                                <i class="glyphicon glyphicon-calendar fa fa fa-clock-o">
+                                                </i>
+                                            </span>
+                                            <input type="text" id='tb' class="form-control border-radius-style offer-date-input"
+                                            value="08:00" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <span id="dbackdate" class="col-xs-4 f12 crred control-label tl">
+                                    <i class="fa fa-times-circle crred fa-lg mr5">
+                                    </i>
+                                    选择返程日期
+                                </span>
+                            </div>
+                            <!-- backtime end -->
+                            <!-- phone -->
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">
+                                    <b class="crred f12 p2">
+                                        *
+                                    </b>
+                                    联系电话：
+                                </label>
+                                <div class="col-xs-10">
+                                    <p class="form-control-static">
+                                        13303360636
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- phone end -->
+                            <!-- myCar msg -->
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">
+                                    <b class="crred f12 p2">
+                                        *
+                                    </b>
+                                    我的车辆：
+                                </label>
+                                <div class="col-xs-10">
+                                    <p class="form-control-static">
+                                        <a href="#">
+                                            法拉利
+                                        </a>
+                                        <a class="ml15 f14" href="#">
+                                            编辑
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- myCar msg end -->
+                            <!-- give-seat -->
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">
+                                    <b class="crred f12 p2">
+                                        *
+                                    </b>
+                                    提供座位：
+                                </label>
+                                <div class="col-xs-6">
+                                    <input class="minseat btn btn-default btn-xs frame-nradius" name="" type="button"
+                                    value="-" />
+                                    <input class="numseat  frame-nradius wp50 p0 text-center" name="" type="text"
+                                    value="1" />
+                                    <input class="addseat btn btn-default btn-xs frame-nradius" name="" type="button"
+                                    value="+" />
+                                </div>
+                            </div>
+                            <!-- give-seat end -->
+                            <!-- price -->
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">
+                                    期望价格：
+                                </label>
+                                <div class="col-xs-2">
+                                    <input type="number" class="form-control border-radius-style offer-date-input"
+                                    />
+                                </div>
+                                <span class="col-xs-4  control-label tl">
+                                    元/人
+                                </span>
+                            </div>
+                            <!-- price end -->
+                            <!-- descrip -->
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">
+                                    补充说明：
+                                </label>
+                                <div class="col-xs-8">
+                                    <textarea class="form-control border-radius-style" rows="3">
+                                    </textarea>
+                                </div>
+                            </div>
+                            <!-- descrip end -->
+                            <div class="text-center m30">
+                                <button type="button" class="btn btn-primary border-radius-style">
+                                    立即发布
+                                </button>
+                                <button type="button" class="btn border-radius-style offer-back-btn">
+                                    返回
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- main end -->
+            <!-- footer start -->
+            <div id="footer" class="text-center p20 wmw">
+                <p>
+                    <a href="">
+                        关于拼座族
+                    </a>
+                    |
+                    <a href="">
+                        关于拼座族
+                    </a>
+                    |
+                    <a href="">
+                        关于拼座族
+                    </a>
+                    |
+                    <a href="">
+                        关于拼座族
+                    </a>
+                    |
+                    <a href="">
+                        关于拼座族
+                    </a>
+                </p>
+                <p>
+                    <a href="">
+                        Copyright Reserved 2014-2015 拼座族拼车、搭乘顺风车，仅在拼座族网ICP备585858588
+                    </a>
+                </p>
+            </div>
+            <!-- footer end -->
         </div>
-      </div>
-    </div>
-    <div class="control-group col-xs-3">
-      <div class="controls">
-        <div class="input-prepend input-group ">
-          <span class="add-on input-group-addon border-radius-style"> <i class="glyphicon glyphicon-calendar fa fa fa-clock-o"></i>
-          </span>
-          <input type="text" id='t' class="form-control border-radius-style offer-date-input" value="08:00"  />
-        </div>
-      </div>
-    </div>
-    <span id="dstartdate" class="col-xs-4 f12 crred control-label tl">
-                        <i class="fa fa-times-circle crred fa-lg mr5"></i>选择出发日期
-                    </span>
-  </div>
-  <!--start time end -->
-  <div class="form-group">
-    <div class="col-xs-offset-2 col-xs-10">
-      <div class="checkbox" id="ifback">
-        <label>
-          <input type="checkbox">是否返程</label>
-      </div>
-    </div>
-  </div>
-  <!-- backtime -->
-    <div class="form-group" id="backtime">
-    <label for="destinationCar" class="col-xs-2 control-label"><b class="crred f12 p2">*</b>返程日期：</label>
-    <div class="control-group col-xs-3">
-      <div class="controls">
-        <div class="input-prepend input-group ">
-          <span class="add-on input-group-addon border-radius-style"> <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-          </span>
-          <input type="text" id='db' class="form-control border-radius-style offer-date-input" data-ro  />
-        </div>
-      </div>
-    </div>
-    <div class="control-group col-xs-3">
-      <div class="controls">
-        <div class="input-prepend input-group ">
-          <span class="add-on input-group-addon border-radius-style"> <i class="glyphicon glyphicon-calendar fa fa fa-clock-o"></i>
-          </span>
-          <input type="text" id='tb' class="form-control border-radius-style offer-date-input"  value="08:00"  />
-        </div>
-      </div>
-    </div>
-    <span id="dbackdate" class="col-xs-4 f12 crred control-label tl">
-                        <i class="fa fa-times-circle crred fa-lg mr5"></i>选择返程日期
-                    </span>
-  </div>
-  <!-- backtime end -->
-  <!-- phone -->
-  <div class="form-group">
-    <label class="col-xs-2 control-label"><b class="crred f12 p2">*</b>联系电话：</label>
-    <div class="col-xs-10">
-      <p class="form-control-static">13303360636</p>
-    </div>
-  </div>
-  <!-- phone end -->
-  <!-- myCar msg -->
-  <div class="form-group">
-    <label class="col-xs-2 control-label"><b class="crred f12 p2">*</b>我的车辆：</label>
-    <div class="col-xs-10">
-      <p class="form-control-static">
-        <a href="#">法拉利</a>
-        <a class="ml15 f14"  href="#">编辑</a>
-      </p>
-    </div>
-  </div>
-  <!-- myCar msg end -->
-  <!-- give-seat   -->
-  <div class="form-group">
-    <label class="col-xs-2 control-label"><b class="crred f12 p2">*</b>提供座位：</label>
-    <div class="col-xs-6">
-      <input class="minseat btn btn-default btn-xs frame-nradius" name="" type="button" value="-" /> 
-        <input class="numseat  frame-nradius wp50 p0 text-center" name="" type="text" value="1" /> 
-        <input class="addseat btn btn-default btn-xs frame-nradius" name="" type="button" value="+" />
-    </div>
-  </div>
-  <!-- give-seat end -->
-  <!-- price -->
-  <div class="form-group">
-    <label class="col-xs-2 control-label">期望价格：</label>
-    <div class="col-xs-2">
-      <input type="number"   class="form-control border-radius-style offer-date-input"    />
-    </div>
-    <span  class="col-xs-4  control-label tl">
-                        元/人
-                    </span>
+        <!-- wrapper -->
+        <script src='js/rome.js'>
+        </script>
+        <script src='js/example.js'>
+        </script>
+    </body>
 
-  </div>
-  <!-- price end -->
-  <!-- descrip -->
-  <div class="form-group">
-    <label class="col-xs-2 control-label">补充说明：</label>
-    <div class="col-xs-8">
-      <textarea class="form-control border-radius-style" rows="3"></textarea>
-    </div>
-  </div>
-  <!-- descrip end -->
-  <div class="text-center m30">
-    <button type="button" class="btn btn-primary border-radius-style">立即发布</button>
-    <button type="button" class="btn border-radius-style offer-back-btn">返回</button>
-
-  </div>
-</form>
-</div>
-</div>
-</div>
-<!-- main  end -->
-<!-- footer start -->
-<div id="footer" class="text-center p20 wmw" >
-<p>
-<a href="">关于拼座族</a>
-|
-<a href="">关于拼座族</a>
-|
-<a href="">关于拼座族</a>
-|
-<a href="">关于拼座族</a>
-|
-<a href="">关于拼座族</a>
-</p>
-<p>
-<a href="">
-Copyright Reserved 2014-2015 拼座族拼车、搭乘顺风车，仅在拼座族网ICP备585858588
-</a>
-</p>
-
-</div>
-<!-- footer end -->
-</div>
-<!-- wrapper -->
-<script src='js/rome.js'></script>
-  <script src='js/example.js'></script>
-</body>
 </html>
 <script type="text/javascript">
     var map = new BMap.Map("drivernewmap");
     map.centerAndZoom(new BMap.Point(116.404, 39.915), 12);
-    map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
-    map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
-     var transit = new BMap.DrivingRoute(map, {
+    map.enableScrollWheelZoom(); //启用滚轮放大缩小，默认禁用
+    map.enableContinuousZoom(); //启用地图惯性拖拽，默认禁用
+    var transit = new BMap.DrivingRoute(map, {
         renderOptions: {
             map: map,
             //panel: "r-result",
             //enableDragging : true //起终点可进行拖拽
-        },  
+        },
     });
     var myCity = new BMap.LocalCity();
     myCity.get(myFun);
 
     var cityName;
-    function myFun(result){
+    function myFun(result) {
         cityName = result.name;
         map.setCenter(cityName);
     }
     //transit.search("固安","廊坊市");
-    
-    var sIcon=new BMap.Icon("http://api0.map.bdimg.com/images/dest_markers.png",new BMap.Size(42,34),{anchor:new BMap.Size(15,32),imageOffset:new BMap.Size(0,0)});
-    var eIcon=new BMap.Icon("http://api0.map.bdimg.com/images/dest_markers.png",new BMap.Size(42,34),{anchor:new BMap.Size(15,32),imageOffset:new BMap.Size(0,-34)});
-    var s_marker;//起点标记
-    var e_marker;//终点标记
+    var sIcon = new BMap.Icon("http://api0.map.bdimg.com/images/dest_markers.png", new BMap.Size(42, 34), {
+        anchor: new BMap.Size(15, 32),
+        imageOffset: new BMap.Size(0, 0)
+    });
+    var eIcon = new BMap.Icon("http://api0.map.bdimg.com/images/dest_markers.png", new BMap.Size(42, 34), {
+        anchor: new BMap.Size(15, 32),
+        imageOffset: new BMap.Size(0, -34)
+    });
+    var s_marker; //起点标记
+    var e_marker; //终点标记
     var myGeo = new BMap.Geocoder();
 
     //建立一个自动完成的对象
-    var startPlace = new BMap.Autocomplete(
-      {
-        "input":"dOriginCityD",
-        "location":map
-      }
-    );
-    var endPlace = new BMap.Autocomplete(
-      {
-        "input":"dDestinationCityD",
-        "location":map
-      }
-    );
+    var startPlace = new BMap.Autocomplete({
+        "input": "dOriginCityD",
+        "location": map
+    });
+    var endPlace = new BMap.Autocomplete({
+        "input": "dDestinationCityD",
+        "location": map
+    });
     //鼠标放在下拉列表上的事件
-    startPlace.addEventListener("onhighlight", function(e){
-      var str = "";
-      var _value = e.fromitem.value;
-      var value = "";
-      if(e.fromitem.index > -1){
-        value = _value.province + _value.city + _value.district + 
-        _value.street + _value.business;
-      }
-      str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
-      value = "";
-      if(e.toitem.index > -1){
-        _value = e.toitem.value;
-        value = _value.province + _value.city + _value.district +
-        _value.street + _value.business;
-      }
-      str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
-      $("#searchdOriginCityD").innerHTML = str;
+    startPlace.addEventListener("onhighlight",
+    function(e) {
+        var str = "";
+        var _value = e.fromitem.value;
+        var value = "";
+        if (e.fromitem.index > -1) {
+            value = _value.province + _value.city + _value.district + _value.street + _value.business;
+        }
+        str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+        value = "";
+        if (e.toitem.index > -1) {
+            _value = e.toitem.value;
+            value = _value.province + _value.city + _value.district + _value.street + _value.business;
+        }
+        str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
+        $("#searchdOriginCityD").innerHTML = str;
     });
 
-    endPlace.addEventListener("onhighlight", function(e){
-      var str = "";
-      var _value = e.fromitem.value;
-      var value = "";
-      if(e.fromitem.index > -1){
-        value = _value.province + _value.city + _value.district + 
-        _value.street + _value.business;
-      }
-      str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
-      value = "";
-      if(e.toitem.index > -1){
-        _value = e.toitem.value;
-        value = _value.province + _value.city + _value.district +
-        _value.street + _value.business;
-      }
-      str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
-      $("#searchdDestinationCityD").innerHTML = str;
+    endPlace.addEventListener("onhighlight",
+    function(e) {
+        var str = "";
+        var _value = e.fromitem.value;
+        var value = "";
+        if (e.fromitem.index > -1) {
+            value = _value.province + _value.city + _value.district + _value.street + _value.business;
+        }
+        str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+        value = "";
+        if (e.toitem.index > -1) {
+            _value = e.toitem.value;
+            value = _value.province + _value.city + _value.district + _value.street + _value.business;
+        }
+        str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
+        $("#searchdDestinationCityD").innerHTML = str;
     });
-
 
     var myStartValue;
     var myEndValue;
     //鼠标点击下拉列表后的事件
-    startPlace.addEventListener("onconfirm",function(e){
-      var _value = e.item.value;
-      myStartValue = _value.province + _value.city + _value.district +
-      _value.street + _value.business;
-      $("#searchdOriginCityD").innerHTML = "onconfirm<br />index="+e.item.index+"<br />myStartValue= " + myStartValue;
-      setStartPlace();
+    startPlace.addEventListener("onconfirm",
+    function(e) {
+        var _value = e.item.value;
+        myStartValue = _value.province + _value.city + _value.district + _value.street + _value.business;
+        $("#searchdOriginCityD").innerHTML = "onconfirm<br />index=" + e.item.index + "<br />myStartValue= " + myStartValue;
+        setStartPlace();
     });
-    endPlace.addEventListener("onconfirm",function(e){
-      var _value = e.item.value;
+    endPlace.addEventListener("onconfirm",
+    function(e) {
+        var _value = e.item.value;
 
-      myEndValue = _value.province + _value.city + _value.district + _value.street + _value.business;
-      $("#searchdDestinationCityD").innerHTML = "onconfirm<br />index="+e.item.index+"<br />myEndValue= " + myEndValue;
-      setEndPlace();
+        myEndValue = _value.province + _value.city + _value.district + _value.street + _value.business;
+        $("#searchdDestinationCityD").innerHTML = "onconfirm<br />index=" + e.item.index + "<br />myEndValue= " + myEndValue;
+        setEndPlace();
     });
 
-    function setStartPlace(){
-      if(s_marker!=null && s_marker!=""){
-        map.removeOverlay(s_marker);//清除单个标记
-      }
-      var sLocal = new BMap.LocalSearch(map,{
-        onSearchComplete:myStartFun
-      });
-      sLocal.search(myStartValue);
-      function myStartFun(){
-        //获取第一个智能搜索的结果
-        var sPoint = sLocal.getResults().getPoi(0).point;
-        map.centerAndZoom(sPoint,12);
-        s_marker = new BMap.Marker(sPoint,{icon:sIcon});
-        map.addOverlay(s_marker);//将标记添加到地图中
-        s_marker.enableDragging();//设置可拖动标记
-        s_marker.addEventListener('dragend', function(e){
-          myGeo.getLocation(e.point,function(rs){
-            var addComp = rs.addressComponents;
-            $("#dOriginCityD").val(addComp.district + addComp.street+addComp.streetNumber);
-          });
+    function setStartPlace() {
+        if (s_marker != null && s_marker != "") {
+            map.removeOverlay(s_marker); //清除单个标记
+        }
+        var sLocal = new BMap.LocalSearch(map, {
+            onSearchComplete: myStartFun
         });
-      }
+        sLocal.search(myStartValue);
+        function myStartFun() {
+            //获取第一个智能搜索的结果
+            var sPoint = sLocal.getResults().getPoi(0).point;
+            map.centerAndZoom(sPoint, 12);
+            s_marker = new BMap.Marker(sPoint, {
+                icon: sIcon
+            });
+            map.addOverlay(s_marker); //将标记添加到地图中
+            s_marker.enableDragging(); //设置可拖动标记
+            s_marker.addEventListener('dragend',
+            function(e) {
+                myGeo.getLocation(e.point,
+                function(rs) {
+                    var addComp = rs.addressComponents;
+                    $("#dOriginCityD").val(addComp.district + addComp.street + addComp.streetNumber);
+                });
+            });
+        }
     }
-    function setEndPlace(){
-      if(e_marker!=null && e_marker!=""){
-        map.removeOverlay(e_marker);//清除单个标记
-      }
-      var eLocal = new BMap.LocalSearch(map,{
-        onSearchComplete:myEndFun
-      });
-      eLocal.search(myEndValue);
-      function myEndFun(){
-        //获取第一个智能搜索的结果
-        var ePoint = eLocal.getResults().getPoi(0).point;
-        map.centerAndZoom(ePoint,12);
-        e_marker = new BMap.Marker(ePoint,{icon:eIcon});
-        map.addOverlay(e_marker);//将标记添加到地图中
-        e_marker.enableDragging();//设置可拖动标记
-        e_marker.addEventListener('dragend', function(e){
-          myGeo.getLocation(e.point,function(rs){
-            var addComp = rs.addressComponents;
-            $("#dDestinationCityD").val(addComp.district + addComp.street+addComp.streetNumber);
-          });
+    function setEndPlace() {
+        if (e_marker != null && e_marker != "") {
+            map.removeOverlay(e_marker); //清除单个标记
+        }
+        var eLocal = new BMap.LocalSearch(map, {
+            onSearchComplete: myEndFun
         });
-      }
+        eLocal.search(myEndValue);
+        function myEndFun() {
+            //获取第一个智能搜索的结果
+            var ePoint = eLocal.getResults().getPoi(0).point;
+            map.centerAndZoom(ePoint, 12);
+            e_marker = new BMap.Marker(ePoint, {
+                icon: eIcon
+            });
+            map.addOverlay(e_marker); //将标记添加到地图中
+            e_marker.enableDragging(); //设置可拖动标记
+            e_marker.addEventListener('dragend',
+            function(e) {
+                myGeo.getLocation(e.point,
+                function(rs) {
+                    var addComp = rs.addressComponents;
+                    $("#dDestinationCityD").val(addComp.district + addComp.street + addComp.streetNumber);
+                });
+            });
+        }
     }
-    
 
-    function mark(place){
-      if(place == 'start'){
-        
-        myGeo.getPoint(cityName,function(point){
-          if(point){
-            
-            map.centerAndZoom(point,12);
-            //map.clearOverlays();//清除所有标记
-            map.removeOverlay(s_marker);//清除单个标记
-            s_marker = new BMap.Marker(point,{icon:sIcon});//创建标记，icon为标记图标
-            map.addOverlay(s_marker);//将标记添加到地图中
-            s_marker.enableDragging();//设置可拖动标记
-           
-            s_marker.addEventListener('dragend', function(e){
-              // $("#detail-s-place").val(e.point.lng + ", " + e.point.lat);
-              myGeo.getLocation(e.point,function(rs){
-                var addComp = rs.addressComponents;
-                //alert(addComp.street+addComp.streetNumber);
-                $("#dOriginCityD").val(addComp.district +addComp.street+addComp.streetNumber);
-              });
+    function mark(place) {
+        if (place == 'start') {
+
+            myGeo.getPoint(cityName,
+            function(point) {
+                if (point) {
+
+                    map.centerAndZoom(point, 12);
+                    //map.clearOverlays();//清除所有标记
+                    map.removeOverlay(s_marker); //清除单个标记
+                    s_marker = new BMap.Marker(point, {
+                        icon: sIcon
+                    }); //创建标记，icon为标记图标
+                    map.addOverlay(s_marker); //将标记添加到地图中
+                    s_marker.enableDragging(); //设置可拖动标记
+                    s_marker.addEventListener('dragend',
+                    function(e) {
+                        // $("#detail-s-place").val(e.point.lng + ", " + e.point.lat);
+                        myGeo.getLocation(e.point,
+                        function(rs) {
+                            var addComp = rs.addressComponents;
+                            //alert(addComp.street+addComp.streetNumber);
+                            $("#dOriginCityD").val(addComp.district + addComp.street + addComp.streetNumber);
+                        });
+                    });
+                }
             });
-          }
-        });
-        // var focus_point=new BMap.Point($(this).attr("lng"),$(this).attr("lat"));
-        // s_marker = new BMap.Marker(map.getCenter(),{icon:sIcon});
-        // s_marker.setPosition(focus_point);
-        // map.centerAndZoom(focus_point,17);
-      }else{
-        myGeo.getPoint(cityName,function(point){
-          if(point){
-            map.centerAndZoom(point,12);
-            map.removeOverlay(e_marker);//清除单个标记
-            e_marker = new BMap.Marker(point,{icon:eIcon});//创建标记，icon为标记图标
-            map.addOverlay(e_marker);//将标记添加到地图中
-            e_marker.enableDragging();//设置可拖动标记
-           
-            e_marker.addEventListener('dragend', function(e){
-              // $("#detail-e-place").val(e.point.lng + ", " + e.point.lat);
-              myGeo.getLocation(e.point,function(rs){
-                var addComp = rs.addressComponents;
-                $("#dDestinationCityD").val(addComp.district +addComp.street+addComp.streetNumber);
-              });
+            // var focus_point=new BMap.Point($(this).attr("lng"),$(this).attr("lat"));
+            // s_marker = new BMap.Marker(map.getCenter(),{icon:sIcon});
+            // s_marker.setPosition(focus_point);
+            // map.centerAndZoom(focus_point,17);
+        } else {
+            myGeo.getPoint(cityName,
+            function(point) {
+                if (point) {
+                    map.centerAndZoom(point, 12);
+                    map.removeOverlay(e_marker); //清除单个标记
+                    e_marker = new BMap.Marker(point, {
+                        icon: eIcon
+                    }); //创建标记，icon为标记图标
+                    map.addOverlay(e_marker); //将标记添加到地图中
+                    e_marker.enableDragging(); //设置可拖动标记
+                    e_marker.addEventListener('dragend',
+                    function(e) {
+                        // $("#detail-e-place").val(e.point.lng + ", " + e.point.lat);
+                        myGeo.getLocation(e.point,
+                        function(rs) {
+                            var addComp = rs.addressComponents;
+                            $("#dDestinationCityD").val(addComp.district + addComp.street + addComp.streetNumber);
+                        });
+                    });
+                }
             });
-          }
-        });
-      }
+        }
     }
 </script>
