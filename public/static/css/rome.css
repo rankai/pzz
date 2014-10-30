@@ -12,6 +12,7 @@
   text-align: center;
 }
 .rd-container-attachment {
+  z-index: 100 !important;
   position: absolute;
 }
 .rd-month {

@@ -1,0 +1,150 @@
+/*addcss*/
+.floatservice-code{
+	height: 82px !important;
+}
+/*addcss end*/
+.floatservice {
+	z-index: 100;
+	position: fixed; top: 180px; right: 1px; _position: absolute
+}
+.floatservice a {
+	color: #00a0e9
+}
+.floatservice a:hover {
+	color: #ff8100; text-decoration: none
+}
+.floatservice .floatL {
+	position: relative; width: 28px; float: left
+}
+.floatservice .floatL A {
+	text-indent: -9999px; display: block; font-size: 0px
+}
+.floatservice .floatR {
+	background: url(../images/float_bg.gif)
+}
+.floatservice .tp {
+	background: url(../images/float_bg.gif)
+}
+.floatservice .cn {
+	background: url(../images/float_bg.gif)
+}
+.floatservice .floatR {
+	padding-bottom: 15px; width: 130px; background-repeat: no-repeat; background-position: -131px bottom; float: left; overflow: hidden
+}
+.floatservice .tp {
+	background-repeat: no-repeat; background-position: 0% 0%; height: 10px
+}
+.floatservice .cn {
+	background-repeat: repeat-y; background-position: -262px 0px
+}
+.floatservice .cn h3 {
+	text-indent: -9999px; height: 36px; font-size: 0px
+}
+.floatservice .cn ul {
+	padding-bottom: 0px; padding-left: 14px; padding-right: 14px; padding-top: 0px
+}
+.floatservice .cn ul li {
+	border-bottom: #e6e5e4 1px solid; line-height: 36px; word-wrap: break-word; height: 36px; overflow: hidden; word-break: normal;
+}
+.floatservice .titZx {
+	background: url(../images/float_s.gif) no-repeat
+}
+.floatservice .titDh {
+	background: url(../images/float_s.gif) no-repeat
+}
+.floatservice .titDc {
+	background: url(../images/float_s.gif) no-repeat
+}
+.floatservice .icoZx {
+	background: url(../images/float_s.gif) no-repeat
+}
+.floatservice .icoTc {
+	background: url(../images/float_s.gif) no-repeat
+}
+.floatservice .icoFf {
+	background: url(../images/float_s.gif) no-repeat
+}
+.floatservice .icoTl {
+	background: url(../images/float_s.gif) no-repeat
+}
+.floatservice .btnOpen {
+	background: url(../images/float_s.gif) no-repeat
+}
+.floatservice .btnOpen_n {
+	background: url(../images/float_s.gif) no-repeat
+}
+.floatservice .btnCtn {
+	background: url(../images/float_s.gif) no-repeat
+}
+.floatservice .titZx {
+	background-position: 5px -10px
+}
+.floatservice .titDh {
+	background-position: 5px -66px
+}
+.floatservice .titDc {
+	background-position: 5px -124px
+}
+.floatservice .icoZx {
+	background-position: 2px -154px
+}
+.floatservice .icoTc {
+	background-position: 0px -323px
+}
+.floatservice .icoFf {
+	background-position: 2px -213px
+}
+.floatservice .icoTl {
+	padding-left: 20px; display: block; font-size: "Î¢ÈíÑÅºÚ"; background-position: 2px -266px; float: left
+}
+.floatservice .btnOpen {
+	background-position: -30px -396px
+}
+.floatservice .btnOpen_n {
+	background-position: 0px -530px
+}
+.floatservice .btnCtn {
+	background-position: 0px -396px
+}
+.floatservice .icoZx {
+	padding-left: 28px; display: block; float: left
+}
+.floatservice .icoTc {
+	padding-left: 28px; display: block; float: left
+}
+.floatservice .icoFf {
+	padding-left: 28px; display: block; float: left
+}
+.floatservice .btnOpen {
+	position: relative; width: 28px; height: 118px; top: 80px; left: 2px
+}
+.floatservice .btnOpen_n {
+	position: relative; width: 28px; height: 118px; top: 80px; left: 2px
+}
+.floatservice .btnCtn {
+	position: relative; width: 28px; height: 118px; top: 80px; left: 2px
+}
+.floatservice .btnOpen {
+	top: 118px; left: 1px
+}
+.floatservice .btnOpen_n {
+	top: 118px; left: 1px
+}
+.floatservice .btnCtn {
+	top: 118px; left: 2px
+}
+.floatservice ul li h3.titDc a {
+	width: 80px; display: block; height: 36px
+}
+.floatservice ul li.top {
+	border-bottom: #ace5f9 1px solid
+}
+.floatservice ul li.bot {
+	border-bottom-style: none
+}
+.floatservice ul.webZx {
+	padding-bottom: 0px; padding-left: 0px; width: 164px; padding-right: 0px; background: url(../images/webZx_bg.jpg) no-repeat; height: 65px; padding-top: 0px
+}
+.floatservice ul li.webZx-in {
+	border-bottom-style: none; padding-left: 5px; height: 50px; padding-top: 8px
+}

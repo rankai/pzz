@@ -122,6 +122,7 @@ legend {
 .ti{
 	text-indent: 2em;
 }
+.f10{font-size:10px; }
 .f12{font-size:12px}
 .f13{font-size:13px}
 .f14{font-size:14px}
@@ -211,12 +212,12 @@ legend {
 .mt5{margin-top:5px}
 .mt10{margin-top:10px}
 .mt15{margin-top:15px}
-.mt20{margin-top:20px}
-.mt30{margin-top:30px}
+.mt20{margin-top:20px !important}
+.mt30{margin-top:30px !important}
 .mt50{margin-top:50px}
 .mt60{margin-top: 60px}
 .mt80{margin-top: 80px}
-.mt100{margin-top:100px}
+.mt100{margin-top:100px !important}
 .mt120{margin-top:120px}
 .mt150{margin-top:150px }
 .mb10{margin-bottom:10px}
@@ -271,6 +272,7 @@ legend {
 .pl30{padding-left:30px}
 .pl50{padding-left:50px}
 .pl100{padding-left:100px}
+.pl150{padding-left:150px}
 .pr5{padding-right:5px}
 .pr10{padding-right:10px}
 .pr15{padding-right:15px}

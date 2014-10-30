@@ -11,6 +11,8 @@
     <!-- Custom Theme files -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- time add date -->
+    <link href='css/rome.css' rel='stylesheet' type='text/css' />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -48,16 +50,6 @@
                 <div class="container">
                     <div class="left-content">
                         <span class="left-descrip-span">拼座族，拼车的最佳选择</span>
-                        <!-- <span class="left-attention-span" >关注我们:</span>
-                    -->
-                    <!-- <a href="" class="left-attention-a">
-                    <img src="images/qqzone.gif">关注</a>
-                <a href="" class="left-attention-a">
-                    <img src="images/xinlang.png">关注</a>
-                -->
-                <!-- <a href="" class="left-phone-a">
-                <img src="images/home-tel.png" height="20">手机版</a>
-            -->
             <a class="pl30 f14 cr666 pr10" href="user-login.html">登录</a>
             <span class="f12 crd9d">|</span>
             <a class="pl10 f14 cr666" href="user-register.html">免费注册</a>
@@ -134,9 +126,8 @@
                 <div class="container ">
                     <div id="search" class="home-search-bg ">
                         <form class="form-horizontal home-search-local com-rposition"  role="form">
-                             <a id="route-more" style="bottom: 0px;position: absolute;right: 320px;" class="crfff" href="javascript:void(0)">展开更多<i class="fa fa-caret-down"></i></a>
-                            <div class="p10 form-group ml20">
-                            
+                            <div class="detail-search-div">
+                                 <a class="detail-search-a crfff" id="route-more" href="javascript:void(0)">展开更多<i class="fa fa-caret-down"></i></a>
                             </div>
                             <div class="form-group ">
                                 <label for="originCar" class="col-xs-2 control-label crfff">
@@ -174,10 +165,19 @@
                             <div id="route-detail" >
                                <div class="form-group ">
                                 <label for="destinationCar" class="col-xs-2 control-label crfff">
-                                    出发时间
+                                    出发日期
                                 </label>
-                                <div class="col-xs-3">
-                                    <input class="form-control border-radius-style" id="destinationCar" placeholder="出发时间">
+                                 <div class="control-group col-xs-3">
+                                    <div class="controls">
+                                        <div class="input-prepend input-group ">
+                                            <span class="add-on input-group-addon border-radius-style">
+                                                <i class="glyphicon glyphicon-calendar fa fa-calendar">
+                                                </i>
+                                            </span>
+                                            <input type="text" id='d' class="form-control border-radius-style offer-date-input"
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                              <div class="form-group ">
@@ -185,8 +185,13 @@
                                     座位数
                                 </label>
                                 <div class="col-xs-3">
-                                    <input class="form-control border-radius-style" id="destinationCar" placeholder="座位数">
+                                     <select class="form-control border-radius-style">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                     </select>
                                 </div>
+
                             </div> 
                             </div>
                           
@@ -229,7 +234,7 @@
             </h4>
             -->
         </div>
-        <div class="page-list">
+        <div class="">
 
             <div class="tab-content">
                 <div class="tab-pane active" id="home">
@@ -294,8 +299,41 @@
                                     </div>
                                 </li>
                             </ul>
+
                         </div>
+                        <!-- paging start  -->
+                            <div class="text-right">
+                                <ul class="pagination ">
+                                    <li class="disabled">
+                                        <a href="#">&laquo;</a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="#">
+                                            1
+                                            <span class="sr-only">(current)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">4</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">5</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">&raquo;</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- paging end --> 
                     </div>
+
                 </div>
                 <div class="tab-pane" id="profile">
                     <div id="work-need" class="page-list-bg p10 mt20 ">
@@ -362,43 +400,45 @@
                                 </li>
                             </ul>
                         </div>
+                          <!-- paging start  -->
+                            <div class="text-right">
+                                <ul class="pagination ">
+                                    <li class="disabled">
+                                        <a href="#">&laquo;</a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="#">
+                                            1
+                                            <span class="sr-only">(current)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">4</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">5</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">&raquo;</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- paging end --> 
                     </div>
                     <!-- work end -->
                      </div>
             </div>
 
         </div>
-        <!-- paging start  -->
-        <div class="text-right">
-            <ul class="pagination">
-                <li class="disabled">
-                    <a href="#">&laquo;</a>
-                </li>
-                <li class="active">
-                    <a href="#">
-                        1
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">2</a>
-                </li>
-                <li>
-                    <a href="#">3</a>
-                </li>
-                <li>
-                    <a href="#">4</a>
-                </li>
-                <li>
-                    <a href="#">5</a>
-                </li>
-                <li>
-                    <a href="#">&raquo;</a>
-                </li>
-            </ul>
-        </div>
-
-        <!-- paging end --> </div>
+        
+    </div>
     <!-- work end -->
 
 </div>
@@ -646,6 +686,9 @@
 <!-- footer end -->
 </div>
 <!-- wrapper -->
-
+ <script src='js/rome.js'>
+        </script>
+        <script src='js/example.js'>
+        </script>
 </body>
 </html>

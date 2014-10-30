@@ -207,7 +207,7 @@
                 city_container.empty();
                 for(var item in _tmp){
                 var _data= _tmp[item];
-                city_container.append("<a href='javascript:void(0)' style='display:none'><span>"+_data[2]+"</span><b>"+     _data[1] +"</b></a>");                
+                city_container.append("<a href='javascript:void(0)' style='display:none'><span>"+_data[2]+"</span><b>"+_data[1] +"</b></a>");                
                 }
 			    suggestMain.find('.list_city_head').html(value+",按拼音排序");
                 setAddPage(1);

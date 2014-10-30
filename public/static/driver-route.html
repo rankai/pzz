@@ -28,19 +28,54 @@
         <!-- date start -->
         <!-- time add date -->
         <!-- date end -->
-        <script>
-            $(function() {
-                $(".addseat").click(function() {
-                    var t = $(this).parent().find('input[class*=numseat]');
-                    t.val(parseInt(t.val()) + 1)
-                    // setTotal(); 
-                }) $(".minseat").click(function() {
-                    var t = $(this).parent().find('input[class*=numseat]');
-                    t.val(parseInt(t.val()) - 1) if (parseInt(t.val()) < 0) {
-                        t.val(0);
+         <script>
+            var numplace=1;
+            var numplaceid=1;
+            $(document).ready(function(){
+                 $('#addplace').click(function(){
+                    if(numplace <= 4){
+                        var strDestinationCar = "destinationCar"+numplaceid;
+                        var strDeleteplace = "deleteplace"+numplaceid;
+                          $('#addsite').append(" <div id='"+strDestinationCar+"' class='form-group  has-feedback addplace-span'><div class='col-xs-6 col-xs-offset-2'><input   class='form-control  border-radius-style' id='destinationCar"+numplaceid+"' placeholder='城市/小区/写字楼/地标建筑/道路'/><span class='glyphicon glyphicon-remove form-control-feedback cr999 spancolor ' id='"+strDeleteplace+"' ></span></div></div>");
+                                numplace++;numplaceid++;
+                               $("#"+strDeleteplace).click(function(){
+                                numplace--;
+                                $("#"+strDestinationCar).remove();
+                                alert(numplace);
+                            });
+                        }
+                    else{
+                        alert("最多添加5个地点");
                     }
-                })
-            })
+                  
+                });
+                $('#getvalue').click(function(){
+                   var str=""
+                    $("#addsite input").each(function(index, element) {
+                        str += $(this).val()+","
+                    });
+                    str = str.substr(0,str.length-1);//除去最后一个“，”
+                    alert(str);
+                });
+            });
+        </script>
+        <script>
+           
+        $(function(){ 
+        $(".addseat").click(function(){ 
+        var t=$(this).parent().find('input[class*=numseat]'); 
+        t.val(parseInt(t.val())+1) 
+        // setTotal(); 
+        }) 
+        $(".minseat").click(function(){ 
+        var t=$(this).parent().find('input[class*=numseat]'); 
+        t.val(parseInt(t.val())-1) 
+        if(parseInt(t.val())<0){ 
+        t.val(0); 
+        } 
+        }) 
+        }) 
+        
         </script>
         <script>
             $(document).ready(function() {
@@ -261,18 +296,27 @@
                                     填写目的地
                                 </span>
                             </div>
-                            <div class="form-group">
+                            <div id="addsite">
+                                <div class="form-group" >
                                 <label for="destinationCar" class="col-xs-2 control-label">
                                     途径哪里：
                                 </label>
                                 <div class="col-xs-6">
-                                    <input class="form-control border-radius-style" id="destinationCar" placeholder="途径地">
+                                    <input class="form-control border-radius-style" id="destinationCar12" placeholder="城市/小区/写字楼/地标建筑/道路">
                                 </div>
-                                <span id="dpassplace" class="col-xs-4 f12 crred control-label tl">
+                                <button type="button" id="addplace" class="col-xs-2 cr5b module-driver-route-btn control-label tl"><i class="fa pr5 fa-lg fa-plus"></i>添加途径地点</button>
+                                <span id="dpassplace" class="col-xs-4 f12 crred control-label ">
                                     <i class="fa fa-times-circle crred fa-lg mr5">
                                     </i>
                                     不是必填，选择途径地点
                                 </span>
+                            </div>
+                            </div>
+                            
+                              <div class="form-group">
+                                <div class="col-xs-offset-2 col-xs-10">
+                                    <span class="f10 cr999">途径地点可以为您带来更多拼车机会，最多可以添加 <b class="crred">5 </b>个。</span>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="destinationCar" class="col-xs-2 control-label">
@@ -418,13 +462,12 @@
                                     </b>
                                     提供座位：
                                 </label>
-                                <div class="col-xs-6">
-                                    <input class="minseat btn btn-default btn-xs frame-nradius" name="" type="button"
-                                    value="-" />
-                                    <input class="numseat  frame-nradius wp50 p0 text-center" name="" type="text"
-                                    value="1" />
-                                    <input class="addseat btn btn-default btn-xs frame-nradius" name="" type="button"
-                                    value="+" />
+                               <div class="col-xs-2">
+                                  <select class="form-control border-radius-style">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                  </select>
                                 </div>
                             </div>
                             <!-- give-seat end -->
@@ -454,7 +497,7 @@
                             </div>
                             <!-- descrip end -->
                             <div class="text-center m30">
-                                <button type="button" class="btn btn-primary border-radius-style">
+                                <button type="button" id="getvalue" class="btn btn-primary border-radius-style">
                                     立即发布
                                 </button>
                                 <button type="button" class="btn border-radius-style offer-back-btn">
@@ -467,7 +510,7 @@
             </div>
             <!-- main end -->
             <!-- footer start -->
-            <div id="footer" class="text-center p20 wmw">
+            <div class="text-center wmw p30 footer-bg">
                 <p>
                     <a href="">
                         关于拼座族
@@ -498,6 +541,7 @@
             <!-- footer end -->
         </div>
         <!-- wrapper -->
+        <!-- 日期控件 -->
         <script src='js/rome.js'>
         </script>
         <script src='js/example.js'>
